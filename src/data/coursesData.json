@@ -1,0 +1,104 @@
+
+{
+  "title": "Industry-ready",
+  "highlight": "IT courses",
+  "subtitle": "Master in-demand tech skills with real-world projects and land your dream job",
+  "courses": [
+    {
+      "id": 1,
+      "title": "AUTOCAD",
+      "duration": "2.5 Months",
+      "image": "/images/courses/course-1.webp"
+    },
+    {
+      "id": 2,
+      "title": "CYBER SECURITY + GEN AI",
+      "duration": "6 Months",
+      "image": "/images/courses/course-2.webp"
+    },
+    {
+      "id": 3,
+      "title": "JAVA FULL STACK DEVELOPER + GEN AI",
+      "duration": "6 Months",
+      "image": "/images/courses/course-3.webp"
+    },
+    {
+      "id": 4,
+      "title": "ADVANCE DIGITAL MARKETING",
+      "duration": "6 Months",
+      "image": "/images/courses/course-4.webp"
+    },
+    {
+      "id": 5,
+      "title": "MIS + PowerBI",
+      "duration": "3 Months",
+      "image": "/images/courses/course-5.webp"
+    },
+    {
+      "id": 6,
+      "title": "DATA ANALYTICS USING PYTHON",
+      "duration": "5 Months",
+      "image": "/images/courses/course-6.webp"
+    },
+    {
+      "id": 7,
+      "title": "PYTHON TRAINING COURSE",
+      "duration": "3 Months",
+      "image": "/images/courses/course-7.webp"
+    },
+    {
+      "id": 8,
+      "title": "UI/UX DESIGNING",
+      "duration": "4 Months",
+      "image": "/images/courses/course-8.webp"
+    },
+    {
+      "id": 9,
+      "title": "WEB DEVELOPMENT",
+      "duration": "6 Months",
+      "image": "/images/courses/course-9.webp"
+    },
+    {
+      "id": 10,
+      "title": "APP DEVELOPMENT",
+      "duration": "5 Months",
+      "image": "/images/courses/course-10.webp"
+    },
+    {
+      "id": 11,
+      "title": "DIGITAL MARKETING",
+      "duration": "3 Months",
+      "image": "/images/courses/course-11.webp"
+    },
+    {
+      "id": 12,
+      "title": "PYTHON PROGRAMMING",
+      "duration": "3 Months",
+      "image": "/images/courses/course-12.webp"
+    },
+    {
+      "id": 13,
+      "title": "FRONTEND TECHNOLOGIES",
+      "duration": "3 Months",
+      "image": "/images/courses/course-13.webp"
+    },
+    {
+      "id": 14,
+      "title": "BACKEND TECHNOLOGIES",
+      "duration": "3 Months",
+      "image": "/images/courses/course-14.webp"
+    },
+    {
+      "id": 15,
+      "title": "FULL STACK DEVELOPER",
+      "duration": "8 Months",
+      "image": "/images/courses/course-15.webp"
+    },
+    {
+      "id": 16,
+      "title": "DATA ANALYST",
+      "duration": "5 Months",
+      "image": "/images/courses/course-16.webp"
+    }
+  ]
+}

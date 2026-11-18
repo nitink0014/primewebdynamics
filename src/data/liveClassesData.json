@@ -1,0 +1,45 @@
+
+{
+  "badge": "Live Now",
+  "title": "Upcoming",
+  "highlight": "Live Classes",
+  "subtitle": "Join our expert-led live sessions — completely free!",
+  "columns": {
+    "course": "Course",
+    "date": "Date",
+    "seats": "Seats Left",
+    "action": "Action"
+  },
+  "classes": [
+    {
+      "id": 1,
+      "course": "Full Stack Development",
+      "date": "Sat, Nov 21, 2026",
+      "seats": 32
+    },
+    {
+      "id": 2,
+      "course": "Data Science with Python",
+      "date": "Mon, Nov 23, 2026",
+      "seats": 8
+    },
+    {
+      "id": 3,
+      "course": "Cloud & DevOps",
+      "date": "Wed, Nov 25, 2026",
+      "seats": 15
+    },
+    {
+      "id": 4,
+      "course": "Generative AI & LLMs",
+      "date": "Fri, Nov 27, 2026",
+      "seats": 6
+    },
+    {
+      "id": 5,
+      "course": "Digital Marketing",
+      "date": "Sat, Nov 28, 2026",
+      "seats": 5
+    }
+  ]
+}
