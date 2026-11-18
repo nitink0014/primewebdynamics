@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CounsellingModal from "./components/CounsellingModal";
 
+import Home from "./pages/HomePage";
 import Registration from "./pages/Registration";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -13,12 +14,12 @@ import Blogs from "./pages/Blogs";
 import BlogDetails from "./pages/BlogDetails";
 import CareerGuidance from "./pages/CareerGuidance";
 import Courses from "./pages/Courses";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const location = useLocation();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Show counselling modal after 30 seconds on every page
   useEffect(() => {
     setIsModalOpen(false);
 
@@ -57,6 +58,7 @@ function App() {
       <Navbar />
 
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />

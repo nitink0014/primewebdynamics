@@ -24,7 +24,7 @@ function CoursesSection() {
         {/* Course Cards */}
         <div className="mt-[48px] grid grid-cols-1 gap-[18px] sm:grid-cols-2 xl:grid-cols-4">
 
-          {coursesData.courses.map((course) => (
+       {coursesData.featuredCourses.map((course) => (
             <div
               key={course.id}
               className="flex h-[350px] min-w-0 flex-col overflow-hidden rounded-[15px] border border-[#d6dfeb] bg-white shadow-[0_3px_9px_rgba(15,35,75,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(15,35,75,0.12)]"
