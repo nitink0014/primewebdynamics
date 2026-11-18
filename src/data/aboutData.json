@@ -1,0 +1,25 @@
+
+{
+  "title": "About Primewebdynamics",
+  "subtitle": "Empowering students with industry-ready technical skills.",
+  "description": "Primewebdynamics focuses on providing learning opportunities that help students develop technical knowledge and practical skills.",
+  "mission": "To help learners build strong technical foundations and prepare for professional opportunities.",
+  "vision": "To make quality technical education accessible and career-oriented.",
+  "values": [
+    {
+      "id": 1,
+      "title": "Quality Education",
+      "description": "Focus on practical and meaningful learning."
+    },
+    {
+      "id": 2,
+      "title": "Innovation",
+      "description": "Encourage learners to explore modern technologies."
+    },
+    {
+      "id": 3,
+      "title": "Career Growth",
+      "description": "Help students prepare for professional challenges."
+    }
+  ]
+}
