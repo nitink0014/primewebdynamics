@@ -1,0 +1,162 @@
+{
+  "megaMenu": [
+    {
+      "id": "python",
+      "category": "Python",
+      "icon": "🐍",
+      "courses": [
+        {
+          "title": "Python Programming",
+          "description": "Learn Python from basics to advanced & build real-world projects.",
+          "iconBg": "bg-amber-100 text-amber-600",
+          "icon": "🐍"
+        },
+        {
+          "title": "Data Analyst",
+          "description": "Turn data into insights & drive smart decisions with Excel, SQL, Python & Power BI.",
+          "iconBg": "bg-teal-900 text-amber-400",
+          "icon": "📊"
+        }
+      ]
+    },
+    {
+      "id": "web-development",
+      "category": "Web & Full Stack",
+      "icon": "💻",
+      "courses": [
+        {
+          "title": "Web Development",
+          "description": "Build responsive & dynamic websites from scratch.",
+          "iconBg": "bg-blue-900 text-white",
+          "icon": "🌐"
+        },
+        {
+          "title": "Frontend Technologies",
+          "description": "Design beautiful, responsive & user-friendly interfaces.",
+          "iconBg": "bg-slate-900 text-cyan-400",
+          "icon": "⚛️"
+        },
+        {
+          "title": "Backend Technologies",
+          "description": "Build robust APIs & scalable server-side applications.",
+          "iconBg": "bg-emerald-900 text-emerald-300",
+          "icon": "⚙️"
+        },
+        {
+          "title": "Full Stack Developer",
+          "description": "Master both frontend & backend and become a complete developer.",
+          "iconBg": "bg-indigo-950 text-amber-400",
+          "icon": "🚀"
+        }
+      ]
+    },
+    {
+      "id": "app-development",
+      "category": "App Development",
+      "icon": "📱",
+      "courses": [
+        {
+          "title": "App Development",
+          "description": "Learn modern tools & technologies to build powerful mobile applications.",
+          "iconBg": "bg-sky-950 text-sky-300",
+          "icon": "📱"
+        }
+      ]
+    },
+    {
+      "id": "digital-marketing",
+      "category": "Digital Marketing",
+      "icon": "📢",
+      "courses": [
+        {
+          "title": "Digital Marketing",
+          "description": "Grow brands. Reach audiences. Get results.",
+          "iconBg": "bg-purple-900 text-white",
+          "icon": "📈"
+        }
+      ]
+    }
+  ],
+  "featuredCourses": [
+    {
+      "id": 1,
+      "title": "Web Development",
+      "duration": "4-6 Months",
+      "level": "Beginner to Advanced",
+      "bannerBg": "from-[#040b1a] via-[#0a1d3f] to-[#082454]",
+      "badge": "COURSE 01 / 08",
+      "tagline": "Build responsive & dynamic websites from scratch.",
+      "accentColor": "text-cyan-400"
+    },
+    {
+      "id": 2,
+      "title": "App Development",
+      "duration": "4-5 Months",
+      "level": "Beginner to Intermediate",
+      "bannerBg": "from-[#05081c] via-[#111642] to-[#1e1147]",
+      "badge": "COURSE 02 / 08",
+      "tagline": "Build powerful Android & iOS mobile applications.",
+      "accentColor": "text-indigo-400"
+    },
+    {
+      "id": 3,
+      "title": "Digital Marketing",
+      "duration": "3 Months",
+      "level": "Beginner Friendly",
+      "bannerBg": "from-[#09061c] via-[#17123b] to-[#0f172a]",
+      "badge": "COURSE 03 / 08",
+      "tagline": "Grow brands. Reach audiences. Get results.",
+      "accentColor": "text-purple-400"
+    },
+    {
+      "id": 4,
+      "title": "Python Programming",
+      "duration": "2-3 Months",
+      "level": "Beginner to Advanced",
+      "bannerBg": "from-[#04141c] via-[#0a2b3d] to-[#0d3b4c]",
+      "badge": "COURSE 04 / 08",
+      "tagline": "Learn Python from basics to advanced & build real-world projects.",
+      "accentColor": "text-amber-400"
+    },
+    {
+      "id": 5,
+      "title": "Frontend Technologies",
+      "duration": "3 Months",
+      "level": "Beginner to Intermediate",
+      "bannerBg": "from-[#040914] via-[#0a1931] to-[#131138]",
+      "badge": "COURSE 05 / 08",
+      "tagline": "Design beautiful, responsive & user-friendly interfaces.",
+      "accentColor": "text-sky-400"
+    },
+    {
+      "id": 6,
+      "title": "Backend Technologies",
+      "duration": "3 Months",
+      "level": "Intermediate",
+      "bannerBg": "from-[#041712] via-[#0a2e24] to-[#0d3b32]",
+      "badge": "COURSE 06 / 08",
+      "tagline": "Build robust APIs & scalable server-side applications.",
+      "accentColor": "text-emerald-400"
+    },
+    {
+      "id": 7,
+      "title": "Full Stack Developer",
+      "duration": "6-8 Months",
+      "level": "Beginner to Job-Ready",
+      "bannerBg": "from-[#0b0824] via-[#181347] to-[#231454]",
+      "badge": "COURSE 07 / 08",
+      "tagline": "Master both frontend & backend and become a complete developer.",
+      "accentColor": "text-blue-400"
+    },
+    {
+      "id": 8,
+      "title": "Data Analyst",
+      "duration": "4-5 Months",
+      "level": "Beginner to Advanced",
+      "bannerBg": "from-[#071324] via-[#0f294a] to-[#133863]",
+      "badge": "COURSE 08 / 08",
+      "tagline": "Turn data into insights & drive smart decisions.",
+      "accentColor": "text-teal-300"
+    }
+  ]
+}
