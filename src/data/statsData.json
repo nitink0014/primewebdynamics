@@ -1,0 +1,35 @@
+
+{
+  "badge": {
+    "icon": "🚀",
+    "text": "Trusted by 4 Lakh+ Learners"
+  },
+  "title": "Numbers that speak for themselves.",
+  "description": "India's leading AI, Data Science & Software Training Institute with thousands of successful placements.",
+  "stats": [
+    {
+      "id": 1,
+      "icon": "🎓",
+      "number": "400,000+",
+      "label": "Learners"
+    },
+    {
+      "id": 2,
+      "icon": "🏢",
+      "number": "500+",
+      "label": "Hiring Partners"
+    },
+    {
+      "id": 3,
+      "icon": "📈",
+      "number": "94%",
+      "label": "Success Rate"
+    },
+    {
+      "id": 4,
+      "icon": "📚",
+      "number": "180+",
+      "label": "Courses"
+    }
+  ]
+}

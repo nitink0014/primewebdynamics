@@ -1,0 +1,38 @@
+
+{
+  "eyebrow": "AI-Powered Guidance",
+  "title": "Get a Personalised Learning Roadmap",
+  "description": "Let our AI guide you toward the best career path based on your background, goals and aspirations. Get expert counselling and a custom roadmap to reach your dream job.",
+  "benefits": [
+    "1:1 career counselling session",
+    "Customised course roadmap",
+    "Job role & salary predictions",
+    "Get started in 2 minutes"
+  ],
+  "formTitle": "Enquire Now",
+  "formSubtitle": "Fill in your details and our team will reach out to you",
+  "placeholders": {
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "course": "Select a Course",
+    "branch": "Select a Branch"
+  },
+  "courses": [
+    "Web Development",
+    "App Development",
+    "Digital Marketing",
+    "Python Programming",
+    "Frontend Technologies",
+    "Backend Technologies",
+    "Full Stack Developer",
+    "Data Analyst"
+  ],
+  "branches": [
+    "Rampur",
+    "Delhi",
+    "Noida",
+    "Dehradun"
+  ],
+  "submitText": "Submit"
+}

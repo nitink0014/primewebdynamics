@@ -1,0 +1,54 @@
+{
+  "badge": "Testimonials",
+  "title": "Hear it From",
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Yashika",
+      "image": "/images/testimonials/yashika.png",
+      "video": "/videos/testimonials/yashika.mp4"
+    },
+    {
+      "id": 2,
+      "name": "Ashish Singh",
+      "image": "/images/testimonials/ashish.png",
+      "video": "/videos/testimonials/ashish.mp4"
+    },
+    {
+      "id": 3,
+      "name": "Ali Abaas",
+      "image": "/images/testimonials/ali.png",
+      "video": "/videos/testimonials/ali.mp4"
+    },
+    {
+      "id": 4,
+      "name": "Ankit Chaudhary",
+      "image": "/images/testimonials/ankit-chaudhary.png",
+      "video": "/videos/testimonials/ankit-chaudhary.mp4"
+    },
+    {
+      "id": 5,
+      "name": "Ankit",
+      "image": "/images/testimonials/ankit.png",
+      "video": "/videos/testimonials/soni-jain.mp4"
+    },
+    {
+      "id": 6,
+      "name": "Rahul Sharma",
+      "image": "/images/testimonials/harshit.png",
+      "video": "/videos/testimonials/rahul.mp4"
+    },
+    {
+      "id": 7,
+      "name": "Priya Singh",
+      "image": "/images/testimonials/nikita-verma.png",
+      "video": "/videos/testimonials/priya.mp4"
+    },
+    {
+      "id": 8,
+      "name": "Aman Kumar",
+      "image": "/images/testimonials/sonia-jain.png",
+      "video": "/videos/testimonials/aman.mp4"
+    }
+  ]
+}
