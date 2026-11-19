@@ -1,25 +1,153 @@
 
 {
-  "title": "About Primewebdynamics",
-  "subtitle": "Empowering students with industry-ready technical skills.",
-  "description": "Primewebdynamics focuses on providing learning opportunities that help students develop technical knowledge and practical skills.",
-  "mission": "To help learners build strong technical foundations and prepare for professional opportunities.",
-  "vision": "To make quality technical education accessible and career-oriented.",
-  "values": [
-    {
-      "id": 1,
-      "title": "Quality Education",
-      "description": "Focus on practical and meaningful learning."
-    },
-    {
-      "id": 2,
-      "title": "Innovation",
-      "description": "Encourage learners to explore modern technologies."
-    },
-    {
-      "id": 3,
-      "title": "Career Growth",
-      "description": "Help students prepare for professional challenges."
+  "hero": {
+    "title": "ABOUT US",
+    "heading": "Building Skills. Creating Opportunities.",
+    "subtitle": "Empowering the next generation with industry-ready skills.",
+    "backgroundImage": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80"
+  },
+  "mission": {
+    "title": "Our Mission",
+    "description": "At Primewebdynamics, our mission is to empower students and aspiring professionals with practical, industry-relevant technology skills. We aim to bridge the gap between academic knowledge and industry requirements through structured learning, hands-on projects and expert guidance. Our goal is to help learners build confidence and prepare for successful careers in the technology industry."
+  },
+  "vision": {
+    "title": "Our Vision",
+    "description": "To become a trusted learning and technology partner that creates skilled professionals, encourages innovation and makes quality technology education accessible to everyone."
+  },
+  "whatWeDo": {
+    "title": "What We Do",
+    "items": [
+      {
+        "id": 1,
+        "title": "Practical Learning",
+        "description": "Learn through hands-on assignments, practical exercises and real-world projects.",
+        "icon": "💻"
+      },
+      {
+        "id": 2,
+        "title": "Industry Skills",
+        "description": "Develop technical skills and knowledge aligned with modern industry requirements.",
+        "icon": "🚀"
+      },
+      {
+        "id": 3,
+        "title": "Career Guidance",
+        "description": "Get guidance to improve your technical knowledge, portfolio and interview readiness.",
+        "icon": "🎯"
+      }
+    ]
+  },
+  "industryConnections": {
+    "title": "Industry Connections",
+    "subtitle": "Learn Skills That Matter!",
+    "description": "We focus on helping learners understand current technology trends and prepare for opportunities in the digital industry through practical learning and career-focused guidance.",
+    "partners": [
+      "Google",
+      "Microsoft",
+      "Amazon",
+      "Infosys",
+      "TCS",
+      "Accenture",
+      "IBM",
+      "Wipro"
+    ]
+  },
+  "contactCTA": {
+    "title": "Ready to Start Your Journey?",
+    "description": "Take the next step towards building your technology career.",
+    "buttonText": "CONTACT US",
+    "buttonLink": "/contact"
+  },
+  "topCourses": {
+    "title": "Top Courses",
+    "courses": [
+      "Full Stack Development",
+      "MERN Stack Development",
+      "Java + AI",
+      "Data Analytics",
+      "Data Science",
+      "Python Programming",
+      "Cloud Computing",
+      "DevOps",
+      "Software Testing",
+      "Generative AI",
+      "Cyber Security",
+      "UI / UX Design"
+    ],
+    "link": "/courses"
+  },
+  "stats": {
+    "items": [
+      {
+        "id": 1,
+        "number": "10+",
+        "label": "Industry-focused Programs"
+      },
+      {
+        "id": 2,
+        "number": "500+",
+        "label": "Learning Opportunities"
+      },
+      {
+        "id": 3,
+        "number": "50+",
+        "label": "Expert Mentors"
+      }
+    ]
+  },
+  "inquiry": {
+    "title": "Ready to Empower Your Future?",
+    "description": "Connect with our team to explore learning opportunities, courses and career guidance.",
+    "backgroundImage": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=80",
+    "contactDetails": [
+      {
+        "id": 1,
+        "icon": "☎",
+        "title": "Phone",
+        "value": "Contact details coming soon"
+      },
+      {
+        "id": 2,
+        "icon": "✉",
+        "title": "Email",
+        "value": "Contact details coming soon"
+      }
+    ],
+    "form": {
+      "title": "Get In Touch",
+      "fields": {
+        "namePlaceholder": "Full Name",
+        "emailPlaceholder": "Email Address",
+        "phonePlaceholder": "Phone Number",
+        "coursePlaceholder": "Select a Course"
+      },
+      "submitText": "SUBMIT"
     }
-  ]
+  },
+  "testimonials": {
+    "title": "Testimonials & Reviews",
+    "items": [
+      {
+        "id": 1,
+        "name": "Rahul Sharma",
+        "course": "Full Stack Development",
+        "review": "The practical learning approach helped me understand web development and build real-world projects.",
+        "rating": 5
+      },
+      {
+        "id": 2,
+        "name": "Priya Verma",
+        "course": "Data Analytics",
+        "review": "The learning experience was excellent. I gained confidence in working with real-world datasets.",
+        "rating": 5
+      },
+      {
+        "id": 3,
+        "name": "Aman Kumar",
+        "course": "MERN Stack Development",
+        "review": "A great learning environment with practical projects and helpful guidance.",
+        "rating": 5
+      }
+    ]
+  }
 }
