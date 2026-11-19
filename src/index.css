@@ -1,24 +1,6 @@
 
 @import "tailwindcss";
 
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Global Body Styling */
-body {
-  font-family: Arial, sans-serif;
-}
-
-/* Homepage Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;

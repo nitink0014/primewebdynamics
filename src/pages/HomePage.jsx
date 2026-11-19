@@ -9,6 +9,11 @@ import SuccessStoriesSection from "../components/home/SuccessStoriesSection";
 import TestimonialsSection from "../components/home/TestimonialsSection";
 import CareerTestimonialsSection from "../components/home/CareerTestimonialsSection";
 import EnquirySection from "../components/home/EnquirySection";
+import BlogsSection from "../components/home/BlogsSection";
+import FAQSection from "../components/home/FAQSection";
+import CareerContactSection from "../components/home/CareerContactSection";
+import CareerCta from "../components/home/CareerCta";
+import AutoPopupForm from "../components/home/AutoPopupForm";
 
 function HomePage() {
   return (
@@ -24,6 +29,11 @@ function HomePage() {
       <TestimonialsSection />
       <CareerTestimonialsSection />
       <EnquirySection />
+      <BlogsSection />
+      <FAQSection />
+      <CareerContactSection />
+      <CareerCta />
+       <AutoPopupForm />
     </>
   );
 }

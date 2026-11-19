@@ -8,32 +8,32 @@
     {
       "id": 1,
       "name": "Aditya Birla Group",
-      "image": "/images/companies/aditya-birla.png"
+      "image": "https://www.google.com/s2/favicons?domain=adityabirla.com&sz=256"
     },
     {
       "id": 2,
       "name": "Algoscale",
-      "image": "/images/companies/algoscale.png"
+      "image": "https://www.google.com/s2/favicons?domain=algoscale.com&sz=256"
     },
     {
       "id": 3,
       "name": "Bajaj",
-      "image": "/images/companies/bajaj.png"
+      "image": "https://www.google.com/s2/favicons?domain=bajajgroup.company&sz=256"
     },
     {
       "id": 4,
       "name": "Birlasoft",
-      "image": "/images/companies/birlasoft.png"
+      "image": "https://www.google.com/s2/favicons?domain=birlasoft.com&sz=256"
     },
     {
       "id": 5,
       "name": "CSC",
-      "image": "/images/companies/csc.png"
+      "image": "https://www.google.com/s2/favicons?domain=csc.com&sz=256"
     },
     {
       "id": 6,
       "name": "Cognizant",
-      "image": "/images/companies/cognizant.png"
+      "image": "https://www.google.com/s2/favicons?domain=cognizant.com&sz=256"
     }
   ]
 }
