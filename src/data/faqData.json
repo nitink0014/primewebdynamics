@@ -7,23 +7,23 @@
   "faqs": [
     {
       "id": 1,
-      "question": "What courses does Ducat offer?",
-      "answer": "Ducat offers industry-oriented IT and AI training courses including Data Science, Machine Learning, Artificial Intelligence, Cyber Security, Full Stack Development (MERN, MEAN, Java), Cloud Computing (AWS, Azure), DevOps, Python, Digital Marketing, UI/UX, and Software Testing. All courses are designed according to current industry requirements and job market demand."
+      "question": "What courses does Primewebdynamics offer?",
+      "answer": "Primewebdynamics offers industry-oriented IT and AI training courses including Data Science, Machine Learning, Artificial Intelligence, Cyber Security, Full Stack Development (MERN, MEAN, Java), Cloud Computing (AWS, Azure), DevOps, Python, Digital Marketing, UI/UX, and Software Testing. All courses are designed according to current industry requirements and job market demand."
     },
     {
       "id": 2,
-      "question": "Does Ducat provide placement assistance?",
-      "answer": "Ducat provides placement assistance to help students prepare for job opportunities. This may include interview preparation, resume guidance, career support, and placement-related activities. Contact the admissions team for details about the support available for your chosen course."
+      "question": "Does Primewebdynamics provide placement assistance?",
+      "answer": "Primewebdynamics provides placement assistance to help students prepare for job opportunities. This may include interview preparation, resume guidance, career support, and placement-related activities. Contact the admissions team for details about the support available for your chosen course."
     },
     {
       "id": 3,
-      "question": "Why should I choose Ducat over other institutes?",
-      "answer": "Ducat focuses on industry-oriented training, practical learning, project-based experience, and career development. Students get an opportunity to learn relevant technologies and build skills that are useful in the IT industry."
+      "question": "Why should I choose Primewebdynamics over other institutes?",
+      "answer": "Primewebdynamics focuses on industry-oriented training, practical learning, project-based experience, and career development. Students get an opportunity to learn relevant technologies and build skills that are useful in the IT industry."
     },
     {
       "id": 4,
       "question": "Are the trainers experienced industry professionals?",
-      "answer": "Ducat provides training through experienced trainers who guide students through technical concepts and practical learning. The training approach focuses on building both theoretical understanding and practical skills."
+      "answer": "Primewebdynamics provides training through experienced trainers who guide students through technical concepts and practical learning. The training approach focuses on building both theoretical understanding and practical skills."
     },
     {
       "id": 5,
@@ -37,13 +37,13 @@
     },
     {
       "id": 7,
-      "question": "Can beginners join Ducat courses?",
+      "question": "Can beginners join Primewebdynamics courses?",
       "answer": "Yes, students with different levels of technical knowledge can explore suitable courses. Course prerequisites may vary, so it is recommended to discuss your background with the admissions team before enrolling."
     },
     {
       "id": 8,
-      "question": "How can I enroll in a course at Ducat?",
-      "answer": "You can contact the Ducat admissions team or submit an enquiry through the website. The team can guide you about available courses, batches, fees, and the enrollment process."
+      "question": "How can I enroll in a course at Primewebdynamics?",
+      "answer": "You can contact the Primewebdynamics admissions team or submit an enquiry through the website. The team can guide you about available courses, batches, fees, and the enrollment process."
     }
   ]
 }

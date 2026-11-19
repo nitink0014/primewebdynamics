@@ -12,6 +12,7 @@ import Blogs from "./pages/Blogs";
 import BlogDetails from "./pages/BlogDetails";
 import CareerGuidance from "./pages/CareerGuidance";
 import Courses from "./pages/Courses";
+import CourseDetail from "./pages/CourseDetail";
 
 function App() {
   const location = useLocation();
@@ -31,6 +32,7 @@ function App() {
         <Route path="/blogs/:id" element={<BlogDetails />} />
         <Route path="/career-guidance" element={<CareerGuidance />} />
         <Route path="/courses" element={<Courses />} />
+        <Route path="/courses/:id" element={<CourseDetail />} />
       </Routes>
 
       {!isCareerPage && <Footer />}

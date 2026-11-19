@@ -40,11 +40,13 @@ function CompaniesSection() {
 
   const activeDot = Math.min(
     2,
-    Math.floor((activeIndex % totalLogos) / Math.max(1, totalLogos / 3))
+    Math.floor(
+      (activeIndex % totalLogos) / Math.max(1, totalLogos / 3)
+    )
   );
 
   return (
-    <section className="min-h-[588px] w-full overflow-hidden bg-white px-5 pt-6 font-sans sm:px-8 lg:px-[50px]">
+    <section className="min-h-[520px] w-full overflow-hidden bg-white px-5 pt-6 font-sans sm:px-8 lg:px-[50px]">
 
       {/* Heading */}
       <div className="w-full">
@@ -64,12 +66,12 @@ function CompaniesSection() {
       </div>
 
       {/* Logo Carousel */}
-      <div className="mx-auto mt-[96px] w-full max-w-[1234px] overflow-hidden">
+      <div className="mx-auto mt-[75px] w-full max-w-[1100px] overflow-hidden">
 
         <div
           onTransitionEnd={handleTransitionEnd}
           style={{
-            transform: `translateX(-${activeIndex * 204}px)`,
+            transform: `translateX(-${activeIndex * 158}px)`,
             transition: transitionEnabled
               ? "transform 650ms ease-in-out"
               : "none"
@@ -80,7 +82,7 @@ function CompaniesSection() {
           {[...logos, ...logos].map((company, index) => (
             <div
               key={`${company.id}-${index}`}
-              className="flex h-[125px] w-[186px] shrink-0 items-center justify-center border border-[#d7e5f8] bg-white p-3"
+              className="flex h-[90px] w-[140px] shrink-0 items-center justify-center border border-[#d7e5f8] bg-white p-3"
             >
 
               <img

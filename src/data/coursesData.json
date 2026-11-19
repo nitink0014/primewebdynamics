@@ -8,49 +8,57 @@
       "id": 1,
       "title": "Web Development",
       "duration": "4-6 Months",
-      "image": "/images/courses/course-1.webp"
+      "image": "/images/courses/course-1.webp",
+      "description": "Learn to build modern, responsive and dynamic websites using HTML, CSS, JavaScript, React and Node.js. Work on real-world projects and develop the skills needed to become a professional web developer."
     },
     {
       "id": 2,
       "title": "App Development",
       "duration": "4-5 Months",
-      "image": "/images/courses/course-2.webp"
+      "image": "/images/courses/course-2.webp",
+      "description": "Learn to design and develop mobile applications with modern development tools and technologies. Understand app architecture, user interfaces, APIs and practical application development through hands-on projects."
     },
     {
       "id": 3,
       "title": "Digital Marketing",
       "duration": "3 Months",
-      "image": "/images/courses/course-3.webp"
+      "image": "/images/courses/course-3.webp",
+      "description": "Explore SEO, social media marketing, content marketing, email marketing and paid advertising. Learn how to create effective digital campaigns, reach target audiences and measure marketing performance."
     },
     {
       "id": 4,
       "title": "Python Programming",
       "duration": "2-3 Months",
-      "image": "/images/courses/course-4.webp"
+      "image": "/images/courses/course-4.webp",
+      "description": "Build a strong programming foundation with Python. Learn variables, data types, loops, functions, object-oriented programming and practical problem-solving through coding exercises and projects."
     },
     {
       "id": 5,
       "title": "Frontend Technologies",
       "duration": "3 Months",
-      "image": "/images/courses/course-5.webp"
+      "image": "/images/courses/course-5.webp",
+      "description": "Learn to create attractive and responsive user interfaces using HTML, CSS, JavaScript and React. Understand component-based development, responsive layouts and modern frontend practices."
     },
     {
       "id": 6,
       "title": "Backend Technologies",
       "duration": "3 Months",
-      "image": "/images/courses/course-6.webp"
+      "image": "/images/courses/course-6.webp",
+      "description": "Learn server-side development using Node.js, Express.js and MongoDB. Understand REST APIs, database operations, authentication and backend application architecture through practical projects."
     },
     {
       "id": 7,
       "title": "Full Stack Developer",
       "duration": "6-8 Months",
-      "image": "/images/courses/course-7.webp"
+      "image": "/images/courses/course-7.webp",
+      "description": "Become familiar with both frontend and backend development using the MERN stack. Build complete web applications with React, Node.js, Express.js and MongoDB while learning APIs, authentication and deployment."
     },
     {
       "id": 8,
       "title": "Data Analyst",
       "duration": "4-5 Months",
-      "image": "/images/courses/course-8.webp"
+      "image": "/images/courses/course-8.webp",
+      "description": "Learn to collect, clean, analyze and visualize data using Excel, SQL, Python and data visualization tools. Develop analytical thinking and practical skills to turn raw data into meaningful insights."
     }
   ]
 }

@@ -7,43 +7,43 @@
       "id": 1,
       "rating": 5,
       "message": "Especial thanks to new placement head shashank mishra sir ... he has created a storm of companies in the ducat.. I got placed in satin creditcare network limited as java developer with 5 lpa...",
-      "name": "Omer Zia",
-      "image": "/images/testimonials/omer-zia.webp"
+      "name": "Aman Kumar",
+      "image": "/images/testimonials/ali.png"
     },
     {
       "id": 2,
       "rating": 5,
       "message": "The Web Designing course was fantastic! It covered everything from UX design principles to the latest HTML and CSS techniques. The hands-on approach made learning enjoyable and effective....",
       "name": "Vinay Kumar",
-      "image": "/images/testimonials/vinay-kumar.webp"
+      "image": "/images/testimonials/ankit-chaudhary.png"
     },
     {
       "id": 3,
       "rating": 5,
       "message": "The Graphic Designing course exceeded my expectations. It not only polished my design skills but also taught me about various software and tools essential for modern-day graphic designing. The portfolio...",
       "name": "Tripti Chauhan",
-      "image": "/images/testimonials/tripti-chauhan.webp"
+      "image": "/images/testimonials/ankit.png"
     },
     {
       "id": 4,
       "rating": 5,
       "message": "The training sessions helped me improve my technical knowledge and prepare confidently for interviews. The practical projects were very useful.",
       "name": "Rahul Sharma",
-      "image": "/images/testimonials/rahul-sharma.webp"
+      "image": "/images/testimonials/ashish.png"
     },
     {
       "id": 5,
       "rating": 5,
       "message": "The mentors were supportive throughout the course. I learned new skills and gained the confidence to start my career in the IT industry.",
-      "name": "Neha Verma",
-      "image": "/images/testimonials/neha-verma.webp"
+      "name": "Harshit Sharma",
+      "image": "/images/testimonials/harshit.png"
     },
     {
       "id": 6,
       "rating": 5,
       "message": "A great learning experience with practical assignments and helpful guidance. I would recommend these courses to anyone starting their career.",
-      "name": "Amit Kumar",
-      "image": "/images/testimonials/amit-kumar.webp"
+      "name": "Nikita Veerma",
+      "image": "/images/testimonials/nikita-verma.png"
     }
   ]
 }

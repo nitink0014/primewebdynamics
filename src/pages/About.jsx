@@ -1,5 +1,21 @@
 
+import { useState } from "react";
 import aboutData from "../data/aboutData.json";
+
+const courses = [
+  "Full Stack Development",
+  "MERN Stack Development",
+  "Java + AI",
+  "Data Analytics",
+  "Data Science",
+  "Python Programming",
+  "Cloud Computing",
+  "DevOps",
+  "Software Testing",
+  "Generative AI",
+  "Cyber Security",
+  "UI / UX Design",
+];
 
 function SectionTitle({ children }) {
   return (
@@ -25,6 +41,65 @@ export default function About() {
     inquiry,
     testimonials,
   } = aboutData;
+
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    course: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Please enter your name";
+    }
+
+    const phone = formData.phone.replace(/\D/g, "");
+
+    if (!phone) {
+      newErrors.phone = "Please enter your phone number";
+    } else if (phone.length !== 10) {
+      newErrors.phone = "Phone number must be exactly 10 digits";
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) return;
+
+    console.log("About Inquiry Details:", {
+      ...formData,
+      phone,
+    });
+
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      course: "",
+    });
+
+    setErrors({});
+  };
 
   return (
     <main className="overflow-hidden bg-white">
@@ -217,46 +292,74 @@ export default function About() {
             </div>
           </div>
 
-          {/* Inquiry Form */}
+          {/* About Inquiry Form */}
           <form
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
+            noValidate
             className="space-y-5 rounded-2xl bg-white p-7 shadow-2xl md:p-10"
           >
             <h3 className="mb-5 text-2xl font-bold text-blue-900">
               {inquiry.form.title}
             </h3>
 
-            <input
-              type="text"
-              placeholder={inquiry.form.fields.namePlaceholder}
-              required
-              className="w-full rounded-lg border border-gray-300 p-4 outline-none focus:border-blue-600"
-            />
+            {/* Name - Required */}
+            <div>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Full Name"
+                className="w-full rounded-lg border border-gray-300 p-4 outline-none focus:border-blue-600"
+              />
 
+              {errors.name && (
+                <p className="mt-1 text-sm text-red-500">
+                  {errors.name}
+                </p>
+              )}
+            </div>
+
+            {/* Email - Optional */}
             <input
               type="email"
-              placeholder={inquiry.form.fields.emailPlaceholder}
-              required
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email Address"
               className="w-full rounded-lg border border-gray-300 p-4 outline-none focus:border-blue-600"
             />
 
-            <input
-              type="tel"
-              placeholder={inquiry.form.fields.phonePlaceholder}
-              required
-              className="w-full rounded-lg border border-gray-300 p-4 outline-none focus:border-blue-600"
-            />
+            {/* Phone - Required */}
+            <div>
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Phone Number"
+                maxLength={10}
+                inputMode="numeric"
+                className="w-full rounded-lg border border-gray-300 p-4 outline-none focus:border-blue-600"
+              />
 
+              {errors.phone && (
+                <p className="mt-1 text-sm text-red-500">
+                  {errors.phone}
+                </p>
+              )}
+            </div>
+
+            {/* Course - Optional */}
             <select
-              required
-              defaultValue=""
+              name="course"
+              value={formData.course}
+              onChange={handleChange}
               className="w-full rounded-lg border border-gray-300 p-4 text-gray-500 outline-none focus:border-blue-600"
             >
-              <option value="" disabled>
-                {inquiry.form.fields.coursePlaceholder}
-              </option>
+              <option value="">Select a Course</option>
 
-              {topCourses.courses.map((course) => (
+              {courses.map((course) => (
                 <option key={course} value={course}>
                   {course}
                 </option>
