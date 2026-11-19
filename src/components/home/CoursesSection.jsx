@@ -4,27 +4,26 @@ import coursesData from "../../data/coursesData.json";
 function CoursesSection() {
   return (
     <section className="w-full bg-white px-5 pb-12 pt-5 font-sans sm:px-8 lg:px-0">
-
       <div className="mx-auto w-full max-w-[1610px] lg:w-[90%]">
 
         {/* Section Heading */}
         <div>
           <h2 className="text-[36px] font-extrabold leading-[1.12] tracking-[-1.5px] text-[#151b2a] sm:text-[46px] lg:text-[58px]">
-            {coursesData.title}{" "}
+            Industry-ready{" "}
             <span className="text-[#5099fa]">
-              {coursesData.highlight}
+              IT courses
             </span>
           </h2>
 
           <p className="mt-2 text-[16px] font-medium text-[#647084] sm:text-[18px]">
-            {coursesData.subtitle}
+            Master in-demand tech skills with real-world projects and land your
+            dream job
           </p>
         </div>
 
         {/* Course Cards */}
         <div className="mt-[48px] grid grid-cols-1 gap-[18px] sm:grid-cols-2 xl:grid-cols-4">
-
-       {coursesData.featuredCourses.map((course) => (
+          {coursesData.featuredCourses.map((course) => (
             <div
               key={course.id}
               className="flex h-[350px] min-w-0 flex-col overflow-hidden rounded-[15px] border border-[#d6dfeb] bg-white shadow-[0_3px_9px_rgba(15,35,75,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(15,35,75,0.12)]"
@@ -35,6 +34,7 @@ function CoursesSection() {
                 <img
                   src={course.image}
                   alt={course.title}
+                  loading="lazy"
                   className="h-full w-full rounded-t-[15px] object-cover"
                 />
               </div>
@@ -54,7 +54,6 @@ function CoursesSection() {
 
                 {/* Action Buttons */}
                 <div className="mt-3 flex items-center justify-between gap-2">
-
                   <button
                     type="button"
                     className="flex h-[29px] items-center justify-center rounded-[8px] border border-[#5099fa] bg-white px-[12px] text-[12px] font-bold text-[#5099fa] transition-colors duration-200 hover:bg-[#5099fa] hover:text-white"
@@ -68,18 +67,14 @@ function CoursesSection() {
                   >
                     Apply Now
                   </button>
-
                 </div>
 
               </div>
-
             </div>
           ))}
-
         </div>
 
       </div>
-
     </section>
   );
 }

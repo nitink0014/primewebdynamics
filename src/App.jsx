@@ -6,7 +6,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CounsellingModal from "./components/CounsellingModal";
 
-import Home from "./pages/HomePage";
 import Registration from "./pages/Registration";
 import Contact from "./pages/Contact";
 import About from "./pages/About";

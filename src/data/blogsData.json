@@ -1,0 +1,116 @@
+{
+  "badge": "LEARNING HUB",
+  "title": "Recent Insights & career guides",
+  "subtitle": "Read our blogs on AI, ML, tech careers, and career tips to succeed and thrive",
+  "viewAllText": "View all blogs",
+  "blogs": [
+    {
+      "id": 1,
+      "category": "MERN Stack",
+      "date": "Recent",
+      "title": "Top 10 MERN Stack Training Institutes in Delhi NCR",
+      "description": "The MERN Stack (MongoDB, Express.js, React.js, Node.js) is one of the most powerful combinations for building modern, scalable, and high-performing web applications. With MERN skills, developers can build complete web solutions.",
+      "image": "/images/blog/blog-1.webp",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "category": "Artificial Intelligence",
+      "date": "Recent",
+      "title": "Top Artificial Intelligence (AI) Training Institutes in Delhi NCR",
+      "description": "Artificial Intelligence (AI) is transforming every industry — from healthcare, finance, e-commerce, and cybersecurity to self-driving cars, robotics, and chatbots. AI enables machines to think, learn, and solve problems.",
+      "image": "/images/blog/blog-2.webp",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "category": "Data Science",
+      "date": "Recent",
+      "title": "Top 10 Data Science Training Institutes in Delhi NCR: A Complete Guide for Students",
+      "description": "Data Science is one of the most sought-after fields in technology today. Companies across industries rely on data to drive strategic decisions, and skilled data scientists are in high demand.",
+      "image": "/images/blog/blog-3.webp",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "category": "Machine Learning",
+      "date": "Recent",
+      "title": "Top 10 Machine Learning Training Institutes in Delhi NCR",
+      "description": "Machine Learning (ML) is the backbone of Artificial Intelligence and modern business automation. It helps systems learn from data, predict outcomes, and make smart decisions without explicit programming.",
+      "image": "/images/blog/blog-4.webp",
+      "link": "#"
+    },
+    {
+      "id": 5,
+      "category": "Data Analytics",
+      "date": "Recent",
+      "title": "Top Data Analytics Training Institutes in Delhi NCR",
+      "description": "Data Analytics helps businesses understand information, identify trends, and make better decisions. Learn essential tools and practical techniques to build a successful career in analytics.",
+      "image": "/images/blog/blog-5.webp",
+      "link": "#"
+    },
+    {
+      "id": 6,
+      "category": "Python",
+      "date": "Recent",
+      "title": "Top 10 Python Training Institutes in Delhi NCR",
+      "description": "Python is a versatile programming language used in web development, automation, data science, and artificial intelligence. Discover how learning Python can open new career opportunities.",
+      "image": "/images/blog/blog-6.webp",
+      "link": "#"
+    },
+    {
+      "id": 7,
+      "category": "MERN Stack",
+      "date": "Recent",
+      "title": "Complete MERN Stack Developer Roadmap for Beginners",
+      "description": "Explore the complete roadmap to becoming a MERN Stack developer. Understand the technologies, development skills, and projects needed to start your web development career.",
+      "image": "/images/blog/blog-7.webp",
+      "link": "#"
+    },
+    {
+      "id": 8,
+      "category": "Artificial Intelligence",
+      "date": "Recent",
+      "title": "How Artificial Intelligence Is Changing the Future of Technology",
+      "description": "AI is creating new possibilities across industries. Explore important AI applications, emerging technologies, and the skills students should develop for future careers.",
+      "image": "/images/blog/blog-8.webp",
+      "link": "#"
+    },
+    {
+      "id": 9,
+      "category": "Web Development",
+      "date": "Recent",
+      "title": "Top Web Development Skills Every Student Should Learn",
+      "description": "From HTML and CSS to modern JavaScript frameworks, discover the important skills required to build responsive websites and become a professional web developer.",
+      "image": "/images/blog/blog-9.webp",
+      "link": "#"
+    },
+    {
+      "id": 10,
+      "category": "Digital Marketing",
+      "date": "Recent",
+      "title": "Digital Marketing Career Opportunities and Skills in 2026",
+      "description": "Digital marketing continues to grow as businesses move online. Learn about SEO, social media marketing, content strategy, and the skills required to build a career.",
+      "image": "/images/blog/blog-10.webp",
+      "link": "#"
+    },
+    {
+      "id": 11,
+      "category": "App Development",
+      "date": "Recent",
+      "title": "Mobile App Development: A Beginner's Career Guide",
+      "description": "Mobile applications are an essential part of everyday life. Understand the basics of app development, popular technologies, and how to begin building your own applications.",
+      "image": "/images/blog/blog-11.webp",
+      "link": "#"
+    },
+    {
+      "id": 12,
+      "category": "Career Guide",
+      "date": "Recent",
+      "title": "How to Prepare for Your First IT Job Interview",
+      "description": "Prepare for your first IT interview with practical tips on technical skills, communication, resume preparation, project explanations, and common interview questions.",
+      "image": "/images/blog/blog-12.webp",
+      "link": "#"
+    }
+  ]
+}
