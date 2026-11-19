@@ -3,7 +3,6 @@ import { useState } from "react";
 import {
   Phone,
   Mail,
-  MapPin,
   MessageCircle,
   Send,
   ExternalLink,
@@ -51,18 +50,54 @@ function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
     setSubmitted(false);
+
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const newErrors = {};
+
+    // Name validation
+    if (!formData.name.trim()) {
+      newErrors.name = "Please enter your name";
+    }
+
+    // Phone validation
+    const phone = formData.phone.replace(/\D/g, "");
+
+    if (!phone) {
+      newErrors.phone = "Please enter your phone number";
+    } else if (phone.length !== 10) {
+      newErrors.phone = "Phone number must be exactly 10 digits";
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      setSubmitted(false);
+      return;
+    }
+
+    console.log("Contact Form Data:", formData);
+
     setSubmitted(true);
+
     setFormData({
       name: "",
       email: "",
@@ -124,11 +159,16 @@ function Contact() {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form
+            onSubmit={handleSubmit}
+            noValidate
+            className="space-y-4"
+          >
 
             {/* NAME AND EMAIL */}
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
 
+              {/* Name - Required */}
               <div>
                 <label className={labelStyle}>
                   Name<span className="text-red-500">*</span>
@@ -141,13 +181,19 @@ function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   className={inputStyle}
-                  required
                 />
+
+                {errors.name && (
+                  <p className="mt-1 text-xs text-red-500">
+                    {errors.name}
+                  </p>
+                )}
               </div>
 
+              {/* Email - Optional */}
               <div>
                 <label className={labelStyle}>
-                  Email<span className="text-red-500">*</span>
+                  Email
                 </label>
 
                 <input
@@ -157,7 +203,6 @@ function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   className={inputStyle}
-                  required
                 />
               </div>
 
@@ -166,6 +211,7 @@ function Contact() {
             {/* PHONE, CENTER, COURSE */}
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
+              {/* Phone - Required */}
               <div>
                 <label className={labelStyle}>
                   Phone<span className="text-red-500">*</span>
@@ -175,18 +221,24 @@ function Contact() {
                   type="tel"
                   name="phone"
                   placeholder="Phone Number"
-                  pattern="[0-9]{10}"
-                  title="Enter a valid 10 digit phone number"
                   value={formData.phone}
                   onChange={handleChange}
+                  maxLength={10}
+                  inputMode="numeric"
                   className={inputStyle}
-                  required
                 />
+
+                {errors.phone && (
+                  <p className="mt-1 text-xs text-red-500">
+                    {errors.phone}
+                  </p>
+                )}
               </div>
 
+              {/* Center - Optional */}
               <div>
                 <label className={labelStyle}>
-                  Center<span className="text-red-500">*</span>
+                  Center / Branch
                 </label>
 
                 <select
@@ -194,7 +246,6 @@ function Contact() {
                   value={formData.center}
                   onChange={handleChange}
                   className={inputStyle}
-                  required
                 >
                   <option value="">Select Branch</option>
                   <option value="Noida Sector 16">Noida Sector 16</option>
@@ -204,9 +255,10 @@ function Contact() {
                 </select>
               </div>
 
+              {/* Course - Optional */}
               <div>
                 <label className={labelStyle}>
-                  Course<span className="text-red-500">*</span>
+                  Course
                 </label>
 
                 <select
@@ -214,7 +266,6 @@ function Contact() {
                   value={formData.course}
                   onChange={handleChange}
                   className={inputStyle}
-                  required
                 >
                   <option value="">Select a Course</option>
                   <option value="Full Stack Development">Full Stack Development</option>
@@ -229,10 +280,10 @@ function Contact() {
 
             </div>
 
-            {/* MESSAGE */}
+            {/* MESSAGE - Optional */}
             <div>
               <label className={labelStyle}>
-                How can we help you?<span className="text-red-500">*</span>
+                How can we help you?
               </label>
 
               <textarea
@@ -242,7 +293,6 @@ function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 className={`${inputStyle} resize-y`}
-                required
               />
             </div>
 

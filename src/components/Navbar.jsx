@@ -5,12 +5,10 @@ import { Link, NavLink } from "react-router-dom";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [othersOpen, setOthersOpen] = useState(false);
-  const [coursesOpen, setCoursesOpen] = useState(false);
 
   const closeMenu = () => {
     setIsOpen(false);
     setOthersOpen(false);
-    setCoursesOpen(false);
   };
 
   const navLinkClass = ({ isActive }) =>
@@ -50,40 +48,10 @@ function Navbar() {
             Home
           </NavLink>
 
-          {/* Courses Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setCoursesOpen(true)}
-            onMouseLeave={() => setCoursesOpen(false)}
-          >
-            <button
-              type="button"
-              onClick={() => setCoursesOpen(!coursesOpen)}
-              aria-expanded={coursesOpen}
-              className={dropdownButtonClass}
-            >
-              Courses
-              <span
-                className={`text-[12px] transition-transform ${
-                  coursesOpen ? "rotate-180" : ""
-                }`}
-              >
-                ▼
-              </span>
-            </button>
-
-            {coursesOpen && (
-              <div className={dropdownMenuClass}>
-                <Link
-                  to="/courses"
-                  onClick={closeMenu}
-                  className="block px-4 py-3 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600"
-                >
-                  All Courses
-                </Link>
-              </div>
-            )}
-          </div>
+          {/* Courses - Direct Navigation */}
+          <NavLink to="/courses" className={navLinkClass}>
+            Courses
+          </NavLink>
 
           {/* Registration */}
           <NavLink to="/registration" className={navLinkClass}>
@@ -94,9 +62,9 @@ function Navbar() {
           <div className="relative flex items-center gap-2">
 
             {/* AI Powered Badge */}
-           <span className="absolute -top-[22px] left-[62px] mt-2 whitespace-nowrap rounded-full bg-gradient-to-r from-orange-400 to-orange-500 px-2 py-[3px] text-[10px] font-semibold leading-tight text-white shadow-sm">
-  ✦ AI-Powered
-</span>
+            <span className="absolute -top-[22px] left-[62px] mt-2 whitespace-nowrap rounded-full bg-gradient-to-r from-orange-400 to-orange-500 px-2 py-[3px] text-[10px] font-semibold leading-tight text-white shadow-sm">
+              ✦ AI-Powered
+            </span>
 
             {/* Green Verification Icon */}
             <span
@@ -205,25 +173,20 @@ function Navbar() {
               Home
             </NavLink>
 
-            {/* Mobile Courses */}
-            <button
-              type="button"
-              onClick={() => setCoursesOpen(!coursesOpen)}
-              className="flex justify-between rounded-lg px-4 py-3 text-left text-gray-700 hover:bg-blue-50"
+            {/* Mobile Courses - Direct Navigation */}
+            <NavLink
+              to="/courses"
+              onClick={closeMenu}
+              className={({ isActive }) =>
+                `rounded-lg px-4 py-3 text-[16px] ${
+                  isActive
+                    ? "bg-blue-50 text-blue-600"
+                    : "text-gray-700 hover:bg-blue-50"
+                }`
+              }
             >
               Courses
-              <span>{coursesOpen ? "▲" : "▼"}</span>
-            </button>
-
-            {coursesOpen && (
-              <Link
-                to="/courses"
-                onClick={closeMenu}
-                className="ml-5 px-4 py-2 text-sm text-gray-600 hover:text-blue-600"
-              >
-                All Courses
-              </Link>
-            )}
+            </NavLink>
 
             {/* Registration */}
             <NavLink

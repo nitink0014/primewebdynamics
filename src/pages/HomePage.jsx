@@ -1,3 +1,6 @@
+
+import { useEffect, useState } from "react";
+
 import HeroCarousel from "../components/home/HeroCarousel";
 import StatsSection from "../components/home/StatsSection";
 import CompaniesSection from "../components/home/CompaniesSection";
@@ -16,9 +19,21 @@ import CareerCta from "../components/home/CareerCta";
 import AutoPopupForm from "../components/home/AutoPopupForm";
 
 function HomePage() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  // Automatically open popup after every 15 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsPopupOpen(true);
+    }, 15000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
-      <HeroCarousel />
+      <HeroCarousel onEnroll={() => setIsPopupOpen(true)} />
+
       <StatsSection />
       <CompaniesSection />
       <CoursesSection />
@@ -33,7 +48,11 @@ function HomePage() {
       <FAQSection />
       <CareerContactSection />
       <CareerCta />
-       <AutoPopupForm />
+
+      <AutoPopupForm
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+      />
     </>
   );
 }

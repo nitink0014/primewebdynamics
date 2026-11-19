@@ -1,0 +1,30 @@
+
+{
+  "brand": {
+    "firstLine": "Prime",
+    "highlight": "web",
+    "secondLine": "dynamics",
+    "tagline": "LEARN • BUILD • GROW"
+  },
+  "heading": "Online Registration Form",
+  "subtitle": "Register online today and take the first step towards success!",
+  "submitText": "Submit Registration",
+  "successMessage": "Registration submitted successfully!",
+  "courses": [
+    "Web Development",
+    "App Development",
+    "Digital Marketing",
+    "Python Programming",
+    "Frontend Technologies",
+    "Backend Technologies",
+    "Full Stack Developer",
+    "Data Analyst"
+  ],
+  "branches": [
+    "Noida Sector 16",
+    "Noida Sector 63",
+    "Gurugram",
+    "Ghaziabad",
+    "Online"
+  ]
+}

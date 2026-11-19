@@ -1,5 +1,7 @@
 
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import {
   ChevronLeft,
   ChevronRight,
@@ -10,8 +12,9 @@ import {
 
 import homeSlides from "../../data/homeSlides.json";
 
-function HeroCarousel() {
+function HeroCarousel({ onEnroll }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const navigate = useNavigate();
 
   const activeSlide = homeSlides[activeIndex];
 
@@ -62,15 +65,27 @@ function HeroCarousel() {
 
           {/* Buttons */}
           <div className="flex flex-wrap items-center gap-3">
-            <button className="flex h-[49px] items-center justify-center gap-2 rounded-lg border border-[#4b9df5] bg-[#4b9df5] px-6 text-sm font-bold transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#3188eb]">
+
+            {/* Explore Course */}
+            <button
+              type="button"
+              onClick={() => navigate("/courses")}
+              className="flex h-[49px] items-center justify-center gap-2 rounded-lg border border-[#4b9df5] bg-[#4b9df5] px-6 text-sm font-bold transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#3188eb]"
+            >
               {activeSlide.primaryButton}
               <span>→</span>
             </button>
 
-            <button className="flex h-[49px] items-center justify-center gap-2 rounded-lg border-2 border-[#7183a5] bg-transparent px-5 text-sm font-bold transition-all duration-300 hover:border-white hover:bg-white/10">
+            {/* Enroll Now */}
+            <button
+              type="button"
+              onClick={() => onEnroll?.()}
+              className="flex h-[49px] items-center justify-center gap-2 rounded-lg border-2 border-[#7183a5] bg-transparent px-5 text-sm font-bold transition-all duration-300 hover:border-white hover:bg-white/10"
+            >
               <Play size={15} fill="currentColor" />
               {activeSlide.secondaryButton}
             </button>
+
           </div>
 
           {/* Reviews */}

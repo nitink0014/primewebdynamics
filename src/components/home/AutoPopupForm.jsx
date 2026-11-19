@@ -1,17 +1,9 @@
 
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import content from "../../data/autoPopupForm.json";
 
-const AutoPopupForm = ({ onSubmit }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsOpen(true);
-    }, 15000);
-
-    return () => clearInterval(interval);
-  }, []);
+const AutoPopupForm = ({ onSubmit, isOpen, onClose }) => {
+  const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,11 +11,36 @@ const AutoPopupForm = ({ onSubmit }) => {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
+    const phoneDigits = data.phone.replace(/\D/g, "");
+    const newErrors = {};
+
+    if (!data.fullName.trim()) {
+      newErrors.fullName = "Name is required";
+    }
+
+    if (!phoneDigits) {
+      newErrors.phone = "Phone number is required";
+    } else if (phoneDigits.length !== 10) {
+      newErrors.phone = "Please enter a valid 10 digit phone number";
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      return;
+    }
+
+    data.phone = phoneDigits;
+
     if (onSubmit) {
       onSubmit(data);
     } else {
       console.log("Enquiry Form Data:", data);
     }
+
+    e.target.reset();
+    setErrors({});
+    onClose();
   };
 
   if (!isOpen) return null;
@@ -38,13 +55,11 @@ const AutoPopupForm = ({ onSubmit }) => {
         <div className="w-[47.7%] h-full bg-gradient-to-br from-[#233f91] via-[#294bb5] to-[#2860df] px-[32px] py-[32px] text-white flex flex-col justify-between max-md:w-full max-md:h-auto max-md:gap-6 max-md:px-6 max-md:py-7">
 
           <div>
-            {/* Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-orange-400/50 bg-orange-400/20 px-3 py-1.5 text-[12px] font-semibold text-orange-100">
               <span>☆</span>
               {content.badge}
             </div>
 
-            {/* Heading */}
             <h2 className="mt-[35px] text-[32px] leading-[1.15] font-extrabold tracking-tight max-md:mt-6 max-md:text-[28px]">
               {content.headingLine1}
               <br />
@@ -56,7 +71,6 @@ const AutoPopupForm = ({ onSubmit }) => {
               {content.headingLine3}
             </h2>
 
-            {/* Description */}
             <p className="mt-[30px] text-[14px] leading-[1.6] text-blue-100 max-md:mt-5">
               {content.description}
             </p>
@@ -65,7 +79,6 @@ const AutoPopupForm = ({ onSubmit }) => {
           <div>
             {/* Statistics */}
             <div className="grid grid-cols-3 gap-[12px]">
-
               {content.stats.map((stat, index) => (
                 <div
                   key={index}
@@ -80,12 +93,10 @@ const AutoPopupForm = ({ onSubmit }) => {
                   </p>
                 </div>
               ))}
-
             </div>
 
             {/* Company Badges */}
             <div className="mt-[14px] flex flex-wrap gap-[8px]">
-
               {content.companies.map((company, index) => (
                 <span
                   key={index}
@@ -94,7 +105,6 @@ const AutoPopupForm = ({ onSubmit }) => {
                   {company}
                 </span>
               ))}
-
             </div>
           </div>
         </div>
@@ -105,7 +115,7 @@ const AutoPopupForm = ({ onSubmit }) => {
           {/* Close Button */}
           <button
             type="button"
-            onClick={() => setIsOpen(false)}
+            onClick={onClose}
             aria-label="Close enquiry form"
             className="absolute right-[15px] top-[14px] h-[38px] w-[38px] rounded-full bg-white shadow-lg flex items-center justify-center text-[#64748b] text-[23px] hover:bg-gray-100 transition"
           >
@@ -114,9 +124,7 @@ const AutoPopupForm = ({ onSubmit }) => {
 
           {/* Form Header */}
           <div className="flex items-center gap-[13px] mb-[30px] max-md:mb-6">
-
             <div className="h-[48px] w-[48px] shrink-0 rounded-[14px] bg-[#3478f6] shadow-lg shadow-blue-200 flex items-center justify-center">
-
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -131,7 +139,6 @@ const AutoPopupForm = ({ onSubmit }) => {
                 <circle cx="12" cy="12" r="9" />
                 <path d="m8 12 3 3 5-6" />
               </svg>
-
             </div>
 
             <div>
@@ -143,43 +150,70 @@ const AutoPopupForm = ({ onSubmit }) => {
                 {content.formSubtitle}
               </p>
             </div>
-
           </div>
 
           {/* Enquiry Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-[13px]">
+          <form
+            onSubmit={handleSubmit}
+            noValidate
+            className="flex flex-col gap-[13px]"
+          >
 
-            <input
-              type="text"
-              name="fullName"
-              placeholder={content.fields.name}
-              required
-              className="h-[43px] w-full rounded-[11px] border border-[#cbd5e1] bg-[#f8fafc] px-[15px] text-[14px] text-gray-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
-            />
+            {/* Name - Required */}
+            <div>
+              <input
+                type="text"
+                name="fullName"
+                placeholder={content.fields.name}
+                className="h-[43px] w-full rounded-[11px] border border-[#cbd5e1] bg-[#f8fafc] px-[15px] text-[14px] text-gray-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                onChange={() =>
+                  setErrors((prev) => ({ ...prev, fullName: "" }))
+                }
+              />
 
+              {errors.fullName && (
+                <p className="mt-1 text-xs text-red-500">
+                  {errors.fullName}
+                </p>
+              )}
+            </div>
+
+            {/* Mobile - Required */}
+            <div>
+              <input
+                type="tel"
+                name="phone"
+                placeholder={content.fields.phone}
+                maxLength={10}
+                inputMode="numeric"
+                className="h-[43px] w-full rounded-[11px] border border-[#cbd5e1] bg-[#f8fafc] px-[15px] text-[14px] text-gray-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                onChange={() =>
+                  setErrors((prev) => ({ ...prev, phone: "" }))
+                }
+              />
+
+              {errors.phone && (
+                <p className="mt-1 text-xs text-red-500">
+                  {errors.phone}
+                </p>
+              )}
+            </div>
+
+            {/* Email - Optional */}
             <input
               type="email"
               name="email"
               placeholder={content.fields.email}
-              required
               className="h-[43px] w-full rounded-[11px] border border-[#cbd5e1] bg-[#f8fafc] px-[15px] text-[14px] text-gray-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
             />
 
-            <input
-              type="tel"
-              name="phone"
-              placeholder={content.fields.phone}
-              required
-              className="h-[43px] w-full rounded-[11px] border border-[#cbd5e1] bg-[#f8fafc] px-[15px] text-[14px] text-gray-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
-            />
-
+            {/* Course - Optional */}
             <select
               name="course"
               defaultValue=""
-              required
               className="h-[43px] w-full rounded-[11px] border border-[#cbd5e1] bg-[#f8fafc] px-[15px] text-[14px] text-[#4b5563] outline-none focus:border-blue-500"
             >
-              <option value="" disabled>
+              <option value="">
                 {content.fields.course}
               </option>
 
@@ -190,13 +224,13 @@ const AutoPopupForm = ({ onSubmit }) => {
               ))}
             </select>
 
+            {/* Branch - Optional */}
             <select
               name="branch"
               defaultValue=""
-              required
               className="h-[43px] w-full rounded-[11px] border border-[#cbd5e1] bg-[#f8fafc] px-[15px] text-[14px] text-[#4b5563] outline-none focus:border-blue-500"
             >
-              <option value="" disabled>
+              <option value="">
                 {content.fields.branch}
               </option>
 
