@@ -83,13 +83,15 @@ function CompaniesSection() {
               className="flex h-[125px] w-[186px] shrink-0 items-center justify-center border border-[#d7e5f8] bg-white p-3"
             >
 
-              <img
-                src={company.image}
-                alt={company.name}
-                title={company.name}
-                className="h-full w-full object-contain"
-              />
-
+           <img
+  src={`https://www.google.com/s2/favicons?domain_url=https://${company.domain}&sz=128`}
+  alt={company.name}
+  title={company.name}
+  onError={(e) => {
+    console.error(`Failed to load ${company.name}:`, e.currentTarget.src);
+  }}
+  className="h-full w-full object-contain"
+/>
             </div>
           ))}
 

@@ -1,3 +1,4 @@
+
 {
   "megaMenu": [
     {
@@ -81,6 +82,7 @@
     {
       "id": 1,
       "title": "Web Development",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800",
       "duration": "4-6 Months",
       "level": "Beginner to Advanced",
       "bannerBg": "from-[#040b1a] via-[#0a1d3f] to-[#082454]",
@@ -91,6 +93,7 @@
     {
       "id": 2,
       "title": "App Development",
+     "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800",
       "duration": "4-5 Months",
       "level": "Beginner to Intermediate",
       "bannerBg": "from-[#05081c] via-[#111642] to-[#1e1147]",
@@ -101,6 +104,7 @@
     {
       "id": 3,
       "title": "Digital Marketing",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
       "duration": "3 Months",
       "level": "Beginner Friendly",
       "bannerBg": "from-[#09061c] via-[#17123b] to-[#0f172a]",
@@ -111,6 +115,7 @@
     {
       "id": 4,
       "title": "Python Programming",
+      "image": "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800",
       "duration": "2-3 Months",
       "level": "Beginner to Advanced",
       "bannerBg": "from-[#04141c] via-[#0a2b3d] to-[#0d3b4c]",
@@ -121,6 +126,7 @@
     {
       "id": 5,
       "title": "Frontend Technologies",
+      "image": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800",
       "duration": "3 Months",
       "level": "Beginner to Intermediate",
       "bannerBg": "from-[#040914] via-[#0a1931] to-[#131138]",
@@ -131,6 +137,7 @@
     {
       "id": 6,
       "title": "Backend Technologies",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800",
       "duration": "3 Months",
       "level": "Intermediate",
       "bannerBg": "from-[#041712] via-[#0a2e24] to-[#0d3b32]",
@@ -141,6 +148,7 @@
     {
       "id": 7,
       "title": "Full Stack Developer",
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800",
       "duration": "6-8 Months",
       "level": "Beginner to Job-Ready",
       "bannerBg": "from-[#0b0824] via-[#181347] to-[#231454]",
@@ -151,6 +159,7 @@
     {
       "id": 8,
       "title": "Data Analyst",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
       "duration": "4-5 Months",
       "level": "Beginner to Advanced",
       "bannerBg": "from-[#071324] via-[#0f294a] to-[#133863]",

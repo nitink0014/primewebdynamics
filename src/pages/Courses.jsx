@@ -33,12 +33,23 @@ export default function Courses() {
               <div>
 
                 {/* Course Thumbnail */}
-                <div
-                  className={`h-44 rounded-xl bg-gradient-to-br ${course.bannerBg} p-4 flex flex-col justify-between relative overflow-hidden text-white`}
-                >
-                  <div className="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-blue-500/20 blur-xl" />
+                <div className="h-44 rounded-xl relative overflow-hidden bg-slate-100">
 
-                  <div className="flex items-center justify-between">
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+
+                  {/* Dark Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent" />
+
+                  {/* Course Badge */}
+                  <div className="absolute top-4 left-4">
                     <span
                       className={`text-[10px] font-bold tracking-wider uppercase ${course.accentColor}`}
                     >
@@ -46,20 +57,18 @@ export default function Courses() {
                     </span>
                   </div>
 
-                  <div className="my-auto">
-                    <p className="font-extrabold text-sm leading-snug tracking-wide">
+                  {/* Course Tagline */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="font-extrabold text-sm leading-snug tracking-wide text-white">
                       {course.tagline}
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-1.5 text-[10px] text-slate-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                    <span>Live Projects + Certification</span>
-                  </div>
                 </div>
 
                 {/* Course Details */}
                 <div className="pt-4 px-1">
+
                   <h3 className="font-bold text-[15px] text-slate-900 uppercase leading-snug">
                     {course.title}
                   </h3>
@@ -70,6 +79,7 @@ export default function Courses() {
                       {course.duration}
                     </span>
                   </p>
+
                 </div>
 
               </div>

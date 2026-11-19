@@ -1,4 +1,3 @@
-
 {
   "title": "Top Companies",
   "highlight": "Hiring",
@@ -8,32 +7,32 @@
     {
       "id": 1,
       "name": "Aditya Birla Group",
-      "image": "/images/companies/aditya-birla.png"
+      "domain": "adityabirla.com"
     },
     {
       "id": 2,
       "name": "Algoscale",
-      "image": "/images/companies/algoscale.png"
+      "domain": "algoscale.com"
     },
     {
       "id": 3,
       "name": "Bajaj",
-      "image": "/images/companies/bajaj.png"
+      "domain": "bajajfinserv.in"
     },
     {
       "id": 4,
       "name": "Birlasoft",
-      "image": "/images/companies/birlasoft.png"
+      "domain": "birlasoft.com"
     },
     {
       "id": 5,
       "name": "CSC",
-      "image": "/images/companies/csc.png"
+      "domain": "csc.com"
     },
     {
       "id": 6,
       "name": "Cognizant",
-      "image": "/images/companies/cognizant.png"
+      "domain": "cognizant.com"
     }
   ]
 }
