@@ -1,0 +1,116 @@
+{
+  "badge": "Success Stories",
+  "title": "Real Career",
+  "highlight": "Outcomes",
+  "subtitle": "See how our students transformed their careers and salaries",
+  "students": [
+    {
+      "id": 1,
+      "name": "Kishan Gupta",
+      "role": "Software Developer",
+      "image": "/images/success-stories/student-1.webp",
+      "course": ".Net",
+      "package": "2 LPA",
+      "company": "Webcity Technologies LLP"
+    },
+    {
+      "id": 2,
+      "name": "Amlesh Kumar Gupta",
+      "role": "Software Developer",
+      "image": "/images/success-stories/student-2.webp",
+      "course": "React",
+      "package": "3 LPA",
+      "company": "BIZBLOCK INFOTECH"
+    },
+    {
+      "id": 3,
+      "name": "Pranav Mittal",
+      "role": "Software Developer",
+      "image": "/images/success-stories/student-3.webp",
+      "course": "Mobile Application Development",
+      "package": "5 LPA/-",
+      "company": "NovelVOX"
+    },
+    {
+      "id": 4,
+      "name": "Ankit Chaudhary",
+      "role": "Python Developer",
+      "image": "/images/success-stories/student-4.webp",
+      "course": "Python",
+      "package": "N/A",
+      "company": "Uni Cloud.Co"
+    },
+    {
+      "id": 5,
+      "name": "Yashika",
+      "role": "Data Analyst",
+      "image": "/images/success-stories/student-5.webp",
+      "course": "Data analytics with AI",
+      "package": "N/A",
+      "company": "Tech Solutions"
+    },
+    {
+      "id": 6,
+      "name": "Abhay Singh",
+      "role": "Android developer",
+      "image": "/images/success-stories/student-6.webp",
+      "course": "Android",
+      "package": "2 LPA",
+      "company": "App mingle media"
+    },
+    {
+      "id": 7,
+      "name": "Rahul Sharma",
+      "role": "Full Stack Developer",
+      "image": "/images/success-stories/student-7.webp",
+      "course": "Full Stack Development",
+      "package": "4 LPA",
+      "company": "Digital Works"
+    },
+    {
+      "id": 8,
+      "name": "Priya Verma",
+      "role": "UI/UX Designer",
+      "image": "/images/success-stories/student-8.webp",
+      "course": "UI/UX Designing",
+      "package": "3.5 LPA",
+      "company": "Creative Studio"
+    },
+    {
+      "id": 9,
+      "name": "Aman Kumar",
+      "role": "Data Analyst",
+      "image": "/images/success-stories/student-9.webp",
+      "course": "Data Analytics",
+      "package": "4 LPA",
+      "company": "Analytics Hub"
+    },
+    {
+      "id": 10,
+      "name": "Neha Singh",
+      "role": "Digital Marketer",
+      "image": "/images/success-stories/student-10.webp",
+      "course": "Digital Marketing",
+      "package": "3 LPA",
+      "company": "Growth Media"
+    },
+    {
+      "id": 11,
+      "name": "Rohit Mehta",
+      "role": "Java Developer",
+      "image": "/images/success-stories/student-11.webp",
+      "course": "Java Full Stack",
+      "package": "5 LPA",
+      "company": "WebTech Solutions"
+    },
+    {
+      "id": 12,
+      "name": "Sneha Gupta",
+      "role": "Python Developer",
+      "image": "/images/success-stories/student-12.webp",
+      "course": "Python Programming",
+      "package": "3.2 LPA",
+      "company": "Innovate Technologies"
+    }
+  ]
+}

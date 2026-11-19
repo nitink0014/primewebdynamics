@@ -1,0 +1,39 @@
+
+{
+  "title": "Top Companies",
+  "highlight": "Hiring",
+  "titleEnd": "Our Students",
+  "subtitle": "Trusted by India's leading organizations",
+  "logos": [
+    {
+      "id": 1,
+      "name": "Aditya Birla Group",
+      "image": "https://www.google.com/s2/favicons?domain=adityabirla.com&sz=256"
+    },
+    {
+      "id": 2,
+      "name": "Algoscale",
+      "image": "https://www.google.com/s2/favicons?domain=algoscale.com&sz=256"
+    },
+    {
+      "id": 3,
+      "name": "Bajaj",
+      "image": "https://www.google.com/s2/favicons?domain=bajajgroup.company&sz=256"
+    },
+    {
+      "id": 4,
+      "name": "Birlasoft",
+      "image": "https://www.google.com/s2/favicons?domain=birlasoft.com&sz=256"
+    },
+    {
+      "id": 5,
+      "name": "CSC",
+      "image": "https://www.google.com/s2/favicons?domain=csc.com&sz=256"
+    },
+    {
+      "id": 6,
+      "name": "Cognizant",
+      "image": "https://www.google.com/s2/favicons?domain=cognizant.com&sz=256"
+    }
+  ]
+}

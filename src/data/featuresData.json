@@ -1,0 +1,44 @@
+
+{
+  "title": "More than a course.",
+  "highlight": "A career engine.",
+  "subtitle": "Everything you need to go from learner to professional — in one structured program.",
+  "features": [
+    {
+      "id": 1,
+      "icon": "Bot",
+      "title": "AI Mentor 24×7",
+      "description": "Get instant answers, personalised feedback and study plans powered by AI — anytime you need it."
+    },
+    {
+      "id": 2,
+      "icon": "Target",
+      "title": "Adaptive Learning Paths",
+      "description": "Your roadmap adapts to your pace, skill level and career goals for maximum efficiency."
+    },
+    {
+      "id": 3,
+      "icon": "Sparkles",
+      "title": "Live Projects",
+      "description": "Work on real industry projects that you can showcase to employers and add to your portfolio."
+    },
+    {
+      "id": 4,
+      "icon": "BriefcaseBusiness",
+      "title": "100% Placement Support",
+      "description": "Dedicated placement team, mock interviews, resume reviews, and direct referrals to 800+ companies."
+    },
+    {
+      "id": 5,
+      "icon": "Video",
+      "title": "Live + Recorded Classes",
+      "description": "Attend live sessions with experts and rewatch recordings whenever you want, forever."
+    },
+    {
+      "id": 6,
+      "icon": "Award",
+      "title": "Industry-recognised Certificate",
+      "description": "Earn a certificate recognised by leading tech companies that validates your skills."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+
+{
+  "heading": {
+    "firstLine": "Ready to Start Your",
+    "secondLine": "Career Transformation?",
+    "subtitle": "Talk to our experts and take the first step towards your dream job"
+  },
+  "cards": [
+    {
+      "id": 1,
+      "type": "call",
+      "title": "Call us",
+      "description": "Speak to our career counsellor",
+      "value": "70-70-90-50-90",
+      "buttonText": "Call Now",
+      "link": "tel:7070905090",
+      "iconColor": "#4774ff",
+      "iconBackground": "#e0e6fa",
+      "buttonColor": "#ff6429"
+    },
+    {
+      "id": 2,
+      "type": "whatsapp",
+      "title": "WhatsApp",
+      "description": "Get instant support via chat",
+      "value": "Chat Now",
+      "buttonText": "Start Chat",
+      "link": "#contact",
+      "iconColor": "#08a94e",
+      "iconBackground": "#d9eee5",
+      "buttonColor": "#13a34a"
+    },
+    {
+      "id": 3,
+      "type": "callback",
+      "title": "Request Callback",
+      "description": "We will call you back at your time",
+      "value": "Contact Us",
+      "buttonText": "Request Now",
+      "link": "/contact",
+      "iconColor": "#ff6429",
+      "iconBackground": "#f9e5df",
+      "buttonColor": "#ff6429"
+    }
+  ]
+}

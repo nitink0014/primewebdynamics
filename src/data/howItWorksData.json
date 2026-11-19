@@ -1,0 +1,41 @@
+
+{
+  "title": "How It",
+  "highlight": "Works",
+  "subtitle": "Your journey from enrollment to placement in 4 simple steps",
+  "buttonText": "Find Your Journey Today",
+  "steps": [
+    {
+      "id": 1,
+      "number": "01",
+      "title": "Enroll",
+      "description": "Choose your course and complete enrollment in 2 minutes. Get instant access.",
+      "icon": "UserRoundPlus",
+      "color": "blue"
+    },
+    {
+      "id": 2,
+      "number": "02",
+      "title": "Learn",
+      "description": "Live mentoring, recorded sessions, and AI-powered doubt resolution 24×7.",
+      "icon": "BookOpen",
+      "color": "orange"
+    },
+    {
+      "id": 3,
+      "number": "03",
+      "title": "Build Projects",
+      "description": "10+ real-world portfolio projects with elite industry mentors.",
+      "icon": "Code",
+      "color": "purple"
+    },
+    {
+      "id": 4,
+      "number": "04",
+      "title": "Get Placed",
+      "description": "Interview prep & placement support at 800+ hiring companies.",
+      "icon": "BriefcaseBusiness",
+      "color": "green"
+    }
+  ]
+}

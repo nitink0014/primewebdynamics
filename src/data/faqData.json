@@ -1,0 +1,49 @@
+
+{
+  "badge": "FAQs",
+  "title": "Frequently Asked Questions",
+  "highlightTitle": "Questions",
+  "subtitle": "Everything you need to know before getting started",
+  "faqs": [
+    {
+      "id": 1,
+      "question": "What courses does Ducat offer?",
+      "answer": "Ducat offers industry-oriented IT and AI training courses including Data Science, Machine Learning, Artificial Intelligence, Cyber Security, Full Stack Development (MERN, MEAN, Java), Cloud Computing (AWS, Azure), DevOps, Python, Digital Marketing, UI/UX, and Software Testing. All courses are designed according to current industry requirements and job market demand."
+    },
+    {
+      "id": 2,
+      "question": "Does Ducat provide placement assistance?",
+      "answer": "Ducat provides placement assistance to help students prepare for job opportunities. This may include interview preparation, resume guidance, career support, and placement-related activities. Contact the admissions team for details about the support available for your chosen course."
+    },
+    {
+      "id": 3,
+      "question": "Why should I choose Ducat over other institutes?",
+      "answer": "Ducat focuses on industry-oriented training, practical learning, project-based experience, and career development. Students get an opportunity to learn relevant technologies and build skills that are useful in the IT industry."
+    },
+    {
+      "id": 4,
+      "question": "Are the trainers experienced industry professionals?",
+      "answer": "Ducat provides training through experienced trainers who guide students through technical concepts and practical learning. The training approach focuses on building both theoretical understanding and practical skills."
+    },
+    {
+      "id": 5,
+      "question": "Do you provide certifications after course completion?",
+      "answer": "Students can receive course completion certification after successfully completing the applicable course requirements. Please contact the institute for certification details related to your selected program."
+    },
+    {
+      "id": 6,
+      "question": "Are there live projects included in the training?",
+      "answer": "Practical learning and project-based activities help students understand how technologies are used in real-world scenarios. Project availability and details may vary depending on the selected course."
+    },
+    {
+      "id": 7,
+      "question": "Can beginners join Ducat courses?",
+      "answer": "Yes, students with different levels of technical knowledge can explore suitable courses. Course prerequisites may vary, so it is recommended to discuss your background with the admissions team before enrolling."
+    },
+    {
+      "id": 8,
+      "question": "How can I enroll in a course at Ducat?",
+      "answer": "You can contact the Ducat admissions team or submit an enquiry through the website. The team can guide you about available courses, batches, fees, and the enrollment process."
+    }
+  ]
+}
