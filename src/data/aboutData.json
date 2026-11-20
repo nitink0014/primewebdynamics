@@ -61,18 +61,14 @@
   "topCourses": {
     "title": "Top Courses",
     "courses": [
-      "Full Stack Development",
-      "MERN Stack Development",
-      "Java + AI",
-      "Data Analytics",
-      "Data Science",
+      "Wev Development",
+      "App Development",
+      "Digital Marketing",
       "Python Programming",
-      "Cloud Computing",
-      "DevOps",
-      "Software Testing",
-      "Generative AI",
-      "Cyber Security",
-      "UI / UX Design"
+      "Frontend Technologies",
+      "Backend Technologies",
+      "Full Stack Developement",
+      "Data Analyst"
     ],
     "link": "/courses"
   },

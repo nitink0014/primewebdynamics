@@ -1,0 +1,55 @@
+
+{
+  "title": "Refund Policy",
+  "subtitle": "Please review the following information before enrolling in a course at Primeweb Dynamics.",
+  "lastUpdated": "20 November 2026",
+  "sections": [
+    {
+      "heading": "1. Introduction",
+      "content": [
+        "This Refund Policy explains the general process for handling refund and cancellation requests related to courses offered by Primeweb Dynamics.",
+        "Students are encouraged to review the course details, fees and enrollment conditions before making a payment."
+      ]
+    },
+    {
+      "heading": "2. Refund Eligibility",
+      "content": [
+        "Refund eligibility will be determined according to the written refund terms communicated by Primeweb Dynamics at the time of enrollment.",
+        "The applicable refund conditions may depend on the course, enrollment status and services already provided."
+      ]
+    },
+    {
+      "heading": "3. Cancellation Requests",
+      "content": [
+        "Students who wish to cancel their enrollment should contact the Primeweb Dynamics team using the official contact details.",
+        "Please provide your registered name, contact number, course details and payment information when submitting a request."
+      ]
+    },
+    {
+      "heading": "4. Refund Processing",
+      "content": [
+        "Approved refunds will be processed according to the payment and refund conditions communicated to the student.",
+        "The refund processing timeline and any applicable deductions must be confirmed by the company before enrollment."
+      ]
+    },
+    {
+      "heading": "5. Non-Refundable Charges",
+      "content": [
+        "Any non-refundable fees, administrative charges or deductions must be clearly communicated to students before payment."
+      ]
+    },
+    {
+      "heading": "6. Contact for Refund Requests",
+      "content": [
+        "For refund-related questions or cancellation requests, please contact Primeweb Dynamics through the official contact details below."
+      ]
+    }
+  ],
+  "contact": {
+    "company": "Primeweb Dynamics",
+    "phone": "+91 79021 70568",
+    "email": "hello@primewebdynamics.com",
+    "website": "https://www.primewebdynamics.in",
+    "address": "1st Floor, Friends Tower, Opp. MAX Mall, Sanjay Palace, Agra, Uttar Pradesh, India"
+  }
+}

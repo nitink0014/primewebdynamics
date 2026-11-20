@@ -1,6 +1,13 @@
 
 import { useState } from "react";
-import { Send, ExternalLink } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MessageCircle,
+  Send,
+  ExternalLink,
+  Globe,
+} from "lucide-react";
 import contact from "../data/contact.json";
 
 function Contact() {
@@ -287,36 +294,72 @@ function Contact() {
                 key={branch.id}
                 className="min-h-[230px] rounded-xl bg-[#e2f1ff] px-8 py-8 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:px-12"
               >
-                <h3 className="mb-2 text-2xl font-bold text-[#24538d]">
+                <h3 className="mb-4 text-2xl font-bold text-[#24538d]">
                   {branch.name}
                 </h3>
 
-                <div className="space-y-2 text-base leading-6 text-gray-900">
-                  <p>
-                    Phone :{" "}
+                <div className="space-y-3 text-base leading-6 text-gray-900">
+
+                  <p className="flex flex-wrap items-center gap-2">
+                    <Phone size={17} className="text-[#24538d]" />
+                    <span>Phone:</span>
+
                     <a
-                      href={`tel:${branch.phone}`}
+                      href={`tel:+91${branch.phone}`}
                       className="text-blue-600 hover:underline"
                     >
-                      {branch.phone}
+                      +91 {branch.phone}
                     </a>
                   </p>
 
-                  <p>
-                    WhatsApp :{" "}
+                  <p className="flex flex-wrap items-center gap-2">
+                    <MessageCircle size={17} className="text-[#25D366]" />
+                    <span>WhatsApp:</span>
+
                     <a
                       href={`https://wa.me/91${branch.whatsapp}`}
                       target="_blank"
                       rel="noreferrer"
                       className="text-blue-600 hover:underline"
                     >
-                      {branch.whatsapp}
+                      +91 {branch.whatsapp}
                     </a>
                   </p>
 
-                  <p>Email : {branch.email}</p>
+                  <p className="flex flex-wrap items-center gap-2">
+                    <Mail size={17} className="text-[#24538d]" />
+                    <span>Email:</span>
 
-                  <p>Address : {branch.address}</p>
+                    <a
+                      href={`mailto:${branch.email}`}
+                      className="text-blue-600 hover:underline"
+                    >
+                      {branch.email}
+                    </a>
+                  </p>
+
+                  {branch.website && (
+                    <p className="flex flex-wrap items-center gap-2">
+                      <Globe size={17} className="text-[#24538d]" />
+                      <span>Website:</span>
+
+                      <a
+                        href={branch.website}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-blue-600 hover:underline"
+                      >
+                        {branch.website}
+                      </a>
+                    </p>
+                  )}
+
+                  <p className="flex flex-wrap items-start gap-2">
+                    <ExternalLink size={17} className="mt-1 text-[#24538d]" />
+                    <span>Address:</span>
+                    <span>{branch.address}</span>
+                  </p>
+
                 </div>
               </div>
             ))}
