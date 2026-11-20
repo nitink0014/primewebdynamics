@@ -1,9 +1,13 @@
 
+import { useState } from "react";
 import { CalendarDays } from "lucide-react";
 
 import liveClassesData from "../../data/liveClassesData.json";
+import AutoPopupForm from "./AutoPopupForm";
 
 function LiveClassesSection() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   return (
     <section className="w-full bg-white px-5 pb-10 pt-8 font-sans sm:px-8 lg:px-0">
 
@@ -110,6 +114,7 @@ function LiveClassesSection() {
                     <td className="px-[20px]">
                       <button
                         type="button"
+                        onClick={() => setIsPopupOpen(true)}
                         className="flex h-[38px] items-center justify-center rounded-[9px] bg-[#ff821f] px-[16px] text-[13px] font-bold text-white shadow-[0_5px_14px_rgba(255,130,31,0.10)] transition-all duration-300 ease-out hover:scale-105 hover:bg-[#ff6b0b] hover:shadow-[0_8px_20px_rgba(255,110,20,0.28)] active:scale-95"
                       >
                         Register Free
@@ -128,6 +133,12 @@ function LiveClassesSection() {
         </div>
 
       </div>
+
+      {/* Existing Registration Popup */}
+      <AutoPopupForm
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+      />
 
     </section>
   );
