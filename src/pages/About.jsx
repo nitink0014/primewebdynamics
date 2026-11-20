@@ -1,21 +1,5 @@
-
 import { useState } from "react";
 import aboutData from "../data/aboutData.json";
-
-const courses = [
-  "Full Stack Development",
-  "MERN Stack Development",
-  "Java + AI",
-  "Data Analytics",
-  "Data Science",
-  "Python Programming",
-  "Cloud Computing",
-  "DevOps",
-  "Software Testing",
-  "Generative AI",
-  "Cyber Security",
-  "UI / UX Design",
-];
 
 function SectionTitle({ children }) {
   return (
@@ -31,15 +15,14 @@ function SectionTitle({ children }) {
 export default function About() {
   const {
     hero,
+    whoWeAre,
     mission,
     vision,
-    whatWeDo,
-    industryConnections,
+    whyChooseUs,
+    learningJourney,
     contactCTA,
     topCourses,
-    stats,
     inquiry,
-    testimonials,
   } = aboutData;
 
   const [formData, setFormData] = useState({
@@ -50,6 +33,7 @@ export default function About() {
   });
 
   const [errors, setErrors] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -63,33 +47,37 @@ export default function About() {
       ...prev,
       [name]: "",
     }));
+
+    setIsSubmitted(false);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const newErrors = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = "Please enter your name";
-    }
-
     const phone = formData.phone.replace(/\D/g, "");
 
+    if (!formData.name.trim()) {
+      newErrors.name = inquiry.form.validation.nameRequired;
+    }
+
     if (!phone) {
-      newErrors.phone = "Please enter your phone number";
+      newErrors.phone = inquiry.form.validation.phoneRequired;
     } else if (phone.length !== 10) {
-      newErrors.phone = "Phone number must be exactly 10 digits";
+      newErrors.phone = inquiry.form.validation.phoneInvalid;
     }
 
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length > 0) return;
 
-    console.log("About Inquiry Details:", {
+    const submissionData = {
       ...formData,
+      name: formData.name.trim(),
       phone,
-    });
+    };
+
+    console.log("About Inquiry Details:", submissionData);
 
     setFormData({
       name: "",
@@ -99,11 +87,11 @@ export default function About() {
     });
 
     setErrors({});
+    setIsSubmitted(true);
   };
 
   return (
     <main className="overflow-hidden bg-white">
-
       {/* Hero Section */}
       <section
         className="relative flex min-h-[320px] items-center justify-center bg-cover bg-center px-5 text-center"
@@ -126,32 +114,78 @@ export default function About() {
         </div>
       </section>
 
-      {/* Mission */}
+      {/* Who We Are */}
       <section className="mx-auto max-w-7xl px-6 py-20">
-        <SectionTitle>{mission.title}</SectionTitle>
+        <SectionTitle>{whoWeAre.title}</SectionTitle>
 
-        <p className="text-justify text-base leading-8 text-gray-700 md:text-lg">
-          {mission.description}
-        </p>
-      </section>
+        <div className="grid items-center gap-10 md:grid-cols-2">
+          <div>
+            <span className="text-sm font-bold uppercase tracking-wider text-orange-500">
+              Bridging the Gap Between College & Career
+            </span>
 
-      {/* Vision */}
-      <section className="bg-slate-50 px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle>{vision.title}</SectionTitle>
+            <h2 className="mt-4 text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">
+              Learn Practical Skills. Build Your Future.
+            </h2>
 
-          <p className="text-center text-lg leading-8 text-gray-700">
-            {vision.description}
-          </p>
+            <p className="mt-6 text-justify text-base leading-8 text-gray-700">
+              {whoWeAre.description}
+            </p>
+
+            <p className="mt-4 text-justify text-base leading-8 text-gray-700">
+              {whoWeAre.additionalDescription}
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-2xl shadow-xl">
+            <img
+              src={hero.backgroundImage}
+              alt="Prime Webdynamics training environment"
+              className="h-[320px] w-full object-cover md:h-[420px]"
+            />
+          </div>
         </div>
       </section>
 
-      {/* What We Do */}
-      <section className="mx-auto max-w-7xl px-6 py-20">
-        <SectionTitle>{whatWeDo.title}</SectionTitle>
+      {/* Mission and Vision */}
+      <section className="bg-slate-50 px-6 py-20">
+        <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2">
+          <div className="rounded-2xl border border-blue-100 bg-white p-8 shadow-lg">
+            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-100 text-3xl">
+              🎯
+            </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {whatWeDo.items.map((item) => (
+            <h2 className="text-2xl font-bold text-blue-900">
+              {mission.title}
+            </h2>
+
+            <p className="mt-5 leading-8 text-gray-700">
+              {mission.description}
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-orange-100 bg-white p-8 shadow-lg">
+            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-orange-100 text-3xl">
+              🔭
+            </div>
+
+            <h2 className="text-2xl font-bold text-blue-900">
+              {vision.title}
+            </h2>
+
+            <p className="mt-5 leading-8 text-gray-700">
+              {vision.description}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <SectionTitle>{whyChooseUs.title}</SectionTitle>
+
+        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+          {whyChooseUs.items.map((item) => (
             <div
               key={item.id}
               className="rounded-xl border border-gray-100 bg-white p-8 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-xl"
@@ -170,32 +204,32 @@ export default function About() {
         </div>
       </section>
 
-      {/* Industry Connections */}
+      {/* Learning Journey */}
       <section className="bg-[#061d38] px-6 py-20 text-white">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2">
-          <div>
-            <h2 className="text-4xl font-extrabold uppercase">
-              {industryConnections.title}
-            </h2>
+        <div className="mx-auto max-w-7xl">
+          <h2 className="text-center text-3xl font-extrabold uppercase md:text-4xl">
+            {learningJourney.title}
+          </h2>
 
-            <div className="mt-3 h-1 w-64 bg-orange-500" />
+          <div className="mx-auto mt-3 h-1 w-28 rounded-full bg-orange-500" />
 
-            <h3 className="mt-8 text-xl font-semibold text-orange-400">
-              {industryConnections.subtitle}
-            </h3>
-
-            <p className="mt-5 leading-8 text-gray-300">
-              {industryConnections.description}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {industryConnections.partners.map((partner) => (
+          <div className="mt-14 grid gap-8 md:grid-cols-3">
+            {learningJourney.items.map((item, index) => (
               <div
-                key={partner}
-                className="flex h-24 items-center justify-center rounded-lg border-2 border-orange-500 bg-white p-3 text-center text-lg font-bold text-blue-900 transition hover:scale-105"
+                key={item.id}
+                className="rounded-2xl border border-white/15 bg-white/5 p-8 text-center transition hover:-translate-y-2 hover:bg-white/10"
               >
-                {partner}
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-xl font-extrabold text-white">
+                  0{index + 1}
+                </div>
+
+                <h3 className="mt-6 text-2xl font-bold text-orange-400">
+                  {item.title}
+                </h3>
+
+                <p className="mt-4 leading-7 text-gray-300">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
@@ -241,23 +275,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Success Stats */}
-      <section className="bg-gradient-to-r from-[#263b75] to-[#54136d] px-6 py-20">
-        <div className="mx-auto grid max-w-7xl gap-12 text-center md:grid-cols-3">
-          {stats.items.map((stat) => (
-            <div key={stat.id}>
-              <h3 className="text-5xl font-extrabold text-orange-400 md:text-6xl">
-                {stat.number}
-              </h3>
-
-              <p className="mt-4 text-lg text-white">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Inquiry Section */}
       <section
         className="bg-cover bg-center px-6 py-20"
@@ -266,7 +283,6 @@ export default function About() {
         }}
       >
         <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2">
-
           {/* Contact Information */}
           <div className="text-white">
             <h2 className="text-3xl font-bold text-orange-500 md:text-4xl">
@@ -286,13 +302,28 @@ export default function About() {
                     {detail.title}
                   </h3>
 
-                  <p>{detail.value}</p>
+                  {detail.link ? (
+                    <a
+                      href={detail.link}
+                      target={detail.link.startsWith("http") ? "_blank" : undefined}
+                      rel={
+                        detail.link.startsWith("http")
+                          ? "noreferrer"
+                          : undefined
+                      }
+                      className="break-words transition hover:text-orange-300"
+                    >
+                      {detail.value}
+                    </a>
+                  ) : (
+                    <p className="leading-7">{detail.value}</p>
+                  )}
                 </div>
               ))}
             </div>
           </div>
 
-          {/* About Inquiry Form */}
+          {/* Inquiry Form */}
           <form
             onSubmit={handleSubmit}
             noValidate
@@ -309,7 +340,8 @@ export default function About() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Full Name"
+                placeholder={inquiry.form.fields.namePlaceholder}
+                required
                 className="w-full rounded-lg border border-gray-300 p-4 outline-none focus:border-blue-600"
               />
 
@@ -326,7 +358,7 @@ export default function About() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Email Address"
+              placeholder={inquiry.form.fields.emailPlaceholder}
               className="w-full rounded-lg border border-gray-300 p-4 outline-none focus:border-blue-600"
             />
 
@@ -337,7 +369,8 @@ export default function About() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="Phone Number"
+                placeholder={inquiry.form.fields.phonePlaceholder}
+                required
                 maxLength={10}
                 inputMode="numeric"
                 className="w-full rounded-lg border border-gray-300 p-4 outline-none focus:border-blue-600"
@@ -357,9 +390,11 @@ export default function About() {
               onChange={handleChange}
               className="w-full rounded-lg border border-gray-300 p-4 text-gray-500 outline-none focus:border-blue-600"
             >
-              <option value="">Select a Course</option>
+              <option value="">
+                {inquiry.form.fields.coursePlaceholder}
+              </option>
 
-              {courses.map((course) => (
+              {topCourses.courses.map((course) => (
                 <option key={course} value={course}>
                   {course}
                 </option>
@@ -372,48 +407,15 @@ export default function About() {
             >
               {inquiry.form.submitText}
             </button>
+
+            {isSubmitted && (
+              <p className="rounded-lg bg-green-50 p-3 text-center text-sm font-medium text-green-700">
+                {inquiry.form.successMessage}
+              </p>
+            )}
           </form>
         </div>
       </section>
-
-      {/* Testimonials */}
-      <section className="bg-gray-50 px-6 py-20">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle>{testimonials.title}</SectionTitle>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            {testimonials.items.map((item) => (
-              <div
-                key={item.id}
-                className="rounded-2xl bg-white p-8 shadow-lg"
-              >
-                <div className="text-5xl font-bold text-orange-400">
-                  “
-                </div>
-
-                <p className="min-h-28 leading-7 text-gray-600">
-                  {item.review}
-                </p>
-
-                <div className="mt-6 border-t pt-5">
-                  <h3 className="font-bold text-gray-900">
-                    {item.name}
-                  </h3>
-
-                  <p className="mt-1 text-sm text-blue-700">
-                    {item.course}
-                  </p>
-
-                  <p className="mt-2 text-lg text-yellow-500">
-                    {"★".repeat(item.rating)}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
     </main>
   );
 }

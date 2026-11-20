@@ -1,55 +1,82 @@
-
 {
   "hero": {
     "title": "ABOUT US",
-    "heading": "Building Skills. Creating Opportunities.",
-    "subtitle": "Empowering the next generation with industry-ready skills.",
+    "heading": "Bridging the Gap Between College & Career",
+    "subtitle": "Practical knowledge. Real-world projects. Industry-ready skills.",
     "backgroundImage": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80"
+  },
+  "whoWeAre": {
+    "title": "About Prime Webdynamics",
+    "description": "Prime Webdynamics is an ISO 9001:2015 certified IT training institute in Agra. We empower college students with practical knowledge, real-world projects and industry-relevant skills to kick-start a successful tech career.",
+    "additionalDescription": "College teaches the theory — we teach you how it is actually used in companies. Our courses are taught in simple language, step by step, so that even a beginner can understand, practise and build confidently. Whether you are in B.Tech, BCA, MCA, M.Tech or any other course, we help you choose the right skill, learn it the right way and become job-ready."
   },
   "mission": {
     "title": "Our Mission",
-    "description": "At Primewebdynamics, our mission is to empower students and aspiring professionals with practical, industry-relevant technology skills. We aim to bridge the gap between academic knowledge and industry requirements through structured learning, hands-on projects and expert guidance. Our goal is to help learners build confidence and prepare for successful careers in the technology industry."
+    "description": "To make every student job-ready with practical, industry-focused skills and the confidence to crack interviews."
   },
   "vision": {
     "title": "Our Vision",
-    "description": "To become a trusted learning and technology partner that creates skilled professionals, encourages innovation and makes quality technology education accessible to everyone."
+    "description": "To be the most trusted skill-development institute for students who want to build a bright career in technology."
   },
-  "whatWeDo": {
-    "title": "What We Do",
+  "whyChooseUs": {
+    "title": "Why Choose Us?",
     "items": [
       {
         "id": 1,
-        "title": "Practical Learning",
-        "description": "Learn through hands-on assignments, practical exercises and real-world projects.",
-        "icon": "💻"
+        "icon": "📚",
+        "title": "Industry-Relevant Curriculum",
+        "description": "Syllabus designed around what IT companies actually ask for in interviews and jobs."
       },
       {
         "id": 2,
-        "title": "Industry Skills",
-        "description": "Develop technical skills and knowledge aligned with modern industry requirements.",
-        "icon": "🚀"
+        "icon": "💻",
+        "title": "Hands-on Projects",
+        "description": "Every course includes live projects so you learn by building, not just by reading."
       },
       {
         "id": 3,
-        "title": "Career Guidance",
-        "description": "Get guidance to improve your technical knowledge, portfolio and interview readiness.",
-        "icon": "🎯"
+        "icon": "👨‍🏫",
+        "title": "Expert Mentors",
+        "description": "Learn from trainers with real industry experience who guide you personally."
+      },
+      {
+        "id": 4,
+        "icon": "🎯",
+        "title": "Placement Assistance",
+        "description": "Resume building, mock interviews and job or internship support after training."
+      },
+      {
+        "id": 5,
+        "icon": "🕒",
+        "title": "Flexible Batches",
+        "description": "Morning, evening and weekend batches that fit around your college timings."
+      },
+      {
+        "id": 6,
+        "icon": "🚀",
+        "title": "100% Job-Oriented",
+        "description": "Practical training focused on helping you become job-ready from day one."
       }
     ]
   },
-  "industryConnections": {
-    "title": "Industry Connections",
-    "subtitle": "Learn Skills That Matter!",
-    "description": "We focus on helping learners understand current technology trends and prepare for opportunities in the digital industry through practical learning and career-focused guidance.",
-    "partners": [
-      "Google",
-      "Microsoft",
-      "Amazon",
-      "Infosys",
-      "TCS",
-      "Accenture",
-      "IBM",
-      "Wipro"
+  "learningJourney": {
+    "title": "Your Journey to Success",
+    "items": [
+      {
+        "id": 1,
+        "title": "Learn",
+        "description": "Understand concepts in simple language with structured training."
+      },
+      {
+        "id": 2,
+        "title": "Build",
+        "description": "Work on real projects and create a practical portfolio."
+      },
+      {
+        "id": 3,
+        "title": "Get Hired",
+        "description": "Prepare for interviews with resume building and placement assistance."
+      }
     ]
   },
   "contactCTA": {
@@ -59,37 +86,18 @@
     "buttonLink": "/contact"
   },
   "topCourses": {
-    "title": "Top Courses",
+    "title": "Explore Our Courses",
     "courses": [
-      "Wev Development",
+      "Web Development",
       "App Development",
       "Digital Marketing",
       "Python Programming",
       "Frontend Technologies",
       "Backend Technologies",
-      "Full Stack Developement",
+      "Full Stack Developer",
       "Data Analyst"
     ],
     "link": "/courses"
-  },
-  "stats": {
-    "items": [
-      {
-        "id": 1,
-        "number": "10+",
-        "label": "Industry-focused Programs"
-      },
-      {
-        "id": 2,
-        "number": "500+",
-        "label": "Learning Opportunities"
-      },
-      {
-        "id": 3,
-        "number": "50+",
-        "label": "Expert Mentors"
-      }
-    ]
   },
   "inquiry": {
     "title": "Ready to Empower Your Future?",
@@ -99,14 +107,22 @@
       {
         "id": 1,
         "icon": "☎",
-        "title": "Phone",
-        "value": "Contact details coming soon"
+        "title": "Call Us",
+        "value": "+91 79021 70568",
+        "link": "tel:+917902170568"
       },
       {
         "id": 2,
-        "icon": "✉",
-        "title": "Email",
-        "value": "Contact details coming soon"
+        "icon": "📍",
+        "title": "Visit Us",
+        "value": "1st Floor, Friends Tower, Opp. MAX Mall, Sanjay Palace, Agra"
+      },
+      {
+        "id": 3,
+        "icon": "🌐",
+        "title": "Website",
+        "value": "www.primewebdynamics.in",
+        "link": "https://www.primewebdynamics.in"
       }
     ],
     "form": {
@@ -117,33 +133,13 @@
         "phonePlaceholder": "Phone Number",
         "coursePlaceholder": "Select a Course"
       },
-      "submitText": "SUBMIT"
-    }
-  },
-  "testimonials": {
-    "title": "Testimonials & Reviews",
-    "items": [
-      {
-        "id": 1,
-        "name": "Rahul Sharma",
-        "course": "Full Stack Development",
-        "review": "The practical learning approach helped me understand web development and build real-world projects.",
-        "rating": 5
-      },
-      {
-        "id": 2,
-        "name": "Priya Verma",
-        "course": "Data Analytics",
-        "review": "The learning experience was excellent. I gained confidence in working with real-world datasets.",
-        "rating": 5
-      },
-      {
-        "id": 3,
-        "name": "Aman Kumar",
-        "course": "MERN Stack Development",
-        "review": "A great learning environment with practical projects and helpful guidance.",
-        "rating": 5
+      "submitText": "SUBMIT",
+      "successMessage": "Thank you! Your enquiry has been submitted successfully.",
+      "validation": {
+        "nameRequired": "Please enter your name",
+        "phoneRequired": "Please enter your phone number",
+        "phoneInvalid": "Phone number must be exactly 10 digits"
       }
-    ]
+    }
   }
 }

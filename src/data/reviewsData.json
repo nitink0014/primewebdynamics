@@ -2,11 +2,54 @@
 {
   "title": "Student Reviews",
   "highlight": "What Our Students Say",
-  "subtitle": "Explore feedback and experiences shared by students learning with Primeweb Dynamics.",
-  "reviews": [],
-  "emptyMessage": "Student reviews will be displayed here soon.",
-  "emptyDescription": "We value genuine student feedback. Check back soon to read about our students' learning experiences.",
-  "contactText": "Want to know more about our courses?",
-  "contactButton": "Contact Us",
-  "contactLink": "/contact"
+  "subtitle": "Explore learning experiences and feedback from students at Primeweb Dynamics.",
+  "sampleLabel": "Sample Student Reviews",
+  "sampleNotice": "These are illustrative sample reviews for website preview. Genuine student feedback will be published here.",
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Aarav Sharma",
+      "course": "Full Stack Development",
+      "rating": 5,
+      "message": "The training approach is very practical and easy to understand. Working on projects helped me understand how web applications are developed. The step-by-step guidance made learning much easier."
+    },
+    {
+      "id": 2,
+      "name": "Priya Verma",
+      "course": "Web Development",
+      "rating": 5,
+      "message": "I was looking for a place where I could learn web development from the basics. The course structure covers important concepts, and practical coding sessions make the topics easier to follow."
+    },
+    {
+      "id": 3,
+      "name": "Rohit Kumar",
+      "course": "Python Programming",
+      "rating": 4,
+      "message": "The concepts are explained in simple language, which is helpful for beginners. I especially like the hands-on practice and the opportunity to work on programming exercises."
+    },
+    {
+      "id": 4,
+      "name": "Sneha Gupta",
+      "course": "Digital Marketing",
+      "rating": 5,
+      "message": "The course introduces useful digital marketing concepts along with practical learning. It provides a good starting point for understanding different tools and marketing strategies."
+    },
+    {
+      "id": 5,
+      "name": "Aditya Singh",
+      "course": "Frontend Technologies",
+      "rating": 5,
+      "message": "Learning frontend technologies through practical examples makes a big difference. The project-based approach helps connect HTML, CSS and JavaScript concepts with real website development."
+    },
+    {
+      "id": 6,
+      "name": "Neha Agarwal",
+      "course": "App Development",
+      "rating": 4,
+      "message": "The learning journey is structured and beginner-friendly. Practical activities and project work help in understanding the process of building mobile applications."
+    }
+  ],
+  "contactText": "Want to start your learning journey?",
+  "contactButton": "Explore Our Courses",
+  "contactLink": "/courses"
 }
