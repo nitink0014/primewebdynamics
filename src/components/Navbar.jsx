@@ -29,16 +29,21 @@ function Navbar() {
 
       <div className="mx-auto flex min-h-[78px] items-center justify-between px-[4%]">
 
-        {/* Primewebdynamics Logo */}
-        <Link
-          to="/"
-          onClick={closeMenu}
-          className="flex shrink-0 items-center text-2xl font-extrabold tracking-tight"
-        >
-          <span className="text-[#1760a4]">Prime</span>
-          <span className="text-slate-800">web</span>
-          <span className="text-blue-500">dynamics</span>
-        </Link>
+      
+{/* Primewebdynamics Logo */}
+{/* Primewebdynamics Logo */}
+<Link
+  to="/"
+  onClick={closeMenu}
+  className="flex shrink-0 items-center"
+>
+  <img
+    src="/PrimeWebdynamicsLogo.png"
+    alt="Primeweb Dynamics"
+    className="h-14 w-auto object-contain sm:h-16"
+  />
+</Link>
+
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-[25px] xl:flex">
