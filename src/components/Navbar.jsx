@@ -70,15 +70,7 @@ function Navbar() {
             
 
             {/* Green Verification Icon */}
-            <span
-              className="flex h-[29px] w-[29px] shrink-0 items-center justify-center bg-emerald-400 text-[20px] text-white"
-              style={{
-                clipPath:
-                  "polygon(50% 0%,64% 12%,82% 8%,88% 27%,100% 40%,92% 58%,96% 77%,76% 83%,64% 100%,46% 91%,27% 97%,20% 78%,3% 66%,11% 47%,4% 29%,25% 23%,34% 5%)",
-              }}
-            >
-              ✓
-            </span>
+          
 
             <NavLink
               to="/career-guidance"
@@ -207,10 +199,6 @@ function Navbar() {
               className="rounded-lg px-4 py-3 text-[16px] text-blue-600 hover:bg-blue-50"
             >
               Career Guidance
-              <span className="ml-2 rounded-full bg-orange-500 px-2 py-1 text-[10px] text-white">
-                AI-Powered
-              </span>
-              <span className="ml-1 text-emerald-500">✓</span>
             </NavLink>
 
             {/* Contact */}
