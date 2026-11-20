@@ -6,36 +6,18 @@ import {
   MessageCircle,
   Send,
   ExternalLink,
+  Globe,
 } from "lucide-react";
 
 const branches = [
   {
-    name: "Noida Sector 16",
-    phone: "7070905090",
-    whatsapp: "9999993213",
+    name: "Primeweb Dynamics – Agra",
+    phone: "7902170568",
+    whatsapp: "7902170568",
     email: "hello@primewebdynamics.com",
-    address: "A-43 & A-52, Noida Sector 16, Uttar Pradesh, India",
-  },
-  {
-    name: "Sector 63, Noida",
-    phone: "7070905090",
-    whatsapp: "7042175774",
-    email: "hello@primewebdynamics.com",
-    address: "H-43, Sector 63, Noida, Uttar Pradesh, India",
-  },
-  {
-    name: "South Ex.",
-    phone: "7070905090",
-    whatsapp: "9899866334",
-    email: "hello@primewebdynamics.com",
-    address: "D-27, South Extension-1, New Delhi, India",
-  },
-  {
-    name: "Noida Extension",
-    phone: "7070905090",
-    whatsapp: "7289886655",
-    email: "hello@primewebdynamics.com",
-    address: "TechZone 4, Greater Noida West, Uttar Pradesh, India",
+    website: "https://www.primewebdynamics.in",
+    address:
+      "1st Floor, Friends Tower, Opp. MAX Mall, Sanjay Palace, Agra, Uttar Pradesh, India",
   },
 ];
 
@@ -73,12 +55,10 @@ function Contact() {
 
     const newErrors = {};
 
-    // Name validation
     if (!formData.name.trim()) {
       newErrors.name = "Please enter your name";
     }
 
-    // Phone validation
     const phone = formData.phone.replace(/\D/g, "");
 
     if (!phone) {
@@ -168,7 +148,7 @@ function Contact() {
             {/* NAME AND EMAIL */}
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
 
-              {/* Name - Required */}
+              {/* NAME - REQUIRED */}
               <div>
                 <label className={labelStyle}>
                   Name<span className="text-red-500">*</span>
@@ -190,7 +170,7 @@ function Contact() {
                 )}
               </div>
 
-              {/* Email - Optional */}
+              {/* EMAIL - OPTIONAL */}
               <div>
                 <label className={labelStyle}>
                   Email
@@ -211,7 +191,7 @@ function Contact() {
             {/* PHONE, CENTER, COURSE */}
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
-              {/* Phone - Required */}
+              {/* PHONE - REQUIRED */}
               <div>
                 <label className={labelStyle}>
                   Phone<span className="text-red-500">*</span>
@@ -235,7 +215,7 @@ function Contact() {
                 )}
               </div>
 
-              {/* Center - Optional */}
+              {/* CENTER - OPTIONAL */}
               <div>
                 <label className={labelStyle}>
                   Center / Branch
@@ -248,14 +228,13 @@ function Contact() {
                   className={inputStyle}
                 >
                   <option value="">Select Branch</option>
-                  <option value="Noida Sector 16">Noida Sector 16</option>
-                  <option value="Sector 63 Noida">Sector 63, Noida</option>
-                  <option value="South Extension">South Extension</option>
-                  <option value="Noida Extension">Noida Extension</option>
+                  <option value="Sanjay Palace Agra">
+                    Sanjay Palace, Agra
+                  </option>
                 </select>
               </div>
 
-              {/* Course - Optional */}
+              {/* COURSE - OPTIONAL */}
               <div>
                 <label className={labelStyle}>
                   Course
@@ -268,19 +247,33 @@ function Contact() {
                   className={inputStyle}
                 >
                   <option value="">Select a Course</option>
-                  <option value="Full Stack Development">Full Stack Development</option>
-                  <option value="Data Analytics">Data Analytics</option>
-                  <option value="Business Analytics">Business Analytics</option>
-                  <option value="Python Development">Python Development</option>
-                  <option value="Java Development">Java Development</option>
-                  <option value="MERN Stack">MERN Stack</option>
-                  <option value="Digital Marketing">Digital Marketing</option>
+                  <option value="Full Stack Development">
+                    Full Stack Development
+                  </option>
+                  <option value="Data Analytics">
+                    Data Analytics
+                  </option>
+                  <option value="Business Analytics">
+                    Business Analytics
+                  </option>
+                  <option value="Python Development">
+                    Python Development
+                  </option>
+                  <option value="Java Development">
+                    Java Development
+                  </option>
+                  <option value="MERN Stack">
+                    MERN Stack
+                  </option>
+                  <option value="Digital Marketing">
+                    Digital Marketing
+                  </option>
                 </select>
               </div>
 
             </div>
 
-            {/* MESSAGE - Optional */}
+            {/* MESSAGE - OPTIONAL */}
             <div>
               <label className={labelStyle}>
                 How can we help you?
@@ -319,16 +312,16 @@ function Contact() {
         </div>
       </section>
 
-      {/* OUR BRANCHES */}
+      {/* OUR OFFICE */}
       <section className="bg-[#f4f8fc] px-5 py-12 sm:px-10 sm:py-16">
 
         <div className="mx-auto max-w-[1400px]">
 
           <h2 className="mb-10 text-center text-4xl font-bold text-[#245b9c] sm:text-5xl">
-            Our Branches
+            Our Office
           </h2>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8">
 
             {branches.map((branch, index) => (
               <div
@@ -336,40 +329,68 @@ function Contact() {
                 className="min-h-[230px] rounded-xl bg-[#e2f1ff] px-8 py-8 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:px-12"
               >
 
-                <h3 className="mb-2 text-2xl font-bold text-[#24538d]">
+                <h3 className="mb-4 text-2xl font-bold text-[#24538d]">
                   {branch.name}
                 </h3>
 
-                <div className="space-y-2 text-base leading-6 text-gray-900">
+                <div className="space-y-3 text-base leading-6 text-gray-900">
 
-                  <p>
-                    Phone :{" "}
+                  <p className="flex flex-wrap items-center gap-2">
+                    <Phone size={17} className="text-[#24538d]" />
+                    <span>Phone:</span>
+
                     <a
-                      href={`tel:${branch.phone}`}
+                      href={`tel:+91${branch.phone}`}
                       className="text-blue-600 hover:underline"
                     >
-                      {branch.phone}
+                      +91 {branch.phone}
                     </a>
                   </p>
 
-                  <p>
-                    WhatsApp :{" "}
+                  <p className="flex flex-wrap items-center gap-2">
+                    <MessageCircle size={17} className="text-[#25D366]" />
+                    <span>WhatsApp:</span>
+
                     <a
                       href={`https://wa.me/91${branch.whatsapp}`}
                       target="_blank"
                       rel="noreferrer"
                       className="text-blue-600 hover:underline"
                     >
-                      {branch.whatsapp}
+                      +91 {branch.whatsapp}
                     </a>
                   </p>
 
-                  <p>
-                    Email : {branch.email}
+                  <p className="flex flex-wrap items-center gap-2">
+                    <Mail size={17} className="text-[#24538d]" />
+                    <span>Email:</span>
+
+                    <a
+                      href={`mailto:${branch.email}`}
+                      className="text-blue-600 hover:underline"
+                    >
+                      {branch.email}
+                    </a>
                   </p>
 
-                  <p>
-                    Address : {branch.address}
+                  <p className="flex flex-wrap items-center gap-2">
+                    <Globe size={17} className="text-[#24538d]" />
+                    <span>Website:</span>
+
+                    <a
+                      href={branch.website}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      www.primewebdynamics.in
+                    </a>
+                  </p>
+
+                  <p className="flex flex-wrap items-start gap-2">
+                    <ExternalLink size={17} className="mt-1 text-[#24538d]" />
+                    <span>Address:</span>
+                    <span>{branch.address}</span>
                   </p>
 
                 </div>
@@ -381,18 +402,19 @@ function Contact() {
         </div>
       </section>
 
-      {/* GOOGLE MAP */}
+      {/* GOOGLE MAP - SANJAY PALACE AGRA */}
       <section className="bg-[#f4f8fc] px-5 pb-14">
 
         <div className="mx-auto max-w-[1400px] overflow-hidden rounded-lg shadow-md">
 
           <div className="flex items-center justify-between bg-white px-4 py-3">
+
             <h3 className="font-semibold text-slate-800">
               Find Our Location
             </h3>
 
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Noida+Sector+16+Uttar+Pradesh+India"
+              href="https://www.google.com/maps/search/?api=1&query=1st+Floor+Friends+Tower+Opp+MAX+Mall+Sanjay+Palace+Agra"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-1 text-sm font-semibold text-blue-600"
@@ -400,11 +422,12 @@ function Contact() {
               Open in Maps
               <ExternalLink size={15} />
             </a>
+
           </div>
 
           <iframe
-            title="Primewebdynamics Office Location"
-            src="https://maps.google.com/maps?q=Noida%20Sector%2016%2C%20Uttar%20Pradesh&t=&z=12&ie=UTF8&iwloc=&output=embed"
+            title="Primewebdynamics Office Location - Agra"
+            src="https://maps.google.com/maps?q=Friends%20Tower%2C%20Sanjay%20Palace%2C%20Agra%2C%20India&t=&z=16&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="450"
             style={{ border: 0 }}
@@ -420,7 +443,7 @@ function Contact() {
       <div className="fixed right-0 top-[35%] z-50 flex flex-col gap-2 rounded-l-2xl bg-[#164c7e] p-2 shadow-xl">
 
         <a
-          href="tel:+910000000000"
+          href="tel:+917902170568"
           aria-label="Call us"
           className="flex h-11 w-11 items-center justify-center rounded-full bg-[#3188bd] text-white transition hover:scale-110"
         >
@@ -428,7 +451,7 @@ function Contact() {
         </a>
 
         <a
-          href="https://wa.me/910000000000"
+          href="https://wa.me/917902170568"
           target="_blank"
           rel="noreferrer"
           aria-label="WhatsApp"

@@ -1,0 +1,12 @@
+
+{
+  "title": "Student Reviews",
+  "highlight": "What Our Students Say",
+  "subtitle": "Explore feedback and experiences shared by students learning with Primeweb Dynamics.",
+  "reviews": [],
+  "emptyMessage": "Student reviews will be displayed here soon.",
+  "emptyDescription": "We value genuine student feedback. Check back soon to read about our students' learning experiences.",
+  "contactText": "Want to know more about our courses?",
+  "contactButton": "Contact Us",
+  "contactLink": "/contact"
+}
