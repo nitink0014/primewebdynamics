@@ -32,63 +32,64 @@
     "description": "Select one or more areas you would like to learn. You can choose multiple interests."
   },
   "careerFields": [
-    {
-      "id": "web-development",
-      "title": "Web Development",
-      "description": "Create websites, web applications and digital experiences.",
-      "icon": "Code2",
-      "courses": ["Frontend Development", "Backend Development", "Full Stack Development", "MERN Stack"]
-    },
-    {
-      "id": "software-programming",
-      "title": "Software & Programming",
-      "description": "Build programming fundamentals and develop software solutions.",
-      "icon": "Laptop",
-      "courses": ["Python Programming", "Java Programming", "C & C++", "Programming Fundamentals"]
-    },
-    {
-      "id": "data-ai",
-      "title": "Data & Artificial Intelligence",
-      "description": "Work with data, automation and intelligent technologies.",
-      "icon": "BrainCircuit",
-      "courses": ["Data Analytics", "Data Science", "Machine Learning", "Generative AI"]
-    },
-    {
-      "id": "cybersecurity-cloud",
-      "title": "Cyber Security & Cloud",
-      "description": "Explore digital security, cloud platforms and modern infrastructure.",
-      "icon": "ShieldCheck",
-      "courses": ["Cyber Security", "Cloud Computing", "AWS Fundamentals", "Networking"]
-    },
-    {
-      "id": "digital-marketing",
-      "title": "Digital Marketing",
-      "description": "Help businesses grow through online marketing and digital strategy.",
-      "icon": "ChartNoAxesCombined",
-      "courses": ["SEO", "Social Media Marketing", "Google Ads", "Digital Marketing + Gen AI"]
-    },
-    {
-      "id": "design-cad",
-      "title": "Design & CAD",
-      "description": "Turn creative ideas into visual designs and technical drawings.",
-      "icon": "Palette",
-      "courses": ["Graphic Designing", "UI/UX Designing", "AutoCAD", "CAD Designing"]
-    },
-    {
-      "id": "enterprise-testing",
-      "title": "Enterprise & Software Testing",
-      "description": "Learn business software and software quality practices.",
-      "icon": "Settings2",
-      "courses": ["SAP", "Software Testing", "Manual Testing", "Automation Testing"]
-    },
-    {
-      "id": "app-iot",
-      "title": "App Development & Emerging Tech",
-      "description": "Build mobile experiences and explore connected technologies.",
-      "icon": "Smartphone",
-      "courses": ["Mobile App Development", "Android Development", "IoT", "Robotics"]
-    }
-  ],
+  {
+    "id": "web-development",
+    "title": "Web Development",
+    "description": "Create websites, web applications and digital experiences.",
+    "icon": "Code2",
+    "courses": ["Frontend Development", "Backend Development", "Full Stack Development", "MERN Stack"]
+  },
+  {
+    "id": "app-development",
+    "title": "App Development",
+    "description": "Build mobile experiences and explore connected technologies.",
+    "icon": "Smartphone",
+    "courses": ["Mobile App Development", "Android Development", "IoT", "Robotics"]
+  },
+  {
+    "id": "digital-marketing",
+    "title": "Digital Marketing",
+    "description": "Help businesses grow through online marketing and digital strategy.",
+    "icon": "ChartNoAxesCombined",
+    "courses": ["SEO", "Social Media Marketing", "Google Ads", "Digital Marketing + Gen AI"]
+  },
+  {
+    "id": "python-programming",
+    "title": "Python Programming",
+    "description": "Build programming fundamentals and develop software solutions in Python.",
+    "icon": "Laptop",
+    "courses": ["Python Programming", "Data Science with Python", "Web Development with Python", "Automation with Python"]
+  },
+  {
+    "id": "frontend-technologies",
+    "title": "Frontend Technologies",
+    "description": "Create engaging user interfaces and experiences.",
+    "icon": "Code2",
+    "courses": ["HTML & CSS", "JavaScript", "React", "Vue.js"]
+  },
+  {
+    "id": "backend-technologies",
+    "title": "Backend Technologies",
+    "description": "Develop powerful server-side applications and APIs.",
+    "icon": "Settings2",
+    "courses": ["Node.js", "Express", "Databases", "API Development"]
+  },
+  {
+    "id": "full-stack-developer",
+    "title": "Full Stack Developer",
+    "description": "Master both frontend and backend development skills.",
+    "icon": "BrainCircuit",
+    "courses": ["Full Stack JavaScript", "MERN Stack", "DevOps Basics", "Project Deployment"]
+  },
+  {
+    "id": "data-analyst",
+    "title": "Data Analyst",
+    "description": "Analyze and interpret complex data to help decision-making.",
+    "icon": "ChartNoAxesCombined",
+    "courses": ["Data Analytics", "Excel for Data Analysis", "SQL", "Data Visualization"]
+  }
+]
+,
   "guidance": {
     "eyebrow": "YOUR NEXT STEP",
     "title": "A clearer direction starts with one conversation.",
