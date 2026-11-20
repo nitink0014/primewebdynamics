@@ -62,45 +62,25 @@
   "branches": [
     {
       "id": 1,
-      "name": "Noida Sector 16",
-      "phone": "7070905090",
-      "whatsapp": "9999993213",
+      "name": "Primeweb Dynamics – Agra",
+      "centerValue": "Sanjay Palace Agra",
+      "centerLabel": "Sanjay Palace, Agra",
+      "phone": "7902170568",
+      "whatsapp": "7902170568",
       "email": "hello@primewebdynamics.com",
-      "address": "A-43 & A-52, Noida Sector 16, Uttar Pradesh, India"
-    },
-    {
-      "id": 2,
-      "name": "Sector 63, Noida",
-      "phone": "7070905090",
-      "whatsapp": "7042175774",
-      "email": "hello@primewebdynamics.com",
-      "address": "H-43, Sector 63, Noida, Uttar Pradesh, India"
-    },
-    {
-      "id": 3,
-      "name": "South Ex.",
-      "phone": "7070905090",
-      "whatsapp": "9899866334",
-      "email": "hello@primewebdynamics.com",
-      "address": "D-27, South Extension-1, New Delhi, India"
-    },
-    {
-      "id": 4,
-      "name": "Noida Extension",
-      "phone": "7070905090",
-      "whatsapp": "7289886655",
-      "email": "hello@primewebdynamics.com",
-      "address": "TechZone 4, Greater Noida West, Uttar Pradesh, India"
+      "website": "https://www.primewebdynamics.in",
+      "websiteText": "www.primewebdynamics.in",
+      "address": "1st Floor, Friends Tower, Opp. MAX Mall, Sanjay Palace, Agra, Uttar Pradesh, India"
     }
   ],
   "branchesSection": {
-    "title": "Our Branches"
+    "title": "Our Office"
   },
   "map": {
     "title": "Find Our Location",
     "buttonText": "Open in Maps",
-    "mapsLink": "https://www.google.com/maps/search/?api=1&query=Noida+Sector+16+Uttar+Pradesh+India",
-    "embedUrl": "https://maps.google.com/maps?q=Noida%20Sector%2016%2C%20Uttar%20Pradesh&t=&z=12&ie=UTF8&iwloc=&output=embed",
-    "iframeTitle": "Primewebdynamics Office Location"
+    "mapsLink": "https://www.google.com/maps/search/?api=1&query=1st+Floor+Friends+Tower+Opp+MAX+Mall+Sanjay+Palace+Agra",
+    "embedUrl": "https://maps.google.com/maps?q=Friends%20Tower%2C%20Sanjay%20Palace%2C%20Agra%2C%20India&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    "iframeTitle": "Primewebdynamics Office Location - Agra"
   }
 }

@@ -1,4 +1,3 @@
-
 {
   "title": "Industry-ready",
   "highlight": "IT courses",
@@ -6,59 +5,576 @@
   "courses": [
     {
       "id": 1,
+      "courseNumber": "01 / 08",
+      "pageNumber": 5,
       "title": "Web Development",
       "duration": "4-6 Months",
+      "level": "Beginner to Advanced",
+      "mode": "Classroom + Online",
+      "tagline": "Build responsive & dynamic websites from scratch",
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=80",
-      "description": "Learn to build modern, responsive and dynamic websites using HTML, CSS, JavaScript, React and Node.js. Work on real-world projects and develop the skills needed to become a professional web developer."
+      "description": "Web Development is the skill of creating websites and web applications that people use every day — from college websites and online shops to booking portals. In this course you start from the very basics (how a web page is made) and move step-by-step to building complete, live websites with a real database behind them.",
+      "easyExplanation": "Think of a website like a house. HTML is the structure (walls & rooms), CSS is the paint & interior design, JavaScript is the electricity that makes things work, and Node.js is the water tank & wiring hidden behind the walls that supplies everything.",
+      "tools": [
+        "HTML5",
+        "CSS3",
+        "Bootstrap",
+        "JavaScript",
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Git & GitHub",
+        "VS Code"
+      ],
+      "syllabus": [
+        {
+          "title": "Web Fundamentals",
+          "description": "How the internet works, browsers, domains, hosting, client vs server"
+        },
+        {
+          "title": "HTML5",
+          "description": "Page structure, text, links, images, tables, forms, semantic tags"
+        },
+        {
+          "title": "CSS3 & Responsive Design",
+          "description": "Colours, fonts, Box Model, Flexbox, Grid, media queries, animations"
+        },
+        {
+          "title": "Bootstrap",
+          "description": "Grid system, ready components, building mobile-friendly layouts fast"
+        },
+        {
+          "title": "JavaScript",
+          "description": "Variables, loops, functions, DOM, events, ES6+, fetch & APIs"
+        },
+        {
+          "title": "React.js",
+          "description": "Components, props, state, hooks, routing, building single-page apps"
+        },
+        {
+          "title": "Node.js & Database",
+          "description": "Server basics, Express, REST APIs, MongoDB / MySQL connection"
+        },
+        {
+          "title": "Git, Hosting & Deployment",
+          "description": "Git & GitHub, domain setup, deploying a live website"
+        }
+      ],
+      "projects": [
+        "Personal portfolio website",
+        "Restaurant / coaching landing page",
+        "To-do & weather app using APIs",
+        "Mini e-commerce website (final project)"
+      ],
+      "careers": [
+        "Web Developer",
+        "Frontend Developer",
+        "WordPress / Web Designer",
+        "Junior Full Stack Developer",
+        "Freelance Web Developer"
+      ],
+      "whoShouldJoin": "B.Tech, BCA, MCA, B.Sc (IT/CS) students, 12th-pass students & anyone who wants to build websites."
     },
     {
       "id": 2,
+      "courseNumber": "02 / 08",
+      "pageNumber": 6,
       "title": "App Development",
       "duration": "4-5 Months",
+      "level": "Beginner to Intermediate",
+      "mode": "Classroom + Online",
+      "tagline": "Learn modern tools & technologies to build powerful mobile applications",
       "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop&q=80",
-      "description": "Learn to design and develop mobile applications with modern development tools and technologies. Understand app architecture, user interfaces, APIs and practical application development through hands-on projects."
+      "description": "Every business today wants its own mobile app. In this course you learn to design and build Android & iOS apps using modern cross-platform technology — one code, two platforms. You will build apps with login, lists, maps, notifications and online data, and learn how apps are published on the Play Store.",
+      "easyExplanation": "A mobile app is like a shop in your pocket. The screens you see are the shop counter, the logic is the shopkeeper who takes your order, and the backend / Firebase is the godown where all the stock (data) is safely kept.",
+      "tools": [
+        "React Native",
+        "Flutter (intro)",
+        "JavaScript",
+        "Firebase",
+        "Android Studio",
+        "Expo",
+        "Figma",
+        "Git"
+      ],
+      "syllabus": [
+        {
+          "title": "App Basics & Setup",
+          "description": "How mobile apps work, Android vs iOS, native vs cross-platform, tool setup"
+        },
+        {
+          "title": "Programming Foundation",
+          "description": "JavaScript / Dart essentials — variables, functions, OOP concepts"
+        },
+        {
+          "title": "UI Design for Mobile",
+          "description": "Layouts, widgets / components, styling, themes, responsive screens"
+        },
+        {
+          "title": "Navigation & State",
+          "description": "Multi-screen apps, passing data, state management basics"
+        },
+        {
+          "title": "APIs & Networking",
+          "description": "Fetching live data from internet, JSON, displaying lists"
+        },
+        {
+          "title": "Firebase & Storage",
+          "description": "User login / signup, cloud database, local storage, push notifications"
+        },
+        {
+          "title": "Device Features",
+          "description": "Camera, gallery, location & maps, permissions"
+        },
+        {
+          "title": "Testing & Publishing",
+          "description": "Debugging, building APK / App Bundle, Play Store publishing process"
+        }
+      ],
+      "projects": [
+        "Calculator & notes app",
+        "News / weather app using live API",
+        "Chat or food-ordering app with Firebase",
+        "Final app ready for Play Store"
+      ],
+      "careers": [
+        "Mobile App Developer",
+        "React Native Developer",
+        "Android Developer (Junior)",
+        "UI Developer",
+        "Freelance App Developer"
+      ],
+      "whoShouldJoin": "B.Tech, BCA, MCA, M.Tech students & developers who want to move into mobile app development."
     },
     {
       "id": 3,
+      "courseNumber": "03 / 08",
+      "pageNumber": 7,
       "title": "Digital Marketing",
       "duration": "3 Months",
+      "level": "Beginner Friendly",
+      "mode": "Classroom + Online",
+      "tagline": "Grow brands. Reach audiences. Get results.",
       "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
-      "description": "Explore SEO, social media marketing, content marketing, email marketing and paid advertising. Learn how to create effective digital campaigns, reach target audiences and measure marketing performance."
+      "description": "Digital Marketing is how businesses find customers online — through Google, Instagram, Facebook, YouTube and email. This course teaches you how to bring a website to the top of Google, run paid ads, grow social media pages and measure results. It is ideal for both tech and non-tech students, and also for business owners.",
+      "easyExplanation": "Imagine you open a new shop. SEO is getting your shop onto the main road so people naturally walk in, Google / Meta Ads are paid hoardings, Social Media is word-of-mouth, and Analytics is the register that tells you who came and who bought.",
+      "tools": [
+        "Google Ads",
+        "Meta Ads Manager",
+        "Google Analytics",
+        "Search Console",
+        "WordPress",
+        "Canva",
+        "SEMrush"
+      ],
+      "syllabus": [
+        {
+          "title": "Marketing Fundamentals",
+          "description": "Digital vs traditional marketing, customer journey, funnels"
+        },
+        {
+          "title": "Website & WordPress Basics",
+          "description": "Creating a simple business website / landing page"
+        },
+        {
+          "title": "SEO",
+          "description": "Keyword research, on-page & off-page SEO, technical SEO, local SEO"
+        },
+        {
+          "title": "Social Media Marketing",
+          "description": "Instagram, Facebook, LinkedIn, YouTube — content & growth strategy"
+        },
+        {
+          "title": "Google Ads",
+          "description": "Search, display & YouTube ads, bidding, budget, conversion tracking"
+        },
+        {
+          "title": "Meta Ads",
+          "description": "Facebook & Instagram ads, audience targeting, lead generation"
+        },
+        {
+          "title": "Content & Email Marketing",
+          "description": "Copywriting, blogs, Canva creatives, email campaigns"
+        },
+        {
+          "title": "Analytics & Reporting",
+          "description": "Google Analytics, Search Console, reports, ROI measurement"
+        }
+      ],
+      "projects": [
+        "SEO audit of a real website",
+        "Social media calendar for a brand",
+        "Live Google / Meta ad campaign (demo budget)",
+        "Complete digital marketing plan"
+      ],
+      "careers": [
+        "Digital Marketing Executive",
+        "SEO Specialist",
+        "Social Media Manager",
+        "PPC / Ads Executive",
+        "Freelancer / Agency Owner"
+      ],
+      "whoShouldJoin": "Any graduate or student — B.Tech, BCA, BBA, B.Com, MBA — business owners & freelancers."
     },
     {
       "id": 4,
+      "courseNumber": "04 / 08",
+      "pageNumber": 8,
       "title": "Python Programming",
       "duration": "2-3 Months",
+      "level": "Beginner to Advanced",
+      "mode": "Classroom + Online",
+      "tagline": "Learn Python from basics to advanced & build real-world projects",
       "image": "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800&auto=format&fit=crop&q=80",
-      "description": "Build a strong programming foundation with Python. Learn variables, data types, loops, functions, object-oriented programming and practical problem-solving through coding exercises and projects."
+      "description": "Python is the world's most popular and easiest programming language to start with. It is used in web development, data analysis, AI / Machine Learning, automation and much more. This course builds a strong programming foundation — logic building, problem solving and object-oriented thinking — which helps in college exams, placements and interviews.",
+      "easyExplanation": "Python is like simple English for computers. Instead of writing long, complex code, you write short, readable instructions — like giving clear directions to a friend. That is why it is the first language most companies and colleges recommend.",
+      "tools": [
+        "Python 3",
+        "VS Code",
+        "PyCharm",
+        "Jupyter Notebook",
+        "NumPy",
+        "Pandas",
+        "Flask (intro)",
+        "Git"
+      ],
+      "syllabus": [
+        {
+          "title": "Python Basics",
+          "description": "Installation, variables, data types, input/output, operators"
+        },
+        {
+          "title": "Control Flow",
+          "description": "If-else, loops, break / continue, pattern & logic-building programs"
+        },
+        {
+          "title": "Data Structures",
+          "description": "Strings, lists, tuples, sets, dictionaries & their methods"
+        },
+        {
+          "title": "Functions & Modules",
+          "description": "User-defined functions, lambda, recursion, packages, pip"
+        },
+        {
+          "title": "OOP in Python",
+          "description": "Classes, objects, inheritance, polymorphism, encapsulation"
+        },
+        {
+          "title": "File & Error Handling",
+          "description": "Reading / writing files, CSV, JSON, exceptions"
+        },
+        {
+          "title": "Advanced Python",
+          "description": "Iterators, generators, decorators, regex, working with APIs"
+        },
+        {
+          "title": "Libraries & Next Steps",
+          "description": "Intro to NumPy, Pandas, Flask / Django, automation scripts"
+        }
+      ],
+      "projects": [
+        "Student management system",
+        "Quiz / game application",
+        "File organiser & automation script",
+        "Mini project with Flask or data analysis"
+      ],
+      "careers": [
+        "Python Developer",
+        "Automation Engineer (Junior)",
+        "Backend Developer (Python)",
+        "Foundation for Data Science / AI roles"
+      ],
+      "whoShouldJoin": "Best first course for B.Tech (all branches), BCA, MCA, M.Tech & B.Sc students — no coding background needed."
     },
     {
       "id": 5,
+      "courseNumber": "05 / 08",
+      "pageNumber": 9,
       "title": "Frontend Technologies",
       "duration": "3 Months",
+      "level": "Beginner to Intermediate",
+      "mode": "Classroom + Online",
+      "tagline": "Design beautiful, responsive & user-friendly interfaces",
       "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&auto=format&fit=crop&q=80",
-      "description": "Learn to create attractive and responsive user interfaces using HTML, CSS, JavaScript and React. Understand component-based development, responsive layouts and modern frontend practices."
+      "description": "Frontend is everything a user sees and clicks on a website or web app — buttons, menus, forms, animations and layouts. This course focuses deeply on creating attractive, fast and mobile-friendly user interfaces, and ends with React, the most in-demand frontend library in the job market today.",
+      "easyExplanation": "If a website is a car, the frontend is the body, dashboard, seats and steering — everything the driver sees and touches. A good frontend developer makes the car look beautiful and feel easy to drive.",
+      "tools": [
+        "HTML5",
+        "CSS3",
+        "Bootstrap 5",
+        "JavaScript",
+        "React",
+        "Figma",
+        "Chrome DevTools",
+        "Netlify / Vercel"
+      ],
+      "syllabus": [
+        {
+          "title": "HTML5 In-Depth",
+          "description": "Semantic structure, forms, media, accessibility basics, SEO-friendly markup"
+        },
+        {
+          "title": "CSS3 Mastery",
+          "description": "Selectors, Flexbox, Grid, positioning, transitions & animations"
+        },
+        {
+          "title": "Responsive Web Design",
+          "description": "Mobile-first approach, media queries, testing on all devices"
+        },
+        {
+          "title": "Bootstrap 5",
+          "description": "Grid, navbar, cards, modals, forms — rapid professional layouts"
+        },
+        {
+          "title": "JavaScript for UI",
+          "description": "DOM manipulation, events, form validation, sliders, ES6+"
+        },
+        {
+          "title": "React.js",
+          "description": "JSX, components, props, state, hooks, React Router"
+        },
+        {
+          "title": "APIs & UI Integration",
+          "description": "Fetching data, loading states, dynamic lists & search"
+        },
+        {
+          "title": "UI/UX Basics & Deployment",
+          "description": "Design principles, Figma to code, Netlify / Vercel hosting"
+        }
+      ],
+      "projects": [
+        "Responsive landing page clone",
+        "Image gallery / slider",
+        "Movie or product search app in React",
+        "Admin dashboard UI"
+      ],
+      "careers": [
+        "Frontend Developer",
+        "React Developer",
+        "UI Developer",
+        "Web Designer"
+      ],
+      "whoShouldJoin": "Students with creative interest — B.Tech, BCA, MCA, B.Sc, Diploma & design-minded learners."
     },
     {
       "id": 6,
+      "courseNumber": "06 / 08",
+      "pageNumber": 10,
       "title": "Backend Technologies",
       "duration": "3 Months",
+      "level": "Intermediate",
+      "mode": "Classroom + Online",
+      "tagline": "Build robust APIs & scalable server-side applications",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80",
-      "description": "Learn server-side development using Node.js, Express.js and MongoDB. Understand REST APIs, database operations, authentication and backend application architecture through practical projects."
+      "description": "Backend is the hidden engine of every application — it handles login, payments, data storage and business logic. This course teaches you to build secure servers and REST APIs using Node.js and Express.js, connect databases, and deploy applications to the cloud, just like real software companies do.",
+      "easyExplanation": "In a restaurant, the frontend is the dining area and menu. The backend is the kitchen: it receives your order (request), prepares it using ingredients from the store (database), and sends the dish back (response). The API is the waiter carrying orders between the two.",
+      "tools": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "MySQL",
+        "Postman",
+        "JWT",
+        "Git & GitHub",
+        "Render / AWS"
+      ],
+      "syllabus": [
+        {
+          "title": "Backend Fundamentals",
+          "description": "Client-server model, HTTP, request / response, JSON, REST"
+        },
+        {
+          "title": "Node.js Core",
+          "description": "Modules, npm, file system, events, asynchronous programming"
+        },
+        {
+          "title": "Express.js",
+          "description": "Routing, middleware, controllers, MVC project structure"
+        },
+        {
+          "title": "Databases",
+          "description": "MongoDB with Mongoose, MySQL basics, CRUD operations, relations"
+        },
+        {
+          "title": "Authentication & Security",
+          "description": "Signup / login, JWT, password hashing, roles, validation"
+        },
+        {
+          "title": "Advanced APIs",
+          "description": "File uploads, pagination, email, payment gateway integration (intro)"
+        },
+        {
+          "title": "Testing & Tools",
+          "description": "Postman, error handling, logging, environment variables"
+        },
+        {
+          "title": "Deployment",
+          "description": "Git, cloud hosting (Render / AWS basics), connecting frontend"
+        }
+      ],
+      "projects": [
+        "REST API for a blog",
+        "User authentication system",
+        "Student / inventory management API",
+        "E-commerce backend with orders"
+      ],
+      "careers": [
+        "Backend Developer",
+        "Node.js Developer",
+        "API Developer",
+        "Junior Full Stack Developer"
+      ],
+      "whoShouldJoin": "Students who know basic programming — B.Tech, BCA, MCA, M.Tech & frontend learners moving ahead."
     },
     {
       "id": 7,
+      "courseNumber": "07 / 08",
+      "pageNumber": 11,
       "title": "Full Stack Developer",
       "duration": "6-8 Months",
+      "level": "Beginner to Job-Ready",
+      "mode": "Classroom + Online",
+      "tagline": "Master both frontend & backend and become a complete developer",
       "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop&q=80",
-      "description": "Become familiar with both frontend and backend development using the MERN stack. Build complete web applications with React, Node.js, Express.js and MongoDB while learning APIs, authentication and deployment."
+      "description": "Full Stack Development is our most complete, job-oriented program. You learn the entire journey of building an application — design, frontend, backend, database and deployment — using the popular MERN stack (MongoDB, Express, React, Node). By the end, you can build and launch a complete product on your own, which is exactly what start-ups and IT companies look for.",
+      "easyExplanation": "A full stack developer is like a building contractor who can handle everything — the design, the construction, the plumbing and the handover. Companies value such developers because one person can take a project from idea to launch.",
+      "tools": [
+        "HTML/CSS",
+        "JavaScript",
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "MySQL",
+        "Git",
+        "Postman",
+        "VS Code"
+      ],
+      "syllabus": [
+        {
+          "title": "Web Foundations",
+          "description": "HTML5, CSS3, Flexbox, Grid, responsive design, Bootstrap"
+        },
+        {
+          "title": "JavaScript Deep Dive",
+          "description": "Core JS, ES6+, DOM, async/await, APIs, problem solving"
+        },
+        {
+          "title": "React.js",
+          "description": "Components, hooks, routing, state management, forms"
+        },
+        {
+          "title": "Node.js & Express.js",
+          "description": "Server setup, REST APIs, middleware, MVC architecture"
+        },
+        {
+          "title": "MongoDB & SQL",
+          "description": "Schema design, CRUD, aggregation, relations"
+        },
+        {
+          "title": "Auth & Security",
+          "description": "JWT, protected routes, role-based access, best practices"
+        },
+        {
+          "title": "Git, Deployment & DevOps Basics",
+          "description": "GitHub, CI basics, hosting frontend & backend, domains"
+        },
+        {
+          "title": "Capstone & Interview Prep",
+          "description": "Full product build, DSA basics, mock interviews, resume"
+        }
+      ],
+      "projects": [
+        "Portfolio + blog platform",
+        "Job portal or social media app",
+        "E-commerce app with cart & payment",
+        "Capstone project (live on internet)"
+      ],
+      "careers": [
+        "Full Stack Developer",
+        "MERN Stack Developer",
+        "Software Engineer",
+        "Frontend / Backend Developer"
+      ],
+      "whoShouldJoin": "Final-year & passed-out B.Tech, BCA, MCA, M.Tech students and career switchers aiming for IT jobs."
     },
     {
       "id": 8,
+      "courseNumber": "08 / 08",
+      "pageNumber": 12,
       "title": "Data Analyst",
       "duration": "4-5 Months",
+      "level": "Beginner to Advanced",
+      "mode": "Classroom + Online",
+      "tagline": "Turn data into insights & drive smart decisions",
       "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
-      "description": "Learn to collect, clean, analyze and visualize data using Excel, SQL, Python and data visualization tools. Develop analytical thinking and practical skills to turn raw data into meaningful insights."
+      "description": "Every company collects huge amounts of data — sales, customers, website visits. A Data Analyst cleans this data, finds patterns and presents clear reports that help managers take better decisions. This course covers Excel, SQL, Python and Power BI — the exact toolkit asked for in data analyst job descriptions.",
+      "easyExplanation": "A data analyst is like a detective. The data is the pile of clues, Excel & SQL help you collect and sort the clues, Python helps you investigate, and Power BI dashboards are the final report you present to solve the case.",
+      "tools": [
+        "MS Excel",
+        "SQL (MySQL)",
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Power BI",
+        "Tableau (intro)",
+        "Jupyter"
+      ],
+      "syllabus": [
+        {
+          "title": "Data Analytics Basics",
+          "description": "Types of data, analytics life-cycle, roles in the data field"
+        },
+        {
+          "title": "Advanced Excel",
+          "description": "Formulas, lookups, pivot tables, charts, dashboards"
+        },
+        {
+          "title": "Statistics for Analysis",
+          "description": "Mean, median, variance, probability, correlation, sampling"
+        },
+        {
+          "title": "SQL",
+          "description": "Queries, filters, joins, group by, sub-queries, window functions"
+        },
+        {
+          "title": "Python for Data",
+          "description": "NumPy, Pandas — data collection, cleaning & transformation"
+        },
+        {
+          "title": "Data Visualization",
+          "description": "Matplotlib, Seaborn — charts that tell a story"
+        },
+        {
+          "title": "Power BI / Tableau",
+          "description": "Data modelling, DAX basics, interactive dashboards"
+        },
+        {
+          "title": "Case Studies & Capstone",
+          "description": "Real business datasets, insights report, presentation skills"
+        }
+      ],
+      "projects": [
+        "Sales dashboard in Excel",
+        "SQL analysis of an e-commerce database",
+        "Data cleaning & EDA with Python",
+        "Power BI business dashboard (capstone)"
+      ],
+      "careers": [
+        "Data Analyst",
+        "Business Analyst",
+        "MIS Executive",
+        "Power BI Developer",
+        "Junior Data Scientist (path)"
+      ],
+      "whoShouldJoin": "B.Tech, BCA, MCA, M.Tech, B.Sc, B.Com, BBA & MBA students — anyone who likes numbers & logic."
     }
+  ],
+  "courseIncludes": [
+    "Certificate",
+    "Live Projects",
+    "Placement Help",
+    "Doubt Sessions"
   ]
 }
