@@ -1,45 +1,52 @@
 
 {
-  "badge": "Live Now",
-  "title": "Upcoming",
-  "highlight": "Live Classes",
-  "subtitle": "Join our expert-led live sessions — completely free!",
-  "columns": {
-    "course": "Course",
-    "date": "Date",
-    "seats": "Seats Left",
-    "action": "Action"
-  },
-  "classes": [
+  "badge": "LEARN BY DOING",
+  "title": "More Than Just",
+  "highlight": "Classroom Learning",
+  "subtitle": "Learn concepts, practise daily, build real-world projects and get ready for your career.",
+  "steps": [
     {
       "id": 1,
-      "course": "Full Stack Development",
-      "date": "Sat, Nov 21, 2026",
-      "seats": 32
+      "number": "01",
+      "title": "Learn",
+      "description": "Understand concepts through live coding sessions, simple explanations and real-world examples.",
+      "frequency": "Concept Classes",
+      "icon": "BookOpen"
     },
     {
       "id": 2,
-      "course": "Data Science with Python",
-      "date": "Mon, Nov 23, 2026",
-      "seats": 8
+      "number": "02",
+      "title": "Practice",
+      "description": "Strengthen your skills with hands-on lab work, coding exercises and daily assignments.",
+      "frequency": "Daily Practice",
+      "icon": "Code"
     },
     {
       "id": 3,
-      "course": "Cloud & DevOps",
-      "date": "Wed, Nov 25, 2026",
-      "seats": 15
+      "number": "03",
+      "title": "Build",
+      "description": "Apply what you learn by creating mini-projects and real-world applications.",
+      "frequency": "Weekly Projects",
+      "icon": "FolderKanban"
     },
     {
       "id": 4,
-      "course": "Generative AI & LLMs",
-      "date": "Fri, Nov 27, 2026",
-      "seats": 6
-    },
-    {
-      "id": 5,
-      "course": "Digital Marketing",
-      "date": "Sat, Nov 28, 2026",
-      "seats": 5
+      "number": "04",
+      "title": "Review",
+      "description": "Track your progress through regular tests, code reviews and mentor-led doubt sessions.",
+      "frequency": "Regular Assessment",
+      "icon": "ClipboardCheck"
     }
-  ]
+  ],
+  "features": [
+    "Classroom & Online Learning",
+    "Morning, Evening & Weekend Batches",
+    "Hindi + English Teaching",
+    "Small Batches & Personal Attention"
+  ],
+  "cta": {
+    "title": "Ready to Start Your Learning Journey?",
+    "description": "Visit Prime Webdynamics for a free demo class and career counselling session.",
+    "buttonText": "Book Free Demo Class"
+  }
 }

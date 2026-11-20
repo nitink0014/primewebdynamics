@@ -1,116 +1,57 @@
+
 {
-  "badge": "Success Stories",
-  "title": "Real Career",
-  "highlight": "Outcomes",
-  "subtitle": "See how our students transformed their careers and salaries",
-  "students": [
+  "badge": "CAREER DEVELOPMENT",
+  "title": "Your Career,",
+  "highlight": "Our Support",
+  "subtitle": "We help you prepare for opportunities with practical career guidance and placement assistance.",
+  "supportServices": [
     {
       "id": 1,
-      "name": "Kishan Gupta",
-      "role": "Software Developer",
-      "image": "/images/success-stories/student-1.webp",
-      "course": ".Net",
-      "package": "2 LPA",
-      "company": "Webcity Technologies LLP"
+      "number": "01",
+      "title": "Resume Building",
+      "description": "Create an ATS-friendly resume that highlights your technical skills, projects and achievements.",
+      "icon": "FileUser"
     },
     {
       "id": 2,
-      "name": "Amlesh Kumar Gupta",
-      "role": "Software Developer",
-      "image": "/images/success-stories/student-2.webp",
-      "course": "React",
-      "package": "3 LPA",
-      "company": "BIZBLOCK INFOTECH"
+      "number": "02",
+      "title": "Mock Interviews",
+      "description": "Prepare for technical and HR interviews with practice sessions and feedback.",
+      "icon": "MessagesSquare"
     },
     {
       "id": 3,
-      "name": "Pranav Mittal",
-      "role": "Software Developer",
-      "image": "/images/success-stories/student-3.webp",
-      "course": "Mobile Application Development",
-      "package": "5 LPA/-",
-      "company": "NovelVOX"
+      "number": "03",
+      "title": "Portfolio & GitHub",
+      "description": "Build a professional GitHub, LinkedIn profile and project portfolio to showcase your work.",
+      "icon": "FolderGit2"
     },
     {
       "id": 4,
-      "name": "Ankit Chaudhary",
-      "role": "Python Developer",
-      "image": "/images/success-stories/student-4.webp",
-      "course": "Python",
-      "package": "N/A",
-      "company": "Uni Cloud.Co"
+      "number": "04",
+      "title": "Aptitude & Logic",
+      "description": "Improve your aptitude, reasoning and coding skills for recruitment assessments.",
+      "icon": "Brain"
     },
     {
       "id": 5,
-      "name": "Yashika",
-      "role": "Data Analyst",
-      "image": "/images/success-stories/student-5.webp",
-      "course": "Data analytics with AI",
-      "package": "N/A",
-      "company": "Tech Solutions"
+      "number": "05",
+      "title": "Job & Internship Support",
+      "description": "Get information about relevant job openings, internship opportunities and referrals.",
+      "icon": "BriefcaseBusiness"
     },
     {
       "id": 6,
-      "name": "Abhay Singh",
-      "role": "Android developer",
-      "image": "/images/success-stories/student-6.webp",
-      "course": "Android",
-      "package": "2 LPA",
-      "company": "App mingle media"
-    },
-    {
-      "id": 7,
-      "name": "Rahul Sharma",
-      "role": "Full Stack Developer",
-      "image": "/images/success-stories/student-7.webp",
-      "course": "Full Stack Development",
-      "package": "4 LPA",
-      "company": "Digital Works"
-    },
-    {
-      "id": 8,
-      "name": "Priya Verma",
-      "role": "UI/UX Designer",
-      "image": "/images/success-stories/student-8.webp",
-      "course": "UI/UX Designing",
-      "package": "3.5 LPA",
-      "company": "Creative Studio"
-    },
-    {
-      "id": 9,
-      "name": "Aman Kumar",
-      "role": "Data Analyst",
-      "image": "/images/success-stories/student-9.webp",
-      "course": "Data Analytics",
-      "package": "4 LPA",
-      "company": "Analytics Hub"
-    },
-    {
-      "id": 10,
-      "name": "Neha Singh",
-      "role": "Digital Marketer",
-      "image": "/images/success-stories/student-10.webp",
-      "course": "Digital Marketing",
-      "package": "3 LPA",
-      "company": "Growth Media"
-    },
-    {
-      "id": 11,
-      "name": "Rohit Mehta",
-      "role": "Java Developer",
-      "image": "/images/success-stories/student-11.webp",
-      "course": "Java Full Stack",
-      "package": "5 LPA",
-      "company": "WebTech Solutions"
-    },
-    {
-      "id": 12,
-      "name": "Sneha Gupta",
-      "role": "Python Developer",
-      "image": "/images/success-stories/student-12.webp",
-      "course": "Python Programming",
-      "package": "3.2 LPA",
-      "company": "Innovate Technologies"
+      "number": "06",
+      "title": "Soft Skills",
+      "description": "Develop communication, presentation and interview confidence for your professional journey.",
+      "icon": "UsersRound"
     }
-  ]
+  ],
+  "footer": {
+    "title": "Take the Next Step Towards Your Career",
+    "description": "Learn industry-relevant skills, build real projects and prepare for your next opportunity.",
+    "buttonText": "Talk to Our Team",
+    "phone": "+917902170568"
+  }
 }

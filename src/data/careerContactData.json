@@ -11,9 +11,9 @@
       "type": "call",
       "title": "Call us",
       "description": "Speak to our career counsellor",
-      "value": "70-70-90-50-90",
+      "value": "+91 7902170568",
       "buttonText": "Call Now",
-      "link": "tel:7070905090",
+      "link": "tel:+917902170568",
       "iconColor": "#4774ff",
       "iconBackground": "#e0e6fa",
       "buttonColor": "#ff6429"
@@ -25,7 +25,7 @@
       "description": "Get instant support via chat",
       "value": "Chat Now",
       "buttonText": "Start Chat",
-      "link": "#contact",
+      "link": "https://wa.me/917902170568?text=Hi%2C%20I%20want%20to%20know%20more%20about%20your%20courses.",
       "iconColor": "#08a94e",
       "iconBackground": "#d9eee5",
       "buttonColor": "#13a34a"

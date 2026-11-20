@@ -1,45 +1,11 @@
 
 import { useState } from "react";
-import {
-  Phone,
-  Mail,
-  MessageCircle,
-  Send,
-  ExternalLink,
-} from "lucide-react";
-
-const branches = [
-  {
-    name: "Noida Sector 16",
-    phone: "7070905090",
-    whatsapp: "9999993213",
-    email: "hello@primewebdynamics.com",
-    address: "A-43 & A-52, Noida Sector 16, Uttar Pradesh, India",
-  },
-  {
-    name: "Sector 63, Noida",
-    phone: "7070905090",
-    whatsapp: "7042175774",
-    email: "hello@primewebdynamics.com",
-    address: "H-43, Sector 63, Noida, Uttar Pradesh, India",
-  },
-  {
-    name: "South Ex.",
-    phone: "7070905090",
-    whatsapp: "9899866334",
-    email: "hello@primewebdynamics.com",
-    address: "D-27, South Extension-1, New Delhi, India",
-  },
-  {
-    name: "Noida Extension",
-    phone: "7070905090",
-    whatsapp: "7289886655",
-    email: "hello@primewebdynamics.com",
-    address: "TechZone 4, Greater Noida West, Uttar Pradesh, India",
-  },
-];
+import { Send, ExternalLink } from "lucide-react";
+import contact from "../data/contact.json";
 
 function Contact() {
+  const { hero, form, courses, branches, branchesSection, map } = contact;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -72,19 +38,16 @@ function Contact() {
     e.preventDefault();
 
     const newErrors = {};
-
-    // Name validation
-    if (!formData.name.trim()) {
-      newErrors.name = "Please enter your name";
-    }
-
-    // Phone validation
     const phone = formData.phone.replace(/\D/g, "");
 
+    if (!formData.name.trim()) {
+      newErrors.name = form.validation.nameRequired;
+    }
+
     if (!phone) {
-      newErrors.phone = "Please enter your phone number";
+      newErrors.phone = form.validation.phoneRequired;
     } else if (phone.length !== 10) {
-      newErrors.phone = "Phone number must be exactly 10 digits";
+      newErrors.phone = form.validation.phoneInvalid;
     }
 
     setErrors(newErrors);
@@ -121,63 +84,57 @@ function Contact() {
       <section
         className="relative flex min-h-[440px] items-center justify-center bg-cover bg-center px-5 text-center"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(8, 25, 55, 0.78), rgba(8, 25, 55, 0.78)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1920&q=85')",
+          backgroundImage: `linear-gradient(rgba(8, 25, 55, 0.78), rgba(8, 25, 55, 0.78)), url('${hero.backgroundImage}')`,
         }}
       >
         <div>
           <h1 className="text-5xl font-extrabold text-white sm:text-6xl">
-            Contact Us
+            {hero.title}
           </h1>
 
           <p className="mt-5 text-base text-gray-200 sm:text-lg">
-            Talk to our team about courses, centres, admissions, and partnerships.
+            {hero.description}
           </p>
         </div>
       </section>
 
-      {/* CONTACT FORM SECTION */}
+      {/* CONTACT FORM */}
       <section className="px-4 py-12 sm:px-8 sm:py-16">
-
         <div className="mx-auto max-w-[1010px] rounded-[22px] bg-white px-5 py-10 shadow-[0_15px_50px_rgba(0,0,0,0.08)] sm:px-10 md:px-14">
 
           <div className="mb-7 text-center">
             <h2 className="text-3xl font-bold text-[#24538d] sm:text-4xl">
-              Send Us a Message
+              {form.title}
             </h2>
 
             <p className="mx-auto mt-3 max-w-3xl text-sm leading-6 text-[#64748b] sm:text-base">
-              For further details, including questions and partnership
-              opportunities, please email{" "}
+              {form.description}{" "}
               <a
-                href="mailto:hello@primewebdynamics.com"
+                href={`mailto:${form.email}`}
                 className="font-bold text-black"
               >
-                hello@primewebdynamics.com
+                {form.emailText}
               </a>{" "}
               or use our contact form.
             </p>
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            noValidate
-            className="space-y-4"
-          >
+          <form onSubmit={handleSubmit} noValidate className="space-y-4">
 
             {/* NAME AND EMAIL */}
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-
-              {/* Name - Required */}
               <div>
                 <label className={labelStyle}>
-                  Name<span className="text-red-500">*</span>
+                  {form.fields.name.label}
+                  {form.fields.name.required && (
+                    <span className="text-red-500">*</span>
+                  )}
                 </label>
 
                 <input
                   type="text"
                   name="name"
-                  placeholder="Name"
+                  placeholder={form.fields.name.placeholder}
                   value={formData.name}
                   onChange={handleChange}
                   className={inputStyle}
@@ -190,37 +147,36 @@ function Contact() {
                 )}
               </div>
 
-              {/* Email - Optional */}
               <div>
                 <label className={labelStyle}>
-                  Email
+                  {form.fields.email.label}
                 </label>
 
                 <input
                   type="email"
                   name="email"
-                  placeholder="Email Address"
+                  placeholder={form.fields.email.placeholder}
                   value={formData.email}
                   onChange={handleChange}
                   className={inputStyle}
                 />
               </div>
-
             </div>
 
             {/* PHONE, CENTER, COURSE */}
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-
-              {/* Phone - Required */}
               <div>
                 <label className={labelStyle}>
-                  Phone<span className="text-red-500">*</span>
+                  {form.fields.phone.label}
+                  {form.fields.phone.required && (
+                    <span className="text-red-500">*</span>
+                  )}
                 </label>
 
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="Phone Number"
+                  placeholder={form.fields.phone.placeholder}
                   value={formData.phone}
                   onChange={handleChange}
                   maxLength={10}
@@ -235,10 +191,9 @@ function Contact() {
                 )}
               </div>
 
-              {/* Center - Optional */}
               <div>
                 <label className={labelStyle}>
-                  Center / Branch
+                  {form.fields.center.label}
                 </label>
 
                 <select
@@ -247,18 +202,21 @@ function Contact() {
                   onChange={handleChange}
                   className={inputStyle}
                 >
-                  <option value="">Select Branch</option>
-                  <option value="Noida Sector 16">Noida Sector 16</option>
-                  <option value="Sector 63 Noida">Sector 63, Noida</option>
-                  <option value="South Extension">South Extension</option>
-                  <option value="Noida Extension">Noida Extension</option>
+                  <option value="">
+                    {form.fields.center.placeholder}
+                  </option>
+
+                  {branches.map((branch) => (
+                    <option key={branch.id} value={branch.name}>
+                      {branch.name}
+                    </option>
+                  ))}
                 </select>
               </div>
 
-              {/* Course - Optional */}
               <div>
                 <label className={labelStyle}>
-                  Course
+                  {form.fields.course.label}
                 </label>
 
                 <select
@@ -267,29 +225,29 @@ function Contact() {
                   onChange={handleChange}
                   className={inputStyle}
                 >
-                  <option value="">Select a Course</option>
-                  <option value="Full Stack Development">Full Stack Development</option>
-                  <option value="Data Analytics">Data Analytics</option>
-                  <option value="Business Analytics">Business Analytics</option>
-                  <option value="Python Development">Python Development</option>
-                  <option value="Java Development">Java Development</option>
-                  <option value="MERN Stack">MERN Stack</option>
-                  <option value="Digital Marketing">Digital Marketing</option>
+                  <option value="">
+                    {form.fields.course.placeholder}
+                  </option>
+
+                  {courses.map((course) => (
+                    <option key={course} value={course}>
+                      {course}
+                    </option>
+                  ))}
                 </select>
               </div>
-
             </div>
 
-            {/* MESSAGE - Optional */}
+            {/* MESSAGE */}
             <div>
               <label className={labelStyle}>
-                How can we help you?
+                {form.fields.message.label}
               </label>
 
               <textarea
                 name="message"
                 rows="4"
-                placeholder="Message..."
+                placeholder={form.fields.message.placeholder}
                 value={formData.message}
                 onChange={handleChange}
                 className={`${inputStyle} resize-y`}
@@ -298,50 +256,42 @@ function Contact() {
 
             {/* SUBMIT */}
             <div className="pt-4 text-center">
-
               <button
                 type="submit"
                 className="flex w-full items-center justify-center gap-2 rounded-md bg-gradient-to-r from-[#39446e] to-[#171c31] px-6 py-4 text-sm font-bold uppercase text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
               >
-                Send Message
+                {form.submitButton}
                 <Send size={17} />
               </button>
 
               {submitted && (
                 <p className="mt-4 text-sm font-semibold text-green-600">
-                  Thank you! Your enquiry has been submitted successfully.
+                  {form.successMessage}
                 </p>
               )}
-
             </div>
-
           </form>
         </div>
       </section>
 
       {/* OUR BRANCHES */}
       <section className="bg-[#f4f8fc] px-5 py-12 sm:px-10 sm:py-16">
-
         <div className="mx-auto max-w-[1400px]">
-
           <h2 className="mb-10 text-center text-4xl font-bold text-[#245b9c] sm:text-5xl">
-            Our Branches
+            {branchesSection.title}
           </h2>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-
-            {branches.map((branch, index) => (
+            {branches.map((branch) => (
               <div
-                key={index}
+                key={branch.id}
                 className="min-h-[230px] rounded-xl bg-[#e2f1ff] px-8 py-8 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:px-12"
               >
-
                 <h3 className="mb-2 text-2xl font-bold text-[#24538d]">
                   {branch.name}
                 </h3>
 
                 <div className="space-y-2 text-base leading-6 text-gray-900">
-
                   <p>
                     Phone :{" "}
                     <a
@@ -364,47 +314,38 @@ function Contact() {
                     </a>
                   </p>
 
-                  <p>
-                    Email : {branch.email}
-                  </p>
+                  <p>Email : {branch.email}</p>
 
-                  <p>
-                    Address : {branch.address}
-                  </p>
-
+                  <p>Address : {branch.address}</p>
                 </div>
-
               </div>
             ))}
-
           </div>
         </div>
       </section>
 
       {/* GOOGLE MAP */}
       <section className="bg-[#f4f8fc] px-5 pb-14">
-
         <div className="mx-auto max-w-[1400px] overflow-hidden rounded-lg shadow-md">
-
           <div className="flex items-center justify-between bg-white px-4 py-3">
             <h3 className="font-semibold text-slate-800">
-              Find Our Location
+              {map.title}
             </h3>
 
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Noida+Sector+16+Uttar+Pradesh+India"
+              href={map.mapsLink}
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-1 text-sm font-semibold text-blue-600"
             >
-              Open in Maps
+              {map.buttonText}
               <ExternalLink size={15} />
             </a>
           </div>
 
           <iframe
-            title="Primewebdynamics Office Location"
-            src="https://maps.google.com/maps?q=Noida%20Sector%2016%2C%20Uttar%20Pradesh&t=&z=12&ie=UTF8&iwloc=&output=embed"
+            title={map.iframeTitle}
+            src={map.embedUrl}
             width="100%"
             height="450"
             style={{ border: 0 }}
@@ -412,40 +353,8 @@ function Contact() {
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"
           />
-
         </div>
       </section>
-
-      {/* FLOATING CONTACT BUTTONS */}
-      <div className="fixed right-0 top-[35%] z-50 flex flex-col gap-2 rounded-l-2xl bg-[#164c7e] p-2 shadow-xl">
-
-        <a
-          href="tel:+910000000000"
-          aria-label="Call us"
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-[#3188bd] text-white transition hover:scale-110"
-        >
-          <Phone size={21} />
-        </a>
-
-        <a
-          href="https://wa.me/910000000000"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="WhatsApp"
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-[#25D366] text-white transition hover:scale-110"
-        >
-          <MessageCircle size={22} />
-        </a>
-
-        <a
-          href="mailto:hello@primewebdynamics.com"
-          aria-label="Email us"
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-[#ff963f] text-white transition hover:scale-110"
-        >
-          <Mail size={21} />
-        </a>
-
-      </div>
 
     </div>
   );
