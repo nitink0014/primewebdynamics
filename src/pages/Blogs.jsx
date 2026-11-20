@@ -1,25 +1,13 @@
 
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { blogs } from "../data/blog";
+import blogsData from "../data/blogsData.json";
+
+const blogs = blogsData.blogs;
 
 const categories = [
   "All",
-  "Software Testing",
-  "Web Designing",
-  "PHP",
-  "Machine Learning",
-  "CCNA",
-  "AutoCAD",
-  "Summer Training",
-  "Data Analytics",
-  "Digital Marketing",
-  "Python",
-  "Mobile Application Development",
-  "Programming",
-  "Cloud Computing",
-  "Java",
-  "DevOps",
+  ...new Set(blogs.map((blog) => blog.category)),
 ];
 
 export default function Blogs() {
@@ -29,9 +17,11 @@ export default function Blogs() {
   // Search and category filtering
   const filteredBlogs = useMemo(() => {
     return blogs.filter((blog) => {
+      const searchTerm = search.toLowerCase().trim();
+
       const matchesSearch =
-        blog.title.toLowerCase().includes(search.toLowerCase()) ||
-        blog.description.toLowerCase().includes(search.toLowerCase());
+        blog.title.toLowerCase().includes(searchTerm) ||
+        blog.description.toLowerCase().includes(searchTerm);
 
       const matchesCategory =
         activeCategory === "All" ||
@@ -85,7 +75,7 @@ export default function Blogs() {
 
                   {/* Blog Image */}
                   <Link
-                    to={`/blogs/${blog.id}`}
+                    to={`/blogs/${blog.slug}`}
                     className="block h-[200px] overflow-hidden rounded-xl bg-blue-50"
                   >
                     <img
@@ -114,7 +104,7 @@ export default function Blogs() {
                     {/* Read More */}
                     <div className="mt-auto flex justify-end pt-5">
                       <Link
-                        to={`/blogs/${blog.id}`}
+                        to={`/blogs/${blog.slug}`}
                         className="font-semibold text-orange-500 transition hover:text-blue-800"
                       >
                         read more ...
