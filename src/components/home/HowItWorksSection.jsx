@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   UserRoundPlus,
   BookOpen,
@@ -6,6 +7,7 @@ import {
 } from "lucide-react";
 
 import howItWorksData from "../../data/howItWorksData.json";
+import AutoPopupForm from "./AutoPopupForm";
 
 const iconMap = {
   UserRoundPlus,
@@ -22,6 +24,8 @@ const colorMap = {
 };
 
 function HowItWorksSection() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   return (
     <section className="w-full bg-white px-5 pb-[60px] pt-[50px] font-sans sm:px-8 lg:px-0">
 
@@ -96,6 +100,7 @@ function HowItWorksSection() {
 
           <button
             type="button"
+            onClick={() => setIsPopupOpen(true)}
             className="flex h-[54px] items-center justify-center gap-2 rounded-[10px] bg-[#5099fa] px-[27px] text-[15px] font-bold text-white shadow-[0_7px_18px_rgba(80,153,250,0.12)] transition-all duration-300 ease-out hover:scale-105 hover:bg-[#ff821f] hover:shadow-[0_10px_22px_rgba(255,130,31,0.28)] active:scale-95"
           >
             {howItWorksData.buttonText}
@@ -105,6 +110,12 @@ function HowItWorksSection() {
         </div>
 
       </div>
+
+      {/* Existing Registration Popup */}
+      <AutoPopupForm
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+      />
 
     </section>
   );

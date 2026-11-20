@@ -1,20 +1,20 @@
 
 import { useParams, Link } from "react-router-dom";
-import { blogs } from "../data/blog";
+import blogsData from "../data/blogsData.json";
 
-const sections = [
-  { title: "Introduction", id: "introduction" },
-  { title: "Why Choose This Course?", id: "why-choose" },
-  { title: "Skills You Will Learn", id: "skills" },
-  { title: "Career Opportunities", id: "career" },
-  { title: "How to Choose the Right Institute", id: "institute" },
-  { title: "Conclusion", id: "conclusion" },
-];
+const blogs = blogsData.blogs;
+
+const createSectionId = (heading) =>
+  heading
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 
 export default function BlogDetails() {
-  const { id } = useParams();
+  const { slug } = useParams();
 
-  const blog = blogs.find((item) => item.id === Number(id));
+  // Find blog using its slug
+  const blog = blogs.find((item) => item.slug === slug);
 
   if (!blog) {
     return (
@@ -45,6 +45,16 @@ export default function BlogDetails() {
     )
     .slice(0, 3);
 
+  // Dynamic Table of Contents
+  const sections = [
+    { title: "Introduction", id: "introduction" },
+    ...(blog.sections || []).map((section) => ({
+      title: section.heading,
+      id: createSectionId(section.heading),
+    })),
+    { title: "Conclusion", id: "conclusion" },
+  ];
+
   return (
     <main className="min-h-screen bg-gray-50">
 
@@ -66,7 +76,7 @@ export default function BlogDetails() {
           </h1>
 
           <p className="mt-5 text-gray-300">
-            Explore useful insights, career guidance and learning opportunities.
+            {blog.description}
           </p>
 
         </div>
@@ -130,133 +140,79 @@ export default function BlogDetails() {
               </div>
 
               <span className="text-sm text-gray-500">
-                Technology & Learning
+                {blog.readTime || "Technology & Learning"}
               </span>
 
             </div>
 
-            {/* Blog Article */}
+            {/* Dynamic Blog Article */}
             <div className="mt-8 space-y-8 text-gray-700">
 
               {/* Introduction */}
-              <section id="introduction" className="scroll-mt-24">
+              <section
+                id="introduction"
+                className="scroll-mt-24"
+              >
 
                 <h2 className="text-2xl font-bold text-[#174f8e]">
                   Introduction
                 </h2>
 
                 <p className="mt-4 text-base leading-8">
-                  {blog.description} Technology is continuously evolving,
-                  and learning the right skills has become important
-                  for students and working professionals.
-                </p>
-
-                <p className="mt-4 text-base leading-8">
-                  Choosing the right training program can help you
-                  understand industry requirements, develop practical
-                  knowledge and prepare for professional opportunities.
+                  {blog.introduction || blog.description}
                 </p>
 
               </section>
 
-              {/* Why Choose */}
-              <section id="why-choose" className="scroll-mt-24">
+              {/* Dynamic Sections */}
+              {(blog.sections || []).map((section, index) => (
+                <section
+                  key={`${blog.id}-${index}`}
+                  id={createSectionId(section.heading)}
+                  className="scroll-mt-24"
+                >
 
-                <h2 className="text-2xl font-bold text-[#174f8e]">
-                  Why Choose This Course?
-                </h2>
+                  <h2 className="text-2xl font-bold text-[#174f8e]">
+                    {section.heading}
+                  </h2>
 
-                <p className="mt-4 leading-8">
-                  A structured learning program helps students build
-                  strong fundamentals. It also provides opportunities
-                  to work on practical assignments and real-world projects.
-                </p>
-
-                <ul className="mt-4 list-disc space-y-3 pl-6 leading-7">
-                  <li>Industry-relevant learning.</li>
-                  <li>Practical project experience.</li>
-                  <li>Expert guidance and mentorship.</li>
-                  <li>Career-oriented skill development.</li>
-                  <li>Technical knowledge and problem-solving skills.</li>
-                </ul>
-
-              </section>
-
-              {/* Skills */}
-              <section id="skills" className="scroll-mt-24">
-
-                <h2 className="text-2xl font-bold text-[#174f8e]">
-                  Skills You Will Learn
-                </h2>
-
-                <p className="mt-4 leading-8">
-                  Depending on your selected technology, you can
-                  develop technical knowledge, problem-solving
-                  abilities and practical implementation skills.
-                </p>
-
-                <div className="mt-5 grid gap-4 sm:grid-cols-2">
-
-                  {[
-                    "Technical Fundamentals",
-                    "Practical Implementation",
-                    "Real-World Projects",
-                    "Problem Solving",
-                  ].map((skill) => (
-                    <div
-                      key={skill}
-                      className="rounded-lg border border-blue-100 bg-blue-50 p-4 font-semibold text-blue-900"
+                  {/* Section Paragraphs */}
+                  {section.paragraphs?.map((paragraph, paragraphIndex) => (
+                    <p
+                      key={paragraphIndex}
+                      className="mt-4 text-base leading-8"
                     >
-                      {skill}
-                    </div>
+                      {paragraph}
+                    </p>
                   ))}
 
-                </div>
+                  {/* Section Points */}
+                  {section.points?.length > 0 && (
+                    <ul className="mt-5 list-disc space-y-3 pl-6 leading-7">
+                      {section.points.map((point, pointIndex) => (
+                        <li key={pointIndex}>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
 
-              </section>
-
-              {/* Career Opportunities */}
-              <section id="career" className="scroll-mt-24">
-
-                <h2 className="text-2xl font-bold text-[#174f8e]">
-                  Career Opportunities
-                </h2>
-
-                <p className="mt-4 leading-8">
-                  Learning modern technologies can help you prepare
-                  for different career paths. Your opportunities
-                  will depend on your knowledge, projects and
-                  practical experience.
-                </p>
-
-              </section>
-
-              {/* Choosing Institute */}
-              <section id="institute" className="scroll-mt-24">
-
-                <h2 className="text-2xl font-bold text-[#174f8e]">
-                  How to Choose the Right Institute
-                </h2>
-
-                <p className="mt-4 leading-8">
-                  Before selecting an institute, compare its course
-                  curriculum, trainer experience, practical training,
-                  placement assistance and student reviews.
-                </p>
-
-              </section>
+                </section>
+              ))}
 
               {/* Conclusion */}
-              <section id="conclusion" className="scroll-mt-24">
+              <section
+                id="conclusion"
+                className="scroll-mt-24"
+              >
 
                 <h2 className="text-2xl font-bold text-[#174f8e]">
                   Conclusion
                 </h2>
 
-                <p className="mt-4 leading-8">
-                  The right learning path, consistent practice and
-                  hands-on experience can help you build a strong
-                  foundation for your professional career.
+                <p className="mt-4 text-base leading-8">
+                  {blog.conclusion ||
+                    "Keep learning and developing your skills to grow in your professional career."}
                 </p>
 
               </section>
@@ -366,7 +322,7 @@ export default function BlogDetails() {
                     </p>
 
                     <Link
-                      to={`/blogs/${item.id}`}
+                      to={`/blogs/${item.slug}`}
                       className="mt-5 inline-block text-sm font-semibold text-orange-500 hover:text-blue-700"
                     >
                       Read More →
