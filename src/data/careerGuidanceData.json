@@ -1,0 +1,119 @@
+
+{
+  "hero": {
+    "eyebrow": "CAREER GUIDANCE",
+    "title": "Discover the right path for your future.",
+    "description": "Not sure which course to choose? Explore in-demand career fields, discover the skills that match your interests and get guidance to take your next step.",
+    "primaryText": "Explore Career Paths",
+    "secondaryText": "Talk to an Advisor",
+    "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80",
+    "imageAlt": "Professionals collaborating on a career project"
+  },
+  "highlights": [
+    {
+      "title": "Industry-relevant skills",
+      "description": "Explore skills used in today's workplaces.",
+      "icon": "BriefcaseBusiness"
+    },
+    {
+      "title": "Practical learning",
+      "description": "Build confidence through hands-on projects.",
+      "icon": "Code2"
+    },
+    {
+      "title": "Expert guidance",
+      "description": "Get help choosing your learning direction.",
+      "icon": "UserRoundCheck"
+    }
+  ],
+  "section": {
+    "eyebrow": "FIND YOUR DIRECTION",
+    "title": "Which career field interests you?",
+    "description": "Select one or more areas you would like to learn. You can choose multiple interests."
+  },
+  "careerFields": [
+    {
+      "id": "web-development",
+      "title": "Web Development",
+      "description": "Create websites, web applications and digital experiences.",
+      "icon": "Code2",
+      "courses": ["Frontend Development", "Backend Development", "Full Stack Development", "MERN Stack"]
+    },
+    {
+      "id": "software-programming",
+      "title": "Software & Programming",
+      "description": "Build programming fundamentals and develop software solutions.",
+      "icon": "Laptop",
+      "courses": ["Python Programming", "Java Programming", "C & C++", "Programming Fundamentals"]
+    },
+    {
+      "id": "data-ai",
+      "title": "Data & Artificial Intelligence",
+      "description": "Work with data, automation and intelligent technologies.",
+      "icon": "BrainCircuit",
+      "courses": ["Data Analytics", "Data Science", "Machine Learning", "Generative AI"]
+    },
+    {
+      "id": "cybersecurity-cloud",
+      "title": "Cyber Security & Cloud",
+      "description": "Explore digital security, cloud platforms and modern infrastructure.",
+      "icon": "ShieldCheck",
+      "courses": ["Cyber Security", "Cloud Computing", "AWS Fundamentals", "Networking"]
+    },
+    {
+      "id": "digital-marketing",
+      "title": "Digital Marketing",
+      "description": "Help businesses grow through online marketing and digital strategy.",
+      "icon": "ChartNoAxesCombined",
+      "courses": ["SEO", "Social Media Marketing", "Google Ads", "Digital Marketing + Gen AI"]
+    },
+    {
+      "id": "design-cad",
+      "title": "Design & CAD",
+      "description": "Turn creative ideas into visual designs and technical drawings.",
+      "icon": "Palette",
+      "courses": ["Graphic Designing", "UI/UX Designing", "AutoCAD", "CAD Designing"]
+    },
+    {
+      "id": "enterprise-testing",
+      "title": "Enterprise & Software Testing",
+      "description": "Learn business software and software quality practices.",
+      "icon": "Settings2",
+      "courses": ["SAP", "Software Testing", "Manual Testing", "Automation Testing"]
+    },
+    {
+      "id": "app-iot",
+      "title": "App Development & Emerging Tech",
+      "description": "Build mobile experiences and explore connected technologies.",
+      "icon": "Smartphone",
+      "courses": ["Mobile App Development", "Android Development", "IoT", "Robotics"]
+    }
+  ],
+  "guidance": {
+    "eyebrow": "YOUR NEXT STEP",
+    "title": "A clearer direction starts with one conversation.",
+    "description": "Tell us what interests you. Our team can help you understand relevant courses, learning paths and the skills you can work towards.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Choose your interests",
+        "description": "Select the career fields you want to explore."
+      },
+      {
+        "number": "02",
+        "title": "Discuss your goals",
+        "description": "Share what you want to learn and achieve."
+      },
+      {
+        "number": "03",
+        "title": "Explore your learning path",
+        "description": "Get guidance on suitable courses and next steps."
+      }
+    ],
+    "buttonText": "Get Career Guidance"
+  },
+  "contact": {
+    "email": "hello@primewebdynamics.com",
+    "emailLabel": "Email our team"
+  }
+}
