@@ -1,8 +1,15 @@
 
-import { Routes, Route, useLocation } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+
+import { useLayoutEffect, useRef, useState } from "react";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import GlobalLoader from "./components/GlobalLoader";
 
 import HomePage from "./pages/HomePage";
 import Registration from "./pages/Registration";
@@ -21,6 +28,31 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 
 function App() {
   const location = useLocation();
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const previousLocationKey = useRef(location.key);
+
+  useLayoutEffect(() => {
+    // Initial page load par loader nahi dikhana
+    if (previousLocationKey.current === location.key) {
+      return;
+    }
+
+    // New navigation detect hui
+    previousLocationKey.current = location.key;
+
+    setIsLoading(true);
+
+    // Short visual loading transition
+    const timer = window.setTimeout(() => {
+      setIsLoading(false);
+    }, 450);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, [location.key]);
 
   const isCareerPage = location.pathname === "/career-guidance";
 
@@ -45,12 +77,11 @@ function App() {
         <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:id" element={<CourseDetail />} />
 
-        {/* Reviews Page */}
         <Route path="/reviews" element={<Reviews />} />
 
-        {/* Policy Pages */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
+
         <Route
           path="/terms-conditions"
           element={<TermsAndConditions />}
@@ -58,6 +89,9 @@ function App() {
       </Routes>
 
       {!isCareerPage && <Footer />}
+
+      {/* Global Navigation Loader */}
+      {isLoading && <GlobalLoader />}
     </>
   );
 }
