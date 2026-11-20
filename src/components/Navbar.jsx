@@ -62,9 +62,7 @@ function Navbar() {
           <div className="relative flex items-center gap-2">
 
             {/* AI Powered Badge */}
-            <span className="absolute -top-[22px] left-[62px] mt-2 whitespace-nowrap rounded-full bg-gradient-to-r from-orange-400 to-orange-500 px-2 py-[3px] text-[10px] font-semibold leading-tight text-white shadow-sm">
-              ✦ AI-Powered
-            </span>
+            
 
             {/* Green Verification Icon */}
             <span

@@ -69,7 +69,7 @@ function HeroCarousel({ onEnroll }) {
             {/* Explore Course */}
             <button
               type="button"
-              onClick={() => navigate("/courses")}
+              onClick={() => onEnroll?.()} 
               className="flex h-[49px] items-center justify-center gap-2 rounded-lg border border-[#4b9df5] bg-[#4b9df5] px-6 text-sm font-bold transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#3188eb]"
             >
               {activeSlide.primaryButton}
@@ -79,7 +79,7 @@ function HeroCarousel({ onEnroll }) {
             {/* Enroll Now */}
             <button
               type="button"
-              onClick={() => onEnroll?.()}
+              onClick={() => navigate("/courses")}
               className="flex h-[49px] items-center justify-center gap-2 rounded-lg border-2 border-[#7183a5] bg-transparent px-5 text-sm font-bold transition-all duration-300 hover:border-white hover:bg-white/10"
             >
               <Play size={15} fill="currentColor" />

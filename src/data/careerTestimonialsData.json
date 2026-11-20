@@ -1,49 +1,56 @@
 
 {
-  "badge": "SUCCESS STORIES",
-  "title": "Careers transformed every day",
-  "testimonials": [
+  "badge": "OUR LEARNING APPROACH",
+  "title": "A Better Way to Learn and Grow",
+  "subtitle": "At Prime Webdynamics, learning goes beyond theory. Build practical skills through guided training, hands-on experience and career-focused preparation.",
+  "features": [
     {
       "id": 1,
-      "rating": 5,
-      "message": "Especial thanks to new placement head shashank mishra sir ... he has created a storm of companies in the ducat.. I got placed in satin creditcare network limited as java developer with 5 lpa...",
-      "name": "Aman Kumar",
-      "image": "/images/testimonials/ali.png"
+      "number": "01",
+      "title": "Industry-Relevant Skills",
+      "description": "Learn technologies and concepts that help you understand today's professional development environment.",
+      "icon": "Code"
     },
     {
       "id": 2,
-      "rating": 5,
-      "message": "The Web Designing course was fantastic! It covered everything from UX design principles to the latest HTML and CSS techniques. The hands-on approach made learning enjoyable and effective....",
-      "name": "Vinay Kumar",
-      "image": "/images/testimonials/ankit-chaudhary.png"
+      "number": "02",
+      "title": "Hands-On Practice",
+      "description": "Strengthen your understanding with coding exercises, practical assignments and guided learning.",
+      "icon": "Laptop"
     },
     {
       "id": 3,
-      "rating": 5,
-      "message": "The Graphic Designing course exceeded my expectations. It not only polished my design skills but also taught me about various software and tools essential for modern-day graphic designing. The portfolio...",
-      "name": "Tripti Chauhan",
-      "image": "/images/testimonials/ankit.png"
+      "number": "03",
+      "title": "Real-World Projects",
+      "description": "Apply your knowledge by working on projects that help you develop practical problem-solving skills.",
+      "icon": "FolderKanban"
     },
     {
       "id": 4,
-      "rating": 5,
-      "message": "The training sessions helped me improve my technical knowledge and prepare confidently for interviews. The practical projects were very useful.",
-      "name": "Rahul Sharma",
-      "image": "/images/testimonials/ashish.png"
+      "number": "04",
+      "title": "Expert Guidance",
+      "description": "Get guidance during your learning journey and support when you need help understanding concepts.",
+      "icon": "GraduationCap"
     },
     {
       "id": 5,
-      "rating": 5,
-      "message": "The mentors were supportive throughout the course. I learned new skills and gained the confidence to start my career in the IT industry.",
-      "name": "Harshit Sharma",
-      "image": "/images/testimonials/harshit.png"
+      "number": "05",
+      "title": "Career Preparation",
+      "description": "Improve your resume, interview skills and professional readiness with career-focused support.",
+      "icon": "BriefcaseBusiness"
     },
     {
       "id": 6,
-      "rating": 5,
-      "message": "A great learning experience with practical assignments and helpful guidance. I would recommend these courses to anyone starting their career.",
-      "name": "Nikita Veerma",
-      "image": "/images/testimonials/nikita-verma.png"
+      "number": "06",
+      "title": "Continuous Improvement",
+      "description": "Build confidence through regular practice, assessments, feedback and doubt-solving sessions.",
+      "icon": "TrendingUp"
     }
-  ]
+  ],
+  "footer": {
+    "title": "Your Learning Journey Starts Here",
+    "description": "Take the first step towards developing practical skills and building your future.",
+    "buttonText": "Explore Our Courses",
+    "buttonLink": "/courses"
+  }
 }

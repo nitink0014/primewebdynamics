@@ -1,221 +1,122 @@
 
-import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
+import {
+  BookOpen,
+  Code,
+  FolderGit2,
+  Lightbulb,
+  UsersRound,
+  BriefcaseBusiness,
+  ArrowUpRight,
+  GraduationCap,
+} from "lucide-react";
 
 import testimonialsData from "../../data/testimonialsData.json";
 
+const iconMap = {
+  BookOpen,
+  Code,
+  FolderGit2,
+  Lightbulb,
+  UsersRound,
+  BriefcaseBusiness,
+};
+
 function TestimonialsSection() {
-  const carouselRef = useRef(null);
-  const [selectedVideo, setSelectedVideo] = useState(null);
-
-  // Automatically move cards one by one
-  useEffect(() => {
-    const carousel = carouselRef.current;
-
-    if (!carousel) return;
-
-    const interval = setInterval(() => {
-      const firstCard = carousel.querySelector(".testimonial-card");
-
-      if (!firstCard) return;
-
-      const cardWidth = firstCard.getBoundingClientRect().width;
-      const gap = 20;
-      const scrollAmount = cardWidth + gap;
-
-      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-
-      if (carousel.scrollLeft + scrollAmount >= maxScroll - 5) {
-        carousel.scrollTo({
-          left: 0,
-          behavior: "smooth",
-        });
-      } else {
-        carousel.scrollBy({
-          left: scrollAmount,
-          behavior: "smooth",
-        });
-      }
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // Manual navigation
-  const moveCarousel = (direction) => {
-    const carousel = carouselRef.current;
-
-    if (!carousel) return;
-
-    const firstCard = carousel.querySelector(".testimonial-card");
-
-    if (!firstCard) return;
-
-    const cardWidth = firstCard.getBoundingClientRect().width;
-    const gap = 20;
-
-    carousel.scrollBy({
-      left: direction * (cardWidth + gap),
-      behavior: "smooth",
-    });
-  };
-
-  // Close video with Escape key
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        setSelectedVideo(null);
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
-
   return (
-    <section className="w-full overflow-hidden bg-[#f1f4f8] px-5 pb-14 pt-10 font-sans sm:px-8 lg:px-0">
+    <section className="relative w-full overflow-hidden bg-[#f1f5fb] px-5 py-16 font-sans sm:px-8 lg:px-0">
 
-      <div className="mx-auto w-full max-w-[1590px] lg:w-[90%]">
+      <div className="mx-auto w-full max-w-[1450px] lg:w-[88%]">
 
         {/* Section Heading */}
-        <div className="mb-[24px]">
+        <div className="mb-12 text-center">
 
-          <div className="flex h-[38px] w-fit items-center rounded-full bg-[#ff7948] px-[18px] text-[13px] font-bold text-white shadow-[0_6px_18px_rgba(255,121,72,0.15)]">
+          <div className="mx-auto flex w-fit items-center gap-2 rounded-full border border-[#cfe2ff] bg-white px-4 py-2 text-[12px] font-bold tracking-[1px] text-[#347dc9] shadow-sm">
+            <GraduationCap size={16} />
             {testimonialsData.badge}
           </div>
 
-          <h2 className="mt-[17px] text-[34px] font-extrabold leading-[1.15] tracking-[-1.1px] text-[#151b2a] sm:text-[44px]">
+          <h2 className="mx-auto mt-5 max-w-[850px] text-[32px] font-extrabold leading-[1.2] tracking-[-1px] text-[#102b59] sm:text-[42px] lg:text-[49px]">
             {testimonialsData.title}
           </h2>
 
+          <p className="mx-auto mt-4 max-w-[680px] text-[14px] leading-7 text-[#647084] sm:text-[16px]">
+            {testimonialsData.subtitle}
+          </p>
+
         </div>
 
-        {/* Carousel */}
-        <div className="group/carousel relative">
+        {/* Learning Outcomes */}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
-          {/* Left Arrow */}
-          <button
-            type="button"
-            onClick={() => moveCarousel(-1)}
-            aria-label="Previous testimonials"
-            className="absolute left-2 top-1/2 z-10 flex h-[42px] w-[42px] -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#1685ff] shadow-md transition-all duration-200 hover:scale-105 hover:bg-white"
-          >
-            <ChevronLeft size={29} strokeWidth={2.5} />
-          </button>
+          {testimonialsData.features.map((item) => {
+            const Icon = iconMap[item.icon] || GraduationCap;
 
-          {/* Cards Container */}
-          <div
-            ref={carouselRef}
-            className="flex gap-[20px] overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          >
-
-            {testimonialsData.testimonials.map((item) => (
-
-              <button
-                type="button"
+            return (
+              <div
                 key={item.id}
-                onClick={() => setSelectedVideo(item)}
-                aria-label={`Play testimonial by ${item.name}`}
-                className="testimonial-card group relative h-[310px] w-[270px] flex-none overflow-hidden rounded-[12px] border border-[#cbd5e1] bg-[#111827] text-left"
+                className="group relative overflow-hidden rounded-2xl border border-[#e1e9f4] bg-white p-7 shadow-[0_8px_25px_rgba(16,43,89,0.04)] transition-all duration-300 hover:-translate-y-2 hover:border-[#b8d3f5] hover:shadow-[0_18px_35px_rgba(16,43,89,0.10)]"
               >
 
-                {/* Thumbnail */}
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-
-                {/* Bottom Gradient */}
-                <div className="absolute inset-x-0 bottom-0 h-[75px] bg-gradient-to-t from-black/80 to-transparent" />
-
-                {/* Play Button */}
-                <div className="absolute left-1/2 top-1/2 flex h-[48px] w-[48px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#111827] shadow-[0_4px_15px_rgba(0,0,0,0.18)] transition-transform duration-300 group-hover:scale-110">
-                  <Play size={20} fill="currentColor" className="ml-1" />
-                </div>
-
-                {/* Student Name */}
-                <span className="absolute bottom-[11px] left-[11px] right-3 truncate text-[13px] font-bold text-white">
-                  {item.name}
+                {/* Background Number */}
+                <span className="absolute right-6 top-4 text-[40px] font-extrabold text-[#edf3fb] transition-colors duration-300 group-hover:text-[#dfebfc]">
+                  {item.number}
                 </span>
 
-              </button>
+                {/* Icon */}
+                <div className="relative flex h-[58px] w-[58px] items-center justify-center rounded-xl bg-[#edf5ff] text-[#347dc9] transition-all duration-300 group-hover:bg-[#347dc9] group-hover:text-white">
+                  <Icon size={26} strokeWidth={1.8} />
+                </div>
 
-            ))}
+                {/* Content */}
+                <h3 className="mt-6 text-[19px] font-extrabold text-[#102b59] sm:text-[21px]">
+                  {item.title}
+                </h3>
 
+                <p className="mt-3 min-h-[75px] text-[13px] leading-[1.85] text-[#647084] sm:text-[14px]">
+                  {item.description}
+                </p>
+
+                {/* Bottom Accent */}
+                <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-[#ff821f] transition-all duration-300 group-hover:w-full" />
+
+              </div>
+            );
+          })}
+
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-10 flex flex-col items-center justify-between gap-5 rounded-2xl bg-[#102f68] px-6 py-8 text-center sm:px-10 lg:flex-row lg:text-left">
+
+          <div>
+            <div className="flex items-center justify-center gap-2 text-[#ff9a48] lg:justify-start">
+              <GraduationCap size={20} />
+
+              <span className="text-[12px] font-bold uppercase tracking-[1px]">
+                {testimonialsData.footer.eyebrow}
+              </span>
+            </div>
+
+            <h3 className="mt-2 text-[21px] font-extrabold text-white sm:text-[25px]">
+              {testimonialsData.footer.title}
+            </h3>
+
+            <p className="mt-2 text-[13px] leading-6 text-blue-100 sm:text-[14px]">
+              {testimonialsData.footer.description}
+            </p>
           </div>
 
-          {/* Right Arrow */}
-          <button
-            type="button"
-            onClick={() => moveCarousel(1)}
-            aria-label="Next testimonials"
-            className="absolute right-2 top-1/2 z-10 flex h-[42px] w-[42px] -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#1685ff] shadow-md transition-all duration-200 hover:scale-105 hover:bg-white"
+          <a
+            href={testimonialsData.footer.buttonLink}
+            className="inline-flex h-[48px] shrink-0 items-center justify-center gap-2 rounded-[9px] bg-[#ff821f] px-6 text-[13px] font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#ed7011] hover:shadow-[0_8px_20px_rgba(255,130,31,0.25)]"
           >
-            <ChevronRight size={29} strokeWidth={2.5} />
-          </button>
+            {testimonialsData.footer.buttonText}
+            <ArrowUpRight size={17} />
+          </a>
 
         </div>
 
       </div>
-
-      {/* Video Modal */}
-      {selectedVideo && (
-        <div
-          onClick={() => setSelectedVideo(null)}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 px-4 py-8 backdrop-blur-sm"
-        >
-
-          <div
-            onClick={(event) => event.stopPropagation()}
-            className="relative w-full max-w-[850px] overflow-hidden rounded-[16px] bg-black shadow-2xl"
-          >
-
-            {/* Close Button */}
-            <button
-              type="button"
-              onClick={() => setSelectedVideo(null)}
-              aria-label="Close video"
-              className="absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white transition-colors hover:bg-[#ff7948]"
-            >
-              <X size={23} />
-            </button>
-
-            {/* Video */}
-            {selectedVideo.video ? (
-              <video
-                key={selectedVideo.id}
-                src={selectedVideo.video}
-                controls
-                autoPlay
-                playsInline
-                className="aspect-video w-full bg-black object-contain"
-              />
-            ) : (
-              <div className="flex aspect-video w-full flex-col items-center justify-center gap-3 text-white">
-                <Play size={42} />
-                <p className="text-base font-semibold">
-                  Video coming soon
-                </p>
-              </div>
-            )}
-
-            {/* Video Name */}
-            <div className="px-5 py-3 text-white">
-              <h3 className="text-[15px] font-bold">
-                {selectedVideo.name}
-              </h3>
-            </div>
-
-          </div>
-
-        </div>
-      )}
-
     </section>
   );
 }

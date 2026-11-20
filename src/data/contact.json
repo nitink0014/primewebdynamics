@@ -1,14 +1,106 @@
 
 {
-  "title": "Contact Us",
-  "subtitle": "Have questions about our courses? Get in touch with our team.",
-  "email": "info@primewebdynamics.com",
-  "phone": "",
-  "address": "",
-  "socialLinks": {
-    "facebook": "",
-    "instagram": "",
-    "linkedin": "",
-    "youtube": ""
+  "hero": {
+    "title": "Contact Us",
+    "description": "Talk to our team about courses, centres, admissions, and partnerships.",
+    "backgroundImage": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1920&q=85"
+  },
+  "form": {
+    "title": "Send Us a Message",
+    "description": "For further details, including questions and partnership opportunities, please email",
+    "email": "hello@primewebdynamics.com",
+    "emailText": "hello@primewebdynamics.com",
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Name",
+        "required": true
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Email Address",
+        "required": false
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "Phone Number",
+        "required": true
+      },
+      "center": {
+        "label": "Center / Branch",
+        "placeholder": "Select Branch",
+        "required": false
+      },
+      "course": {
+        "label": "Course",
+        "placeholder": "Select a Course",
+        "required": false
+      },
+      "message": {
+        "label": "How can we help you?",
+        "placeholder": "Message...",
+        "required": false
+      }
+    },
+    "submitButton": "Send Message",
+    "successMessage": "Thank you! Your enquiry has been submitted successfully.",
+    "validation": {
+      "nameRequired": "Please enter your name",
+      "phoneRequired": "Please enter your phone number",
+      "phoneInvalid": "Phone number must be exactly 10 digits"
+    }
+  },
+  "courses": [
+    "Full Stack Development",
+    "Data Analytics",
+    "Business Analytics",
+    "Python Development",
+    "Java Development",
+    "MERN Stack",
+    "Digital Marketing"
+  ],
+  "branches": [
+    {
+      "id": 1,
+      "name": "Noida Sector 16",
+      "phone": "7070905090",
+      "whatsapp": "9999993213",
+      "email": "hello@primewebdynamics.com",
+      "address": "A-43 & A-52, Noida Sector 16, Uttar Pradesh, India"
+    },
+    {
+      "id": 2,
+      "name": "Sector 63, Noida",
+      "phone": "7070905090",
+      "whatsapp": "7042175774",
+      "email": "hello@primewebdynamics.com",
+      "address": "H-43, Sector 63, Noida, Uttar Pradesh, India"
+    },
+    {
+      "id": 3,
+      "name": "South Ex.",
+      "phone": "7070905090",
+      "whatsapp": "9899866334",
+      "email": "hello@primewebdynamics.com",
+      "address": "D-27, South Extension-1, New Delhi, India"
+    },
+    {
+      "id": 4,
+      "name": "Noida Extension",
+      "phone": "7070905090",
+      "whatsapp": "7289886655",
+      "email": "hello@primewebdynamics.com",
+      "address": "TechZone 4, Greater Noida West, Uttar Pradesh, India"
+    }
+  ],
+  "branchesSection": {
+    "title": "Our Branches"
+  },
+  "map": {
+    "title": "Find Our Location",
+    "buttonText": "Open in Maps",
+    "mapsLink": "https://www.google.com/maps/search/?api=1&query=Noida+Sector+16+Uttar+Pradesh+India",
+    "embedUrl": "https://maps.google.com/maps?q=Noida%20Sector%2016%2C%20Uttar%20Pradesh&t=&z=12&ie=UTF8&iwloc=&output=embed",
+    "iframeTitle": "Primewebdynamics Office Location"
   }
 }
