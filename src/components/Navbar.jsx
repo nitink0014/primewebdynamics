@@ -66,18 +66,12 @@ function Navbar() {
           {/* Career Guidance */}
           <div className="relative flex items-center gap-2">
 
-            {/* AI Powered Badge */}
-            
-
-            {/* Green Verification Icon */}
-          
-
-            <NavLink
-              to="/career-guidance"
-              className="whitespace-nowrap text-[18px] font-normal text-[#087bff] hover:text-blue-700"
-            >
-              Career Guidance
-            </NavLink>
+           <NavLink
+  to="/career-guidance"
+  className={navLinkClass}
+>
+  Career Guidance
+</NavLink>
 
           </div>
 
@@ -193,13 +187,19 @@ function Navbar() {
             </NavLink>
 
             {/* Career Guidance */}
-            <NavLink
-              to="/career-guidance"
-              onClick={closeMenu}
-              className="rounded-lg px-4 py-3 text-[16px] text-blue-600 hover:bg-blue-50"
-            >
-              Career Guidance
-            </NavLink>
+           <NavLink
+  to="/career-guidance"
+  onClick={closeMenu}
+  className={({ isActive }) =>
+    `rounded-lg px-4 py-3 text-[16px] transition-colors duration-200 ${
+      isActive
+        ? "bg-blue-50 text-blue-600"
+        : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+    }`
+  }
+>
+  Career Guidance
+</NavLink>
 
             {/* Contact */}
             <NavLink
