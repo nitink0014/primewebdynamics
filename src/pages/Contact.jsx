@@ -1,12 +1,6 @@
+
 import { useState } from "react";
-import {
-  Phone,
-  Mail,
-  MessageCircle,
-  Send,
-  ExternalLink,
-  Globe,
-} from "lucide-react";
+import { Send, ExternalLink, Globe } from "lucide-react";
 
 const branches = [
   {
@@ -95,7 +89,6 @@ function Contact() {
 
   return (
     <div className="min-h-screen bg-[#f4f8fc]">
-
       {/* HERO BANNER */}
       <section
         className="relative flex min-h-[440px] items-center justify-center bg-cover bg-center px-5 text-center"
@@ -117,9 +110,7 @@ function Contact() {
 
       {/* CONTACT FORM SECTION */}
       <section className="px-4 py-12 sm:px-8 sm:py-16">
-
         <div className="mx-auto max-w-[1010px] rounded-[22px] bg-white px-5 py-10 shadow-[0_15px_50px_rgba(0,0,0,0.08)] sm:px-10 md:px-14">
-
           <div className="mb-7 text-center">
             <h2 className="text-3xl font-bold text-[#24538d] sm:text-4xl">
               Send Us a Message
@@ -143,11 +134,8 @@ function Contact() {
             noValidate
             className="space-y-4"
           >
-
             {/* NAME AND EMAIL */}
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-
-              {/* NAME - REQUIRED */}
               <div>
                 <label className={labelStyle}>
                   Name<span className="text-red-500">*</span>
@@ -169,11 +157,8 @@ function Contact() {
                 )}
               </div>
 
-              {/* EMAIL - OPTIONAL */}
               <div>
-                <label className={labelStyle}>
-                  Email
-                </label>
+                <label className={labelStyle}>Email</label>
 
                 <input
                   type="email"
@@ -184,13 +169,10 @@ function Contact() {
                   className={inputStyle}
                 />
               </div>
-
             </div>
 
             {/* PHONE, CENTER, COURSE */}
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-
-              {/* PHONE - REQUIRED */}
               <div>
                 <label className={labelStyle}>
                   Phone<span className="text-red-500">*</span>
@@ -214,11 +196,8 @@ function Contact() {
                 )}
               </div>
 
-              {/* CENTER - OPTIONAL */}
               <div>
-                <label className={labelStyle}>
-                  Center / Branch
-                </label>
+                <label className={labelStyle}>Center / Branch</label>
 
                 <select
                   name="center"
@@ -233,11 +212,8 @@ function Contact() {
                 </select>
               </div>
 
-              {/* COURSE - OPTIONAL */}
               <div>
-                <label className={labelStyle}>
-                  Course
-                </label>
+                <label className={labelStyle}>Course</label>
 
                 <select
                   name="course"
@@ -246,37 +222,20 @@ function Contact() {
                   className={inputStyle}
                 >
                   <option value="">Select a Course</option>
-                  <option value="Full Stack Development">
-                    Full Stack Development
-                  </option>
-                  <option value="Data Analytics">
-                    Data Analytics
-                  </option>
-                  <option value="Business Analytics">
-                    Business Analytics
-                  </option>
-                  <option value="Python Development">
-                    Python Development
-                  </option>
-                  <option value="Java Development">
-                    Java Development
-                  </option>
-                  <option value="MERN Stack">
-                    MERN Stack
-                  </option>
-                  <option value="Digital Marketing">
-                    Digital Marketing
-                  </option>
+                  <option value="Full Stack Development">Full Stack Development</option>
+                  <option value="Data Analytics">Data Analytics</option>
+                  <option value="Business Analytics">Business Analytics</option>
+                  <option value="Python Development">Python Development</option>
+                  <option value="Java Development">Java Development</option>
+                  <option value="MERN Stack">MERN Stack</option>
+                  <option value="Digital Marketing">Digital Marketing</option>
                 </select>
               </div>
-
             </div>
 
-            {/* MESSAGE - OPTIONAL */}
+            {/* MESSAGE */}
             <div>
-              <label className={labelStyle}>
-                How can we help you?
-              </label>
+              <label className={labelStyle}>How can we help you?</label>
 
               <textarea
                 name="message"
@@ -290,7 +249,6 @@ function Contact() {
 
             {/* SUBMIT */}
             <div className="pt-4 text-center">
-
               <button
                 type="submit"
                 className="flex w-full items-center justify-center gap-2 rounded-md bg-gradient-to-r from-[#39446e] to-[#171c31] px-6 py-4 text-sm font-bold uppercase text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
@@ -304,40 +262,31 @@ function Contact() {
                   Thank you! Your enquiry has been submitted successfully.
                 </p>
               )}
-
             </div>
-
           </form>
         </div>
       </section>
 
       {/* OUR OFFICE */}
       <section className="bg-[#f4f8fc] px-5 py-12 sm:px-10 sm:py-16">
-
         <div className="mx-auto max-w-[1400px]">
-
           <h2 className="mb-10 text-center text-4xl font-bold text-[#245b9c] sm:text-5xl">
             Our Office
           </h2>
 
           <div className="grid grid-cols-1 gap-8">
-
             {branches.map((branch, index) => (
               <div
                 key={index}
                 className="min-h-[230px] rounded-xl bg-[#e2f1ff] px-8 py-8 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:px-12"
               >
-
                 <h3 className="mb-4 text-2xl font-bold text-[#24538d]">
                   {branch.name}
                 </h3>
 
                 <div className="space-y-3 text-base leading-6 text-gray-900">
-
-                  <p className="flex flex-wrap items-center gap-2">
-                    <Phone size={17} className="text-[#24538d]" />
-                    <span>Phone:</span>
-
+                  <p>
+                    <span>Phone: </span>
                     <a
                       href={`tel:+91${branch.phone}`}
                       className="text-blue-600 hover:underline"
@@ -346,10 +295,8 @@ function Contact() {
                     </a>
                   </p>
 
-                  <p className="flex flex-wrap items-center gap-2">
-                    <MessageCircle size={17} className="text-[#25D366]" />
-                    <span>WhatsApp:</span>
-
+                  <p>
+                    <span>WhatsApp: </span>
                     <a
                       href={`https://wa.me/91${branch.whatsapp}`}
                       target="_blank"
@@ -360,10 +307,8 @@ function Contact() {
                     </a>
                   </p>
 
-                  <p className="flex flex-wrap items-center gap-2">
-                    <Mail size={17} className="text-[#24538d]" />
-                    <span>Email:</span>
-
+                  <p>
+                    <span>Email: </span>
                     <a
                       href={`mailto:${branch.email}`}
                       className="text-blue-600 hover:underline"
@@ -375,7 +320,6 @@ function Contact() {
                   <p className="flex flex-wrap items-center gap-2">
                     <Globe size={17} className="text-[#24538d]" />
                     <span>Website:</span>
-
                     <a
                       href={branch.website}
                       target="_blank"
@@ -391,23 +335,17 @@ function Contact() {
                     <span>Address:</span>
                     <span>{branch.address}</span>
                   </p>
-
                 </div>
-
               </div>
             ))}
-
           </div>
         </div>
       </section>
 
       {/* GOOGLE MAP - SANJAY PALACE AGRA */}
       <section className="bg-[#f4f8fc] px-5 pb-14">
-
         <div className="mx-auto max-w-[1400px] overflow-hidden rounded-lg shadow-md">
-
           <div className="flex items-center justify-between bg-white px-4 py-3">
-
             <h3 className="font-semibold text-slate-800">
               Find Our Location
             </h3>
@@ -421,7 +359,6 @@ function Contact() {
               Open in Maps
               <ExternalLink size={15} />
             </a>
-
           </div>
 
           <iframe
@@ -434,41 +371,8 @@ function Contact() {
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"
           />
-
         </div>
       </section>
-
-      {/* FLOATING CONTACT BUTTONS */}
-      <div className="fixed right-0 top-[35%] z-50 flex flex-col gap-2 rounded-l-2xl bg-[#164c7e] p-2 shadow-xl">
-
-        <a
-          href="tel:+917902170568"
-          aria-label="Call us"
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-[#3188bd] text-white transition hover:scale-110"
-        >
-          <Phone size={21} />
-        </a>
-
-        <a
-          href="https://wa.me/917902170568"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="WhatsApp"
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-[#25D366] text-white transition hover:scale-110"
-        >
-          <MessageCircle size={22} />
-        </a>
-
-        <a
-          href="mailto:hello@primewebdynamics.com"
-          aria-label="Email us"
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-[#ff963f] text-white transition hover:scale-110"
-        >
-          <Mail size={21} />
-        </a>
-
-      </div>
-
     </div>
   );
 }
