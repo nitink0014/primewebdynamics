@@ -28,8 +28,14 @@ function HeroCarousel({ onEnroll }) {
     );
   };
 
+  // Automatically change slides every 5 seconds
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
+    const interval = setInterval(() => {
+      setActiveIndex(
+        (current) => (current + 1) % homeSlides.length
+      );
+    }, 5000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -66,17 +72,17 @@ function HeroCarousel({ onEnroll }) {
           {/* Buttons */}
           <div className="flex flex-wrap items-center gap-3">
 
-            {/* Explore Course */}
+            {/* Enroll Now */}
             <button
               type="button"
-              onClick={() => onEnroll?.()} 
+              onClick={() => onEnroll?.()}
               className="flex h-[49px] items-center justify-center gap-2 rounded-lg border border-[#4b9df5] bg-[#4b9df5] px-6 text-sm font-bold transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#3188eb]"
             >
               {activeSlide.primaryButton}
               <span>→</span>
             </button>
 
-            {/* Enroll Now */}
+            {/* Explore Course */}
             <button
               type="button"
               onClick={() => navigate("/courses")}
@@ -86,21 +92,6 @@ function HeroCarousel({ onEnroll }) {
               {activeSlide.secondaryButton}
             </button>
 
-          </div>
-
-          {/* Reviews */}
-          <div className="mt-5 flex flex-wrap items-center gap-2 text-xs font-medium text-[#c3ccdf]">
-            <span className="mr-1 text-base tracking-wide text-[#ffdb00]">
-              ★★★★★
-            </span>
-
-            <span>{activeSlide.rating}</span>
-            <span className="text-[#8190aa]">·</span>
-            <span>{activeSlide.reviews}</span>
-            <span className="text-[#8190aa]">·</span>
-            <span>{activeSlide.alumni}</span>
-            <span className="text-[#8190aa]">·</span>
-            <span>{activeSlide.partners}</span>
           </div>
         </div>
 
@@ -137,6 +128,7 @@ function HeroCarousel({ onEnroll }) {
 
       {/* Previous Arrow */}
       <button
+        type="button"
         onClick={previousSlide}
         aria-label="Previous slide"
         className="absolute left-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 transition hover:bg-white/25"
@@ -146,6 +138,7 @@ function HeroCarousel({ onEnroll }) {
 
       {/* Next Arrow */}
       <button
+        type="button"
         onClick={nextSlide}
         aria-label="Next slide"
         className="absolute right-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 transition hover:bg-white/25"
@@ -158,8 +151,10 @@ function HeroCarousel({ onEnroll }) {
         {homeSlides.map((slide, index) => (
           <button
             key={slide.id}
+            type="button"
             onClick={() => setActiveIndex(index)}
             aria-label={`Go to slide ${index + 1}`}
+            aria-current={activeIndex === index ? "true" : undefined}
             className={`h-2 rounded-full transition-all duration-300 ${
               activeIndex === index
                 ? "w-6 bg-[#ff7434]"
