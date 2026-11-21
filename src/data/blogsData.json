@@ -1,20 +1,19 @@
+
 {
   "badge": "LEARNING HUB",
-  "title": "Recent Insights & career guides",
-  "subtitle": "Read our blogs on AI, ML, tech careers, and career tips to succeed and thrive",
+  "title": "Insights, Tutorials & Career Guides",
+  "subtitle": "Explore technology tutorials, practical learning guides and career advice to support your professional growth.",
   "viewAllText": "View all blogs",
   "blogs": [
     {
       "id": 1,
       "slug": "mern-training-institutes-delhi",
       "category": "MERN Stack",
-      "date": "Recent",
       "readTime": "6 min read",
-      "title": "MERN Stack Training Institutes in Delhi NCR",
-      "description": "The MERN Stack is a powerful combination for building modern web applications. Learn the technologies, skills, and practical experience needed to become a developer.",
+      "title": "MERN Stack Development: Skills, Projects and Career Guide",
+      "description": "Explore the MERN Stack technologies, essential development skills, practical projects, and career opportunities for aspiring full-stack developers.",
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85",
-      "link": "#",
-      "introduction": "MERN Stack development has become a popular career choice for students and aspiring software developers. It combines MongoDB, Express.js, React.js, and Node.js to help developers build complete web applications using JavaScript. Choosing the right training institute can help you understand these technologies and gain practical development experience.",
+      "introduction": "MERN Stack development is a popular path for students and aspiring software developers. It combines MongoDB, Express.js, React.js, and Node.js to help developers build complete web applications using JavaScript. Learning these technologies through structured study and practical development experience can help you build a strong foundation in full-stack development.",
       "sections": [
         {
           "heading": "What Is MERN Stack Development?",
@@ -30,16 +29,17 @@
           ]
         },
         {
-          "heading": "What Should You Look for in a Training Institute?",
+          "heading": "Skills Required for MERN Stack Development",
           "paragraphs": [
-            "A good training program should focus on practical learning instead of only theoretical explanations. Students should get opportunities to write code, debug errors, and build applications.",
-            "Before selecting an institute, understand its curriculum, trainer experience, project work, doubt-solving support, and placement assistance."
+            "A strong MERN developer needs to understand both frontend and backend development. Start with JavaScript fundamentals, then learn how the frontend communicates with APIs and how backend applications manage data.",
+            "Regular coding practice, debugging, and building complete applications are important parts of the learning process."
           ],
           "points": [
-            "Structured frontend and backend curriculum.",
-            "Hands-on projects with MongoDB and APIs.",
-            "Git and GitHub workflow practice.",
-            "Interview preparation and portfolio guidance."
+            "Frontend development with HTML, CSS, JavaScript, and React.",
+            "Backend development with Node.js and Express.js.",
+            "MongoDB database fundamentals.",
+            "REST API development and authentication.",
+            "Git and GitHub workflow practice."
           ]
         },
         {
@@ -55,26 +55,24 @@
           ]
         },
         {
-          "heading": "Career Opportunities After MERN Training",
+          "heading": "Career Opportunities After Learning MERN Stack",
           "paragraphs": [
             "After developing strong fundamentals and practical projects, learners can explore opportunities such as frontend developer, React developer, Node.js developer, and full-stack developer.",
             "Your skills, portfolio, problem-solving ability, and interview performance matter more than simply completing a course."
           ]
         }
       ],
-      "conclusion": "MERN Stack is a practical path for students who want to work in modern web development. Compare institutes carefully, focus on real projects, and build a portfolio that demonstrates your ability to develop complete applications."
+      "conclusion": "MERN Stack is a practical path for students who want to work in modern web development. Learn each technology step by step, build complete projects, and create a portfolio that demonstrates your ability to develop web applications."
     },
     {
       "id": 2,
       "slug": "ai-training-institutes-delhi",
       "category": "Artificial Intelligence",
-      "date": "Recent",
       "readTime": "7 min read",
-      "title": "Artificial Intelligence (AI) Training Institutes in Delhi",
-      "description": "Artificial Intelligence is transforming industries through automation, intelligent systems, and data-driven solutions. Explore the skills needed to begin an AI career.",
+      "title": "Artificial Intelligence: A Beginner's Learning Guide",
+      "description": "Understand the fundamentals of Artificial Intelligence, explore important skills, and discover beginner-friendly projects that can help you start learning AI.",
       "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85",
-      "link": "#",
-      "introduction": "Artificial Intelligence is changing how businesses operate, how people access information, and how software applications are developed. From recommendation systems to conversational assistants, AI is becoming an important part of modern technology. Learning AI can help students explore a wide range of technical career opportunities.",
+      "introduction": "Artificial Intelligence is changing how businesses operate, how people access information, and how software applications are developed. From recommendation systems to conversational assistants, AI is becoming an important part of modern technology. Understanding its fundamentals can help students explore a wide range of technical opportunities.",
       "sections": [
         {
           "heading": "What Is Artificial Intelligence?",
@@ -97,10 +95,10 @@
           ]
         },
         {
-          "heading": "How to Choose an AI Training Program",
+          "heading": "How to Approach AI Learning",
           "paragraphs": [
-            "Look for a course that explains concepts step by step and includes practical exercises. A useful program should cover data preparation, model evaluation, and real-world use cases.",
-            "Ask whether the curriculum includes projects, trainer support, and guidance on responsible AI usage."
+            "Start by understanding the basic concepts behind Artificial Intelligence and gradually explore practical applications. A useful learning path should include programming exercises, data preparation, model evaluation, and real-world examples.",
+            "Look for opportunities to practise concepts through projects and understand the importance of responsible AI usage."
           ]
         },
         {
@@ -128,12 +126,10 @@
       "id": 3,
       "slug": "data-science-training-delhi",
       "category": "Data Science",
-      "date": "Recent",
       "readTime": "6 min read",
-      "title": "Data Science Training Institutes in Delhi",
-      "description": "Discover the fundamentals of Data Science, essential tools, practical projects, and skills that can help you begin a career working with data.",
+      "title": "Understanding Data Science: Skills, Tools and Career Paths",
+      "description": "Discover the fundamentals of Data Science, essential tools, practical projects, and skills that can help you understand how data creates useful insights.",
       "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85",
-      "link": "#",
       "introduction": "Data is an important resource for modern organizations. Companies use data to understand customer behavior, improve products, measure performance, and make informed decisions. Data Science combines programming, statistics, and analytical thinking to turn raw information into useful insights.",
       "sections": [
         {
@@ -158,7 +154,7 @@
           ]
         },
         {
-          "heading": "Tools Used by Data Scientists",
+          "heading": "Tools Used in Data Science",
           "paragraphs": [
             "Different tools are used at different stages of a data science project. Python supports analysis and machine learning, SQL helps retrieve information, and visualization tools help explain findings."
           ],
@@ -183,9 +179,9 @@
           ]
         },
         {
-          "heading": "Choosing the Right Training Institute",
+          "heading": "How to Build Your Data Science Skills",
           "paragraphs": [
-            "Compare course topics, practical assignments, project mentoring, trainer experience, and career guidance. Make sure the program includes hands-on work with real datasets instead of only demonstrations."
+            "Develop your knowledge through structured learning, practical assignments, and project work. Make sure you understand the concepts behind the tools and get hands-on experience with real datasets."
           ]
         }
       ],
@@ -195,12 +191,10 @@
       "id": 4,
       "slug": "machine-learning-training-delhi",
       "category": "Machine Learning",
-      "date": "Recent",
       "readTime": "6 min read",
-      "title": "Machine Learning Training Institutes in Delhi",
-      "description": "Understand how Machine Learning works, explore important algorithms, and discover practical projects to begin learning predictive technologies.",
+      "title": "Machine Learning: Concepts, Tools and Project Ideas",
+      "description": "Understand how Machine Learning works, explore important algorithms, and discover practical project ideas to begin learning predictive technologies.",
       "image": "https://images.unsplash.com/photo-1527474305487-b87b222841cc?auto=format&fit=crop&w=1200&q=85",
-      "link": "#",
       "introduction": "Machine Learning is a branch of Artificial Intelligence that enables computer systems to learn patterns from data and make predictions or decisions. It is used in recommendation engines, fraud detection, forecasting, image recognition, and many other applications.",
       "sections": [
         {
@@ -247,9 +241,9 @@
           ]
         },
         {
-          "heading": "How to Select a Training Program",
+          "heading": "How to Develop Machine Learning Skills",
           "paragraphs": [
-            "Choose a program that explains algorithms, includes coding exercises, and teaches model evaluation. Look for opportunities to work with datasets and understand why a model performs well or poorly."
+            "Build your knowledge through programming exercises, dataset experiments, and projects. Focus on understanding algorithms, coding practice, and model evaluation rather than simply using ready-made tools."
           ]
         }
       ],
@@ -259,13 +253,11 @@
       "id": 5,
       "slug": "data-analytics-training-delhi",
       "category": "Data Analytics",
-      "date": "Recent",
       "readTime": "5 min read",
-      "title": "Data Analytics Training Institutes in Delhi",
-      "description": "Learn how data analytics helps businesses make better decisions and explore the tools and practical skills used by data analysts.",
+      "title": "Data Analytics: Skills, Tools and Career Opportunities",
+      "description": "Learn how data analytics helps businesses make better decisions and explore the tools and practical skills used to understand and communicate data.",
       "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85",
-      "link": "#",
-      "introduction": "Businesses generate large amounts of information every day. Data Analytics helps organize this information, identify meaningful patterns, and communicate findings that support better decisions. It is a useful career path for people who enjoy working with numbers and solving business problems.",
+      "introduction": "Businesses generate large amounts of information every day. Data Analytics helps organize this information, identify meaningful patterns, and communicate findings that support better decisions. It is a useful field for people who enjoy working with numbers and solving business problems.",
       "sections": [
         {
           "heading": "What Is Data Analytics?",
@@ -319,12 +311,10 @@
       "id": 6,
       "slug": "python-training-institutes-delhi",
       "category": "Python",
-      "date": "Recent",
       "readTime": "5 min read",
-      "title": "Top Python Training Institutes in Delhi NCR",
-      "description": "Python is used in web development, automation, data science, and AI. Discover what beginners should learn and how to practise effectively.",
+      "title": "Python Programming: A Beginner's Complete Guide",
+      "description": "Python is used in web development, automation, data science, and AI. Discover what beginners should learn and how to practise programming effectively.",
       "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=85",
-      "link": "#",
       "introduction": "Python is one of the most widely used programming languages because of its readable syntax and broad range of applications. Beginners can use it to understand programming fundamentals before moving into areas such as web development, automation, data analysis, and Artificial Intelligence.",
       "sections": [
         {
@@ -373,9 +363,9 @@
           ]
         },
         {
-          "heading": "Selecting a Python Course",
+          "heading": "How to Learn Python Effectively",
           "paragraphs": [
-            "Choose a course with regular coding exercises, instructor feedback, practical assignments, and projects. Check that the curriculum covers programming fundamentals before moving to advanced topics."
+            "Follow a structured learning path with regular coding exercises, instructor feedback, practical assignments, and projects. Understand programming fundamentals before moving to advanced topics."
           ]
         }
       ],
@@ -385,12 +375,10 @@
       "id": 7,
       "slug": "complete-mern-stack-developer-roadmap-for-beginners",
       "category": "MERN Stack",
-      "date": "Recent",
       "readTime": "8 min read",
       "title": "Complete MERN Stack Developer Roadmap for Beginners",
       "description": "Follow a step-by-step roadmap to become a MERN Stack developer, from web fundamentals to building and deploying full-stack applications.",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=85",
-      "link": "#",
       "introduction": "Becoming a MERN Stack developer requires a combination of frontend development, backend programming, database knowledge, and practical problem-solving. Beginners can make progress by learning each layer in sequence and combining them through small projects.",
       "sections": [
         {
@@ -459,12 +447,10 @@
       "id": 8,
       "slug": "how-artificial-intelligence-is-changing-the-future-of-technology",
       "category": "Artificial Intelligence",
-      "date": "Recent",
       "readTime": "6 min read",
-      "title": "How Artificial Intelligence Is Changing the Future of Technology",
+      "title": "How Artificial Intelligence Is Changing Technology",
       "description": "Explore how AI is influencing industries, improving workflows, and creating new opportunities for students and technology professionals.",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=85",
-      "link": "#",
       "introduction": "Artificial Intelligence is becoming a major part of the technology landscape. AI-powered systems can process large amounts of information, assist with repetitive tasks, generate content, and support complex decisions. Its influence can be seen across education, healthcare, finance, software development, and many other industries.",
       "sections": [
         {
@@ -520,12 +506,10 @@
       "id": 9,
       "slug": "top-web-development-skills-every-student-should-learn",
       "category": "Web Development",
-      "date": "Recent",
       "readTime": "5 min read",
-      "title": "Top Web Development Skills Every Student Should Learn",
+      "title": "Web Development Skills Every Student Should Learn",
       "description": "Explore the essential web development skills needed to create responsive websites and build a foundation for a professional developer career.",
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85",
-      "link": "#",
       "introduction": "Web development is a broad field that combines design, programming, and problem-solving to create websites and web applications. Students can begin with the core technologies of the web and gradually explore frontend, backend, and full-stack development.",
       "sections": [
         {
@@ -584,12 +568,10 @@
       "id": 10,
       "slug": "digital-marketing-career-opportunities-and-skills-in-2026",
       "category": "Digital Marketing",
-      "date": "Recent",
       "readTime": "5 min read",
-      "title": "Digital Marketing Career Opportunities and Skills in 2026",
-      "description": "Discover digital marketing skills including SEO, social media, content strategy, analytics, and the career paths available to beginners.",
+      "title": "Digital Marketing Skills and Career Opportunities",
+      "description": "Discover digital marketing skills including SEO, social media, content strategy, analytics, and career paths available to beginners.",
       "image": "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=1200&q=85",
-      "link": "#",
       "introduction": "Digital marketing helps businesses reach audiences through online channels. As customers increasingly discover products and services online, organizations need people who can create useful content, understand audience behaviour, and measure campaign performance.",
       "sections": [
         {
@@ -652,12 +634,10 @@
       "id": 11,
       "slug": "mobile-app-development-a-beginners-career-guide",
       "category": "App Development",
-      "date": "Recent",
       "readTime": "5 min read",
       "title": "Mobile App Development: A Beginner's Career Guide",
       "description": "Learn the basics of mobile app development, explore popular technologies, and understand how beginners can start building applications.",
-     "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=85",
-      "link": "#",
+      "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=85",
       "introduction": "Mobile applications help people communicate, learn, shop, work, and access services. App development combines programming, interface design, data management, and testing to create useful experiences for mobile users.",
       "sections": [
         {
@@ -717,12 +697,10 @@
       "id": 12,
       "slug": "how-to-prepare-for-your-first-it-job-interview",
       "category": "Career Guide",
-      "date": "Recent",
       "readTime": "6 min read",
       "title": "How to Prepare for Your First IT Job Interview",
       "description": "Prepare for your first IT interview with practical guidance on technical skills, communication, resumes, projects, and common interview questions.",
       "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85",
-      "link": "#",
       "introduction": "Your first IT job interview can feel challenging, especially when you are moving from academic learning to professional work. Preparation helps you explain your skills clearly, demonstrate your projects, and approach technical questions with confidence.",
       "sections": [
         {
