@@ -22,13 +22,13 @@ function HomePage() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   // Automatically open popup after every 15 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsPopupOpen(true);
-    }, 15000);
+ useEffect(() => {
+  const timeout = setTimeout(() => {
+    setIsPopupOpen(true);
+  }, 15000);
 
-    return () => clearInterval(interval);
-  }, []);
+  return () => clearTimeout(timeout);
+}, []);
 
   return (
     <>
