@@ -78,7 +78,7 @@ export default function CareerGuidance() {
 
             <div className="mb-10 flex items-center gap-2 text-sm font-semibold tracking-[0.15em] text-blue-200">
               <Sparkles size={17} />
-              CAREER DISCOVERY
+              CAREER GUIDANCE
             </div>
 
             <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
