@@ -1,22 +1,22 @@
 
 {
-  "eyebrow": "AI-Powered Guidance",
-  "title": "Get a Personalised Learning Roadmap",
-  "description": "Let our AI guide you toward the best career path based on your background, goals and aspirations. Get expert counselling and a custom roadmap to reach your dream job.",
+  "eyebrow": "Career Counselling & Course Guidance",
+  "title": "Find the Right Course for Your Career",
+  "description": "Get guidance from our team, understand your learning options and choose an IT course that matches your interests and career goals.",
   "benefits": [
-    "1:1 career counselling session",
-    "Customised course roadmap",
-    "Job role & salary predictions",
-    "Get started in 2 minutes"
+    "Free career counselling",
+    "Guidance to choose the right course",
+    "Understand course duration and learning path",
+    "Placement assistance after training"
   ],
   "formTitle": "Enquire Now",
-  "formSubtitle": "Fill in your details and our team will reach out to you",
+  "formSubtitle": "Share your details and our team will get in touch with you.",
   "placeholders": {
     "name": "Full Name",
-    "email": "Email Address",
+    "email": "Email Address (Optional)",
     "phone": "Phone Number",
-    "course": "Select a Course",
-    "branch": "Select a Branch"
+    "course": "Select a Course (Optional)",
+    "branch": "Select a Location (Optional)"
   },
   "courses": [
     "Web Development",
@@ -29,10 +29,7 @@
     "Data Analyst"
   ],
   "branches": [
-    "Rampur",
-    "Delhi",
-    "Noida",
-    "Dehradun"
+    "Agra"
   ],
-  "submitText": "Submit"
+  "submitText": "Submit Enquiry"
 }

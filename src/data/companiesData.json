@@ -1,39 +1,39 @@
 
 {
-  "title": "Top Companies",
-  "highlight": "Hiring",
-  "titleEnd": "Our Students",
-  "subtitle": "Trusted by India's leading organizations",
+  "title": "Why Choose",
+  "highlight": "Prime Webdynamics?",
+  "titleEnd": "",
+  "subtitle": "Practical learning and career-focused training to help you become job-ready.",
   "logos": [
     {
       "id": 1,
-      "name": "Aditya Birla Group",
-      "image": "https://www.google.com/s2/favicons?domain=adityabirla.com&sz=256"
+      "name": "Industry-Relevant Curriculum",
+      "image": "📚"
     },
     {
       "id": 2,
-      "name": "Algoscale",
-      "image": "https://www.google.com/s2/favicons?domain=algoscale.com&sz=256"
+      "name": "Real-World Projects",
+      "image": "💻"
     },
     {
       "id": 3,
-      "name": "Bajaj",
-      "image": "https://www.google.com/s2/favicons?domain=bajajgroup.company&sz=256"
+      "name": "Expert Industry Mentors",
+      "image": "👨‍🏫"
     },
     {
       "id": 4,
-      "name": "Birlasoft",
-      "image": "https://www.google.com/s2/favicons?domain=birlasoft.com&sz=256"
+      "name": "Placement Assistance",
+      "image": "🎯"
     },
     {
       "id": 5,
-      "name": "CSC",
-      "image": "https://www.google.com/s2/favicons?domain=csc.com&sz=256"
+      "name": "Flexible Batch Timings",
+      "image": "🕒"
     },
     {
       "id": 6,
-      "name": "Cognizant",
-      "image": "https://www.google.com/s2/favicons?domain=cognizant.com&sz=256"
+      "name": "Small Batch Training",
+      "image": "👥"
     }
   ]
 }

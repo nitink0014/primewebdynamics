@@ -18,12 +18,14 @@ function EnquirySection() {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
+    const updatedValue =
+      name === "phone" ? value.replace(/\D/g, "").slice(0, 10) : value;
+
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: updatedValue,
     }));
 
-    // Field change hone par uska previous error clear karo
     setErrors((prev) => ({
       ...prev,
       [name]: "",
@@ -39,11 +41,9 @@ function EnquirySection() {
       newErrors.name = "Please enter your name";
     }
 
-    const phone = formData.phone.replace(/\D/g, "");
-
-    if (!phone) {
+    if (!formData.phone) {
       newErrors.phone = "Please enter your phone number";
-    } else if (phone.length !== 10) {
+    } else if (formData.phone.length !== 10) {
       newErrors.phone = "Phone number must be exactly 10 digits";
     }
 
@@ -53,9 +53,9 @@ function EnquirySection() {
       return;
     }
 
+    // API integration will be added after receiving backend specifications.
     console.log("Enquiry details:", formData);
 
-    // Successful submission ke baad form reset
     setFormData({
       name: "",
       email: "",
@@ -129,8 +129,11 @@ function EnquirySection() {
                 placeholder={enquiryData.placeholders.name}
                 className="h-[45px] w-full rounded-[11px] border border-[#cbd5e1] bg-white px-[14px] text-[14px] text-[#26364d] outline-none transition-colors placeholder:text-[#647084] focus:border-[#1d4b89]"
               />
+
               {errors.name && (
-                <p className="mt-1 text-xs text-red-500">{errors.name}</p>
+                <p className="mt-1 text-xs text-red-500">
+                  {errors.name}
+                </p>
               )}
             </div>
 
@@ -156,8 +159,11 @@ function EnquirySection() {
                 inputMode="numeric"
                 className="h-[45px] w-full rounded-[11px] border border-[#cbd5e1] bg-white px-[14px] text-[14px] text-[#26364d] outline-none transition-colors placeholder:text-[#647084] focus:border-[#1d4b89]"
               />
+
               {errors.phone && (
-                <p className="mt-1 text-xs text-red-500">{errors.phone}</p>
+                <p className="mt-1 text-xs text-red-500">
+                  {errors.phone}
+                </p>
               )}
             </div>
 
@@ -179,7 +185,7 @@ function EnquirySection() {
               ))}
             </select>
 
-            {/* Branch - Optional */}
+            {/* Location - Optional */}
             <select
               name="branch"
               value={formData.branch}
