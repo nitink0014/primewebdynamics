@@ -1,35 +1,35 @@
 
 {
   "badge": {
-    "icon": "🚀",
-    "text": "Trusted by 4 Lakh+ Learners"
+    "icon": "🎓",
+    "text": "ISO 9001:2015 Certified IT Training Institute"
   },
-  "title": "Numbers that speak for themselves.",
-  "description": "India's leading AI, Data Science & Software Training Institute with thousands of successful placements.",
+  "title": "Learn Skills. Build Projects. Grow Your Career.",
+  "description": "Practical, industry-focused IT training with real-world projects, expert mentorship and placement assistance.",
   "stats": [
     {
       "id": 1,
-      "icon": "🎓",
-      "number": "400,000+",
-      "label": "Learners"
+      "icon": "📚",
+      "number": "8",
+      "label": "Job-Oriented Courses"
     },
     {
       "id": 2,
-      "icon": "🏢",
-      "number": "500+",
-      "label": "Hiring Partners"
+      "icon": "💻",
+      "number": "100%",
+      "label": "Job-Oriented Practical Training"
     },
     {
       "id": 3,
-      "icon": "📈",
-      "number": "94%",
-      "label": "Success Rate"
+      "icon": "🏆",
+      "number": "ISO",
+      "label": "9001:2015 Certified"
     },
     {
       "id": 4,
-      "icon": "📚",
-      "number": "180+",
-      "label": "Courses"
+      "icon": "🚀",
+      "number": "3 Steps",
+      "label": "Learn • Build • Get Hired"
     }
   ]
 }

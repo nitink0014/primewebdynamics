@@ -1,44 +1,44 @@
 
 {
-  "title": "More than a course.",
-  "highlight": "A career engine.",
-  "subtitle": "Everything you need to go from learner to professional — in one structured program.",
+  "title": "Why Choose",
+  "highlight": "Prime Webdynamics?",
+  "subtitle": "Build practical skills with industry-focused training and career support.",
   "features": [
     {
       "id": 1,
       "icon": "Bot",
-      "title": "AI Mentor 24×7",
-      "description": "Get instant answers, personalised feedback and study plans powered by AI — anytime you need it."
+      "title": "Industry-Relevant Curriculum",
+      "description": "Learn in-demand technologies and practical skills aligned with current industry requirements."
     },
     {
       "id": 2,
       "icon": "Target",
-      "title": "Adaptive Learning Paths",
-      "description": "Your roadmap adapts to your pace, skill level and career goals for maximum efficiency."
+      "title": "Step-by-Step Learning",
+      "description": "Understand concepts through simple explanations, practical examples and structured training from basics to advanced."
     },
     {
       "id": 3,
       "icon": "Sparkles",
-      "title": "Live Projects",
-      "description": "Work on real industry projects that you can showcase to employers and add to your portfolio."
+      "title": "Real-World Projects",
+      "description": "Build mini and major projects to gain hands-on experience and showcase your work in your portfolio."
     },
     {
       "id": 4,
       "icon": "BriefcaseBusiness",
-      "title": "100% Placement Support",
-      "description": "Dedicated placement team, mock interviews, resume reviews, and direct referrals to 800+ companies."
+      "title": "Placement Assistance",
+      "description": "Get support with resume building, mock interviews, aptitude preparation and job or internship opportunities."
     },
     {
       "id": 5,
       "icon": "Video",
-      "title": "Live + Recorded Classes",
-      "description": "Attend live sessions with experts and rewatch recordings whenever you want, forever."
+      "title": "Flexible Learning Modes",
+      "description": "Choose offline classroom or online learning with morning, evening and weekend batch options."
     },
     {
       "id": 6,
       "icon": "Award",
-      "title": "Industry-recognised Certificate",
-      "description": "Earn a certificate recognised by leading tech companies that validates your skills."
+      "title": "Certificate & Career Guidance",
+      "description": "Receive a course completion certificate along with mentor guidance, doubt sessions and communication skills support."
     }
   ]
 }
