@@ -3,118 +3,113 @@
   "hero": {
     "eyebrow": "CAREER GUIDANCE",
     "title": "Discover the right path for your future.",
-    "description": "Not sure which course to choose? Explore in-demand career fields, discover the skills that match your interests and get guidance to take your next step.",
-    "primaryText": "Explore Career Paths",
+    "description": "Not sure which course to choose? Explore our industry-focused IT courses and get guidance to find the right learning path for your career goals.",
+    "primaryText": "Explore Our Courses",
     "secondaryText": "Talk to an Advisor",
     "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80",
     "imageAlt": "Professionals collaborating on a career project"
   },
   "highlights": [
     {
-      "title": "Industry-relevant skills",
-      "description": "Explore skills used in today's workplaces.",
+      "title": "Industry-Relevant Courses",
+      "description": "Learn practical skills aligned with industry requirements.",
       "icon": "BriefcaseBusiness"
     },
     {
-      "title": "Practical learning",
-      "description": "Build confidence through hands-on projects.",
+      "title": "Practical Learning",
+      "description": "Build your skills through hands-on projects.",
       "icon": "Code2"
     },
     {
-      "title": "Expert guidance",
-      "description": "Get help choosing your learning direction.",
+      "title": "Expert Guidance",
+      "description": "Get help choosing the right course for your goals.",
       "icon": "UserRoundCheck"
     }
   ],
   "section": {
     "eyebrow": "FIND YOUR DIRECTION",
-    "title": "Which career field interests you?",
-    "description": "Select one or more areas you would like to learn. You can choose multiple interests."
+    "title": "Which course interests you?",
+    "description": "Explore our eight job-oriented IT courses and select the areas you want to learn."
   },
   "careerFields": [
-  {
-    "id": "web-development",
-    "title": "Web Development",
-    "description": "Create websites, web applications and digital experiences.",
-    "icon": "Code2",
-    "courses": ["Frontend Development", "Backend Development", "Full Stack Development", "MERN Stack"]
-  },
-  {
-    "id": "app-development",
-    "title": "App Development",
-    "description": "Build mobile experiences and explore connected technologies.",
-    "icon": "Smartphone",
-    "courses": ["Mobile App Development", "Android Development", "IoT", "Robotics"]
-  },
-  {
-    "id": "digital-marketing",
-    "title": "Digital Marketing",
-    "description": "Help businesses grow through online marketing and digital strategy.",
-    "icon": "ChartNoAxesCombined",
-    "courses": ["SEO", "Social Media Marketing", "Google Ads", "Digital Marketing + Gen AI"]
-  },
-  {
-    "id": "python-programming",
-    "title": "Python Programming",
-    "description": "Build programming fundamentals and develop software solutions in Python.",
-    "icon": "Laptop",
-    "courses": ["Python Programming", "Data Science with Python", "Web Development with Python", "Automation with Python"]
-  },
-  {
-    "id": "frontend-technologies",
-    "title": "Frontend Technologies",
-    "description": "Create engaging user interfaces and experiences.",
-    "icon": "Code2",
-    "courses": ["HTML & CSS", "JavaScript", "React", "Vue.js"]
-  },
-  {
-    "id": "backend-technologies",
-    "title": "Backend Technologies",
-    "description": "Develop powerful server-side applications and APIs.",
-    "icon": "Settings2",
-    "courses": ["Node.js", "Express", "Databases", "API Development"]
-  },
-  {
-    "id": "full-stack-developer",
-    "title": "Full Stack Developer",
-    "description": "Master both frontend and backend development skills.",
-    "icon": "BrainCircuit",
-    "courses": ["Full Stack JavaScript", "MERN Stack", "DevOps Basics", "Project Deployment"]
-  },
-  {
-    "id": "data-analyst",
-    "title": "Data Analyst",
-    "description": "Analyze and interpret complex data to help decision-making.",
-    "icon": "ChartNoAxesCombined",
-    "courses": ["Data Analytics", "Excel for Data Analysis", "SQL", "Data Visualization"]
-  }
-]
-,
+    {
+      "id": "web-development",
+      "title": "Web Development",
+      "description": "Learn to create responsive websites and dynamic web applications.",
+      "icon": "Code2",
+      "courses": ["Web Development"]
+    },
+    {
+      "id": "app-development",
+      "title": "App Development",
+      "description": "Learn to build mobile applications for Android and iOS.",
+      "icon": "Smartphone",
+      "courses": ["App Development"]
+    },
+    {
+      "id": "digital-marketing",
+      "title": "Digital Marketing",
+      "description": "Learn how to grow brands, reach audiences and achieve digital marketing goals.",
+      "icon": "ChartNoAxesCombined",
+      "courses": ["Digital Marketing"]
+    },
+    {
+      "id": "python-programming",
+      "title": "Python Programming",
+      "description": "Build programming fundamentals, logic and problem-solving skills using Python.",
+      "icon": "Laptop",
+      "courses": ["Python Programming"]
+    },
+    {
+      "id": "frontend-technologies",
+      "title": "Frontend Technologies",
+      "description": "Learn to design beautiful, responsive and user-friendly interfaces.",
+      "icon": "Code2",
+      "courses": ["Frontend Technologies"]
+    },
+    {
+      "id": "backend-technologies",
+      "title": "Backend Technologies",
+      "description": "Learn to build robust APIs and server-side applications.",
+      "icon": "Settings2",
+      "courses": ["Backend Technologies"]
+    },
+    {
+      "id": "full-stack-developer",
+      "title": "Full Stack Developer",
+      "description": "Learn frontend, backend and database technologies to build complete applications.",
+      "icon": "BrainCircuit",
+      "courses": ["Full Stack Developer"]
+    },
+    {
+      "id": "data-analyst",
+      "title": "Data Analyst",
+      "description": "Learn to analyse data and turn information into useful insights.",
+      "icon": "ChartNoAxesCombined",
+      "courses": ["Data Analyst"]
+    }
+  ],
   "guidance": {
     "eyebrow": "YOUR NEXT STEP",
     "title": "A clearer direction starts with one conversation.",
-    "description": "Tell us what interests you. Our team can help you understand relevant courses, learning paths and the skills you can work towards.",
+    "description": "Tell us about your interests and career goals. Our team can help you understand suitable courses and learning options.",
     "steps": [
       {
         "number": "01",
-        "title": "Choose your interests",
-        "description": "Select the career fields you want to explore."
+        "title": "Choose Your Interests",
+        "description": "Select the courses you want to explore."
       },
       {
         "number": "02",
-        "title": "Discuss your goals",
+        "title": "Discuss Your Goals",
         "description": "Share what you want to learn and achieve."
       },
       {
         "number": "03",
-        "title": "Explore your learning path",
+        "title": "Explore Your Learning Path",
         "description": "Get guidance on suitable courses and next steps."
       }
     ],
     "buttonText": "Get Career Guidance"
-  },
-  "contact": {
-    "email": "hello@primewebdynamics.com",
-    "emailLabel": "Email our team"
   }
 }
