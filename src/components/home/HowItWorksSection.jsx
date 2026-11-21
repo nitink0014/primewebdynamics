@@ -1,7 +1,9 @@
+
 import { useState } from "react";
 import {
   UserRoundPlus,
   BookOpen,
+  Target,
   Code,
   BriefcaseBusiness,
 } from "lucide-react";
@@ -12,6 +14,7 @@ import AutoPopupForm from "./AutoPopupForm";
 const iconMap = {
   UserRoundPlus,
   BookOpen,
+  Target,
   Code,
   BriefcaseBusiness,
 };
@@ -28,12 +31,10 @@ function HowItWorksSection() {
 
   return (
     <section className="w-full bg-white px-5 pb-[60px] pt-[50px] font-sans sm:px-8 lg:px-0">
-
       <div className="mx-auto w-full max-w-[1400px] lg:w-[90%]">
 
         {/* Section Heading */}
         <div className="mb-[75px] flex flex-col items-center text-center">
-
           <h2 className="text-[36px] font-extrabold leading-[1.15] tracking-[-1.2px] text-[#151b2a] sm:text-[46px] lg:text-[58px]">
             {howItWorksData.title}{" "}
             <span className="text-[#5099fa]">
@@ -44,18 +45,16 @@ function HowItWorksSection() {
           <p className="mt-[8px] text-[15px] font-medium text-[#647084] sm:text-[17px]">
             {howItWorksData.subtitle}
           </p>
-
         </div>
 
         {/* Timeline */}
         <div className="relative">
 
           {/* Connecting Gradient Line */}
-          <div className="absolute left-[12.5%] right-[12.5%] top-[38px] hidden h-[3px] bg-gradient-to-r from-[#5368f5] via-[#ff682d] to-[#009d75] lg:block" />
+          <div className="absolute left-[10%] right-[10%] top-[38px] hidden h-[3px] bg-gradient-to-r from-[#5368f5] via-[#ff682d] to-[#009d75] lg:block" />
 
           {/* Steps */}
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
-
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
             {howItWorksData.steps.map((step) => {
               const Icon = iconMap[step.icon];
 
@@ -86,18 +85,14 @@ function HowItWorksSection() {
                   <p className="mt-[10px] max-w-[290px] text-[14px] font-normal leading-[1.65] text-[#647084]">
                     {step.description}
                   </p>
-
                 </div>
               );
             })}
-
           </div>
-
         </div>
 
         {/* CTA Button */}
         <div className="mt-[48px] flex justify-center">
-
           <button
             type="button"
             onClick={() => setIsPopupOpen(true)}
@@ -106,9 +101,7 @@ function HowItWorksSection() {
             {howItWorksData.buttonText}
             <span>→</span>
           </button>
-
         </div>
-
       </div>
 
       {/* Existing Registration Popup */}
@@ -116,7 +109,6 @@ function HowItWorksSection() {
         isOpen={isPopupOpen}
         onClose={() => setIsPopupOpen(false)}
       />
-
     </section>
   );
 }

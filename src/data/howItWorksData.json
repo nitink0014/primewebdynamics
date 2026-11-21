@@ -1,41 +1,49 @@
 
 {
-  "title": "How It",
+  "title": "How Our Training",
   "highlight": "Works",
-  "subtitle": "Your journey from enrollment to placement in 4 simple steps",
-  "buttonText": "Find Your Journey Today",
+  "subtitle": "Your journey from career counselling to practical learning and placement assistance.",
+  "buttonText": "Start Your Learning Journey",
   "steps": [
     {
       "id": 1,
       "number": "01",
-      "title": "Enroll",
-      "description": "Choose your course and complete enrollment in 2 minutes. Get instant access.",
+      "title": "Counselling",
+      "description": "Understand your career goals and get guidance to choose the right course.",
       "icon": "UserRoundPlus",
       "color": "blue"
     },
     {
       "id": 2,
       "number": "02",
-      "title": "Learn",
-      "description": "Live mentoring, recorded sessions, and AI-powered doubt resolution 24×7.",
+      "title": "Concept Classes",
+      "description": "Learn concepts through simple explanations, practical examples and live coding.",
       "icon": "BookOpen",
       "color": "orange"
     },
     {
       "id": 3,
       "number": "03",
-      "title": "Build Projects",
-      "description": "10+ real-world portfolio projects with elite industry mentors.",
-      "icon": "Code",
+      "title": "Practice",
+      "description": "Improve your skills through hands-on lab sessions, coding practice and daily assignments.",
+      "icon": "Target",
       "color": "purple"
     },
     {
       "id": 4,
       "number": "04",
-      "title": "Get Placed",
-      "description": "Interview prep & placement support at 800+ hiring companies.",
-      "icon": "BriefcaseBusiness",
+      "title": "Projects",
+      "description": "Build mini and major real-world projects to gain practical experience.",
+      "icon": "Code",
       "color": "green"
+    },
+    {
+      "id": 5,
+      "number": "05",
+      "title": "Certify & Place",
+      "description": "Complete assessments, receive your course completion certificate and get placement assistance.",
+      "icon": "BriefcaseBusiness",
+      "color": "blue"
     }
   ]
 }
