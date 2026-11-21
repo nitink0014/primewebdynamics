@@ -1,5 +1,5 @@
 
-import { ArrowRight, CalendarDays } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import blogsData from "../../data/blogsData.json";
@@ -67,8 +67,8 @@ function BlogsSection() {
                   <span className="text-[#a0a9b7]">•</span>
 
                   <span className="flex shrink-0 items-center gap-[4px] text-[#8a96a9]">
-                    <CalendarDays size={13} />
-                    {blog.date}
+                    <Clock size={13} />
+                    {blog.readTime}
                   </span>
                 </div>
 
