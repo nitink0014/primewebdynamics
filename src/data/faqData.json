@@ -3,47 +3,57 @@
   "badge": "FAQs",
   "title": "Frequently Asked Questions",
   "highlightTitle": "Questions",
-  "subtitle": "Everything you need to know before getting started",
+  "subtitle": "Everything you need to know about courses, training and career support.",
   "faqs": [
     {
       "id": 1,
-      "question": "What courses does Primewebdynamics offer?",
-      "answer": "Primewebdynamics offers industry-oriented IT and AI training courses including Data Science, Machine Learning, Artificial Intelligence, Cyber Security, Full Stack Development (MERN, MEAN, Java), Cloud Computing (AWS, Azure), DevOps, Python, Digital Marketing, UI/UX, and Software Testing. All courses are designed according to current industry requirements and job market demand."
+      "question": "What courses does Prime Webdynamics offer?",
+      "answer": "Prime Webdynamics offers 8 job-oriented IT courses: Web Development, App Development, Digital Marketing, Python Programming, Frontend Technologies, Backend Technologies, Full Stack Developer and Data Analyst. Each course focuses on practical learning and industry-relevant skills."
     },
     {
       "id": 2,
-      "question": "Does Primewebdynamics provide placement assistance?",
-      "answer": "Primewebdynamics provides placement assistance to help students prepare for job opportunities. This may include interview preparation, resume guidance, career support, and placement-related activities. Contact the admissions team for details about the support available for your chosen course."
+      "question": "Does Prime Webdynamics provide placement assistance?",
+      "answer": "Yes, Prime Webdynamics provides placement assistance after training. This includes ATS-friendly resume building, technical and HR mock interviews, aptitude preparation, GitHub and LinkedIn profile guidance, and support with job and internship opportunities."
     },
     {
       "id": 3,
-      "question": "Why should I choose Primewebdynamics over other institutes?",
-      "answer": "Primewebdynamics focuses on industry-oriented training, practical learning, project-based experience, and career development. Students get an opportunity to learn relevant technologies and build skills that are useful in the IT industry."
+      "question": "Why should I choose Prime Webdynamics?",
+      "answer": "Prime Webdynamics is an ISO 9001:2015 certified IT training institute focused on practical, industry-oriented learning. Students benefit from expert mentorship, real-world projects, small batches, doubt sessions, flexible timings and placement assistance."
     },
     {
       "id": 4,
-      "question": "Are the trainers experienced industry professionals?",
-      "answer": "Primewebdynamics provides training through experienced trainers who guide students through technical concepts and practical learning. The training approach focuses on building both theoretical understanding and practical skills."
+      "question": "Who can join Prime Webdynamics courses?",
+      "answer": "Students from B.Tech, B.E., BCA, MCA, M.Tech, B.Sc IT/CS, Diploma and Polytechnic backgrounds can join. 12th-pass students, graduates and working professionals can also explore suitable courses based on their interests and career goals."
     },
     {
       "id": 5,
-      "question": "Do you provide certifications after course completion?",
-      "answer": "Students can receive course completion certification after successfully completing the applicable course requirements. Please contact the institute for certification details related to your selected program."
+      "question": "Do you provide a certificate after course completion?",
+      "answer": "Yes, students receive a course completion certificate after successfully completing the applicable course requirements and assessments."
     },
     {
       "id": 6,
-      "question": "Are there live projects included in the training?",
-      "answer": "Practical learning and project-based activities help students understand how technologies are used in real-world scenarios. Project availability and details may vary depending on the selected course."
+      "question": "Are practical projects included in the training?",
+      "answer": "Yes, practical learning is an important part of the training. Students work on hands-on exercises, mini projects and major real-world projects to gain practical experience and build a portfolio for their careers."
     },
     {
       "id": 7,
-      "question": "Can beginners join Primewebdynamics courses?",
-      "answer": "Yes, students with different levels of technical knowledge can explore suitable courses. Course prerequisites may vary, so it is recommended to discuss your background with the admissions team before enrolling."
+      "question": "Can beginners join Prime Webdynamics courses?",
+      "answer": "Yes, several courses are suitable for beginners. Training follows a step-by-step approach, starting with basic concepts and progressing towards advanced topics through simple explanations, practical examples and hands-on practice."
     },
     {
       "id": 8,
-      "question": "How can I enroll in a course at Primewebdynamics?",
-      "answer": "You can contact the Primewebdynamics admissions team or submit an enquiry through the website. The team can guide you about available courses, batches, fees, and the enrollment process."
+      "question": "What are the available batch timings and learning modes?",
+      "answer": "Prime Webdynamics offers flexible morning, evening and weekend batches. Students can choose between offline classroom training and online learning, depending on the available options."
+    },
+    {
+      "id": 9,
+      "question": "How can I enroll in a course?",
+      "answer": "You can contact Prime Webdynamics for career counselling and course guidance. The team will help you understand your career goals, choose a suitable course and learn about the enrollment process."
+    },
+    {
+      "id": 10,
+      "question": "Where is Prime Webdynamics located?",
+      "answer": "Prime Webdynamics is located at Friends Tower, Opposite MAX Mall, Sanjay Palace, Agra. You can contact the institute at +91 79021 70568 for course-related enquiries."
     }
   ]
 }

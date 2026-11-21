@@ -1,8 +1,8 @@
 
 {
-  "title": "Why Choose",
-  "highlight": "Prime Webdynamics?",
-  "subtitle": "Build practical skills with industry-focused training and career support.",
+  "title": "Learn Skills.",
+  "highlight": "Build Your Future.",
+  "subtitle": "A practical learning experience designed to help you develop industry-ready skills and confidence.",
   "features": [
     {
       "id": 1,
@@ -19,26 +19,26 @@
     {
       "id": 3,
       "icon": "Sparkles",
-      "title": "Real-World Projects",
-      "description": "Build mini and major projects to gain hands-on experience and showcase your work in your portfolio."
+      "title": "Learn Through Projects",
+      "description": "Build mini and major real-world projects to gain hands-on experience and showcase your work in your portfolio."
     },
     {
       "id": 4,
       "icon": "BriefcaseBusiness",
-      "title": "Placement Assistance",
-      "description": "Get support with resume building, mock interviews, aptitude preparation and job or internship opportunities."
+      "title": "Career & Placement Support",
+      "description": "Prepare for opportunities with resume building, mock interviews, aptitude preparation and job or internship support."
     },
     {
       "id": 5,
       "icon": "Video",
-      "title": "Flexible Learning Modes",
+      "title": "Flexible Learning Options",
       "description": "Choose offline classroom or online learning with morning, evening and weekend batch options."
     },
     {
       "id": 6,
       "icon": "Award",
-      "title": "Certificate & Career Guidance",
-      "description": "Receive a course completion certificate along with mentor guidance, doubt sessions and communication skills support."
+      "title": "Certification & Mentor Support",
+      "description": "Get a course completion certificate, mentor guidance, doubt-solving sessions and communication skills support."
     }
   ]
 }
