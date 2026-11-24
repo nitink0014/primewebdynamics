@@ -1,6 +1,12 @@
 
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  ArrowUpRight,
+} from "lucide-react";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,70 +18,59 @@ function Navbar() {
   };
 
   const navLinkClass = ({ isActive }) =>
-    `whitespace-nowrap text-[18px] font-normal transition-colors duration-200 ${
+    `relative whitespace-nowrap py-2 text-[14px] font-semibold transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:rounded-full after:bg-[#f47b43] after:transition-all after:duration-300 ${
       isActive
-        ? "text-[#087bff]"
-        : "text-[#777777] hover:text-[#1760a4]"
+        ? "text-[#1765c0] after:w-full"
+        : "text-[#596579] after:w-0 hover:text-[#1765c0] hover:after:w-full"
     }`;
 
-  const dropdownButtonClass =
-    "flex items-center gap-2 whitespace-nowrap text-[18px] font-normal text-[#777777] transition hover:text-[#1760a4]";
+  const mobileLinkClass = ({ isActive }) =>
+    `flex items-center rounded-xl px-4 py-3 text-[15px] font-semibold transition-colors duration-200 ${
+      isActive
+        ? "bg-blue-50 text-[#1765c0]"
+        : "text-[#475569] hover:bg-blue-50 hover:text-[#1765c0]"
+    }`;
 
-  const dropdownMenuClass =
-    "absolute right-0 top-full z-50 w-48 rounded-md border border-gray-100 bg-white py-2 shadow-lg";
+  const dropdownLinkClass =
+    "group flex items-center justify-between rounded-xl px-4 py-3 text-[14px] font-semibold text-[#596579] transition-colors duration-200 hover:bg-[#edf5ff] hover:text-[#1765c0]";
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white">
+    <nav className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 shadow-[0_3px_15px_rgba(15,35,75,0.04)] backdrop-blur-xl">
 
-      <div className="mx-auto flex min-h-[78px] items-center justify-between px-[4%]">
+      <div className="mx-auto flex min-h-[76px] w-full max-w-[1500px] items-center justify-between px-5 sm:px-8 lg:px-[5%]">
 
-      
-{/* Primewebdynamics Logo */}
-{/* Primewebdynamics Logo */}
-<Link
-  to="/"
-  onClick={closeMenu}
-  className="flex shrink-0 items-center"
->
-  <img
-    src="/PrimeWebdynamicsLogo.png"
-    alt="Primeweb Dynamics"
-    className="h-14 w-auto object-contain sm:h-16"
-  />
-</Link>
-
+        {/* Logo */}
+        <Link
+          to="/"
+          onClick={closeMenu}
+          className="flex shrink-0 items-center"
+        >
+          <img
+            src="/PrimeWebdynamicsLogo.png"
+            alt="Prime Webdynamics"
+            className="h-12 w-auto object-contain sm:h-[58px]"
+          />
+        </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-[25px] xl:flex">
+        <div className="hidden items-center gap-6 xl:flex 2xl:gap-8">
 
-          {/* Home */}
-          <NavLink to="/" className={navLinkClass}>
+          <NavLink to="/" end className={navLinkClass}>
             Home
           </NavLink>
 
-          {/* Courses - Direct Navigation */}
           <NavLink to="/courses" className={navLinkClass}>
             Courses
           </NavLink>
 
-          {/* Registration */}
           <NavLink to="/registration" className={navLinkClass}>
             Registration
           </NavLink>
 
-          {/* Career Guidance */}
-          <div className="relative flex items-center gap-2">
+          <NavLink to="/career-guidance" className={navLinkClass}>
+            Career Guidance
+          </NavLink>
 
-           <NavLink
-  to="/career-guidance"
-  className={navLinkClass}
->
-  Career Guidance
-</NavLink>
-
-          </div>
-
-          {/* Contact Us */}
           <NavLink to="/contact" className={navLinkClass}>
             Contact Us
           </NavLink>
@@ -88,155 +83,140 @@ function Navbar() {
           >
             <button
               type="button"
-              onClick={() => setOthersOpen(!othersOpen)}
+              onClick={() => setOthersOpen((current) => !current)}
               aria-expanded={othersOpen}
-              className={dropdownButtonClass}
+              aria-haspopup="true"
+              className={`flex items-center gap-1.5 py-2 text-[14px] font-semibold transition-colors duration-200 ${
+                othersOpen
+                  ? "text-[#1765c0]"
+                  : "text-[#596579] hover:text-[#1765c0]"
+              }`}
             >
               Others
 
-              <span
-                className={`text-[12px] transition-transform ${
+              <ChevronDown
+                size={16}
+                className={`transition-transform duration-200 ${
                   othersOpen ? "rotate-180" : ""
                 }`}
-              >
-                ▼
-              </span>
+              />
             </button>
 
             {othersOpen && (
-              <div className={dropdownMenuClass}>
+              <div className="absolute right-0 top-full z-50 w-56 pt-3">
+                <div className="overflow-hidden rounded-2xl border border-slate-100 bg-white p-2 shadow-[0_15px_40px_rgba(15,35,75,0.13)]">
 
-                <Link
-                  to="/about"
-                  onClick={closeMenu}
-                  className="block px-4 py-3 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600"
-                >
-                  About Us
-                </Link>
+                  <Link
+                    to="/about"
+                    onClick={closeMenu}
+                    className={dropdownLinkClass}
+                  >
+                    <span>About Us</span>
+                    <ArrowUpRight
+                      size={16}
+                      className="text-slate-400 transition-colors duration-200 group-hover:text-[#f47b43]"
+                    />
+                  </Link>
 
-                <Link
-                  to="/blogs"
-                  onClick={closeMenu}
-                  className="block px-4 py-3 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600"
-                >
-                  Blogs
-                </Link>
+                  <Link
+                    to="/blogs"
+                    onClick={closeMenu}
+                    className={dropdownLinkClass}
+                  >
+                    <span>Blogs</span>
+                    <ArrowUpRight
+                      size={16}
+                      className="text-slate-400 transition-colors duration-200 group-hover:text-[#f47b43]"
+                    />
+                  </Link>
 
+                </div>
               </div>
             )}
           </div>
-
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Toggle */}
         <button
           type="button"
-          onClick={() => setIsOpen(!isOpen)}
-          className="text-2xl text-gray-700 xl:hidden"
-          aria-label="Toggle navigation menu"
+          onClick={() => {
+            setIsOpen((current) => !current);
+            setOthersOpen(false);
+          }}
+          className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition-colors hover:bg-blue-50 hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 xl:hidden"
+          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
         >
-          {isOpen ? "✕" : "☰"}
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
 
       </div>
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="border-t border-gray-100 bg-white px-5 py-4 shadow-md xl:hidden">
+        <div
+          id="mobile-navigation"
+          className="border-t border-slate-100 bg-white px-5 py-4 shadow-lg xl:hidden sm:px-8"
+        >
+          <div className="mx-auto flex max-w-[1500px] flex-col gap-1">
 
-          <div className="flex flex-col gap-1">
-
-            {/* Home */}
-            <NavLink
-              to="/"
-              onClick={closeMenu}
-              className={({ isActive }) =>
-                `rounded-lg px-4 py-3 text-[16px] ${
-                  isActive
-                    ? "bg-blue-50 text-blue-600"
-                    : "text-gray-700 hover:bg-blue-50"
-                }`
-              }
-            >
+            <NavLink to="/" end onClick={closeMenu} className={mobileLinkClass}>
               Home
             </NavLink>
 
-            {/* Mobile Courses - Direct Navigation */}
-            <NavLink
-              to="/courses"
-              onClick={closeMenu}
-              className={({ isActive }) =>
-                `rounded-lg px-4 py-3 text-[16px] ${
-                  isActive
-                    ? "bg-blue-50 text-blue-600"
-                    : "text-gray-700 hover:bg-blue-50"
-                }`
-              }
-            >
+            <NavLink to="/courses" onClick={closeMenu} className={mobileLinkClass}>
               Courses
             </NavLink>
 
-            {/* Registration */}
-            <NavLink
-              to="/registration"
-              onClick={closeMenu}
-              className="rounded-lg px-4 py-3 text-[16px] text-gray-700 hover:bg-blue-50"
-            >
+            <NavLink to="/registration" onClick={closeMenu} className={mobileLinkClass}>
               Registration
             </NavLink>
 
-            {/* Career Guidance */}
-           <NavLink
-  to="/career-guidance"
-  onClick={closeMenu}
-  className={({ isActive }) =>
-    `rounded-lg px-4 py-3 text-[16px] transition-colors duration-200 ${
-      isActive
-        ? "bg-blue-50 text-blue-600"
-        : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
-    }`
-  }
->
-  Career Guidance
-</NavLink>
+            <NavLink to="/career-guidance" onClick={closeMenu} className={mobileLinkClass}>
+              Career Guidance
+            </NavLink>
 
-            {/* Contact */}
-            <NavLink
-              to="/contact"
-              onClick={closeMenu}
-              className="rounded-lg px-4 py-3 text-[16px] text-gray-700 hover:bg-blue-50"
-            >
+            <NavLink to="/contact" onClick={closeMenu} className={mobileLinkClass}>
               Contact Us
             </NavLink>
 
             {/* Mobile Others */}
             <button
               type="button"
-              onClick={() => setOthersOpen(!othersOpen)}
-              className="flex justify-between rounded-lg px-4 py-3 text-left text-gray-700 hover:bg-blue-50"
+              onClick={() => setOthersOpen((current) => !current)}
+              aria-expanded={othersOpen}
+              className="flex items-center justify-between rounded-xl px-4 py-3 text-left text-[15px] font-semibold text-slate-600 transition-colors hover:bg-blue-50 hover:text-blue-600"
             >
               Others
-              <span>{othersOpen ? "▲" : "▼"}</span>
+
+              <ChevronDown
+                size={17}
+                className={`transition-transform duration-200 ${
+                  othersOpen ? "rotate-180" : ""
+                }`}
+              />
             </button>
 
             {othersOpen && (
-              <div className="ml-5 border-l-2 border-blue-500 pl-3">
+              <div className="ml-4 space-y-1 border-l-2 border-blue-100 py-1 pl-3">
 
                 <Link
                   to="/about"
                   onClick={closeMenu}
-                  className="block px-3 py-3 text-sm text-gray-600 hover:text-blue-600"
+                  className="group flex items-center justify-between rounded-lg px-4 py-3 text-[14px] font-semibold text-[#596579] transition-colors duration-200 hover:bg-[#edf5ff] hover:text-[#1765c0]"
                 >
                   About Us
+                  <ArrowUpRight size={15} className="text-slate-400 group-hover:text-[#f47b43]" />
                 </Link>
 
                 <Link
                   to="/blogs"
                   onClick={closeMenu}
-                  className="block px-3 py-3 text-sm text-gray-600 hover:text-blue-600"
+                  className="group flex items-center justify-between rounded-lg px-4 py-3 text-[14px] font-semibold text-[#596579] transition-colors duration-200 hover:bg-[#edf5ff] hover:text-[#1765c0]"
                 >
                   Blogs
+                  <ArrowUpRight size={15} className="text-slate-400 group-hover:text-[#f47b43]" />
                 </Link>
 
               </div>

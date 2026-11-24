@@ -2,7 +2,7 @@
 {
   "title": "How Our Training",
   "highlight": "Works",
-  "subtitle": "Your journey from career counselling to practical learning and placement assistance.",
+  "subtitle": "Your journey from career counselling to practical learning and career support.",
   "buttonText": "Start Your Learning Journey",
   "steps": [
     {
@@ -40,8 +40,8 @@
     {
       "id": 5,
       "number": "05",
-      "title": "Certify & Place",
-      "description": "Complete assessments, receive your course completion certificate and get placement assistance.",
+      "title": "Certification & Career Support",
+      "description": "Receive your course completion certificate and get support with resume building, interview preparation and job or internship opportunities.",
       "icon": "BriefcaseBusiness",
       "color": "blue"
     }

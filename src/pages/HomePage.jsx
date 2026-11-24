@@ -21,18 +21,21 @@ import AutoPopupForm from "../components/home/AutoPopupForm";
 function HomePage() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  // Automatically open popup after every 15 seconds
- useEffect(() => {
-  const timeout = setTimeout(() => {
-    setIsPopupOpen(true);
-  }, 15000);
+  // Open enquiry popup once after 15 seconds
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      setIsPopupOpen(true);
+    }, 15000);
 
-  return () => clearTimeout(timeout);
-}, []);
+    return () => window.clearTimeout(timeoutId);
+  }, []);
+
+  const openPopup = () => setIsPopupOpen(true);
+  const closePopup = () => setIsPopupOpen(false);
 
   return (
     <>
-      <HeroCarousel onEnroll={() => setIsPopupOpen(true)} />
+      <HeroCarousel onEnroll={openPopup} />
 
       <StatsSection />
       <CompaniesSection />
@@ -51,7 +54,7 @@ function HomePage() {
 
       <AutoPopupForm
         isOpen={isPopupOpen}
-        onClose={() => setIsPopupOpen(false)}
+        onClose={closePopup}
       />
     </>
   );

@@ -1,116 +1,57 @@
 
-import { useEffect, useState } from "react";
 import companiesData from "../../data/companiesData.json";
 
 function CompaniesSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [transitionEnabled, setTransitionEnabled] = useState(true);
-
   const benefits = companiesData.logos;
-  const totalBenefits = benefits.length;
-
-  useEffect(() => {
-    if (totalBenefits <= 1) return;
-
-    const interval = setInterval(() => {
-      setTransitionEnabled(true);
-      setActiveIndex((current) => current + 1);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [totalBenefits]);
-
-  const handleTransitionEnd = () => {
-    if (activeIndex >= totalBenefits) {
-      setTransitionEnabled(false);
-      setActiveIndex(0);
-    }
-  };
-
-  const goToSlide = (index) => {
-    setTransitionEnabled(true);
-    setActiveIndex(index);
-  };
-
-  const dotIndexes = [
-    0,
-    Math.ceil(totalBenefits / 3),
-    Math.ceil((totalBenefits * 2) / 3)
-  ].map((index) =>
-    Math.min(index, Math.max(totalBenefits - 1, 0))
-  );
-
-  const activeDot = Math.min(
-    2,
-    Math.floor(
-      (activeIndex % totalBenefits) /
-      Math.max(1, totalBenefits / 3)
-    )
-  );
 
   return (
-    <section className="min-h-[520px] w-full overflow-hidden bg-white px-5 pt-6 font-sans sm:px-8 lg:px-[50px]">
+    <section className="relative w-full overflow-hidden bg-white px-5 py-16 font-sans sm:px-8 sm:py-20 lg:px-12">
+      {/* Background decoration */}
+      <div className="pointer-events-none absolute -right-32 top-10 h-72 w-72 rounded-full bg-blue-50 blur-3xl" />
 
-      {/* Heading */}
-      <div className="w-full">
-        <h2 className="text-[36px] font-extrabold leading-tight tracking-[-1.5px] text-[#151b2a] sm:text-[46px] lg:text-[58px]">
-          {companiesData.title}{" "}
-          <span className="text-[#5099fa]">
-            {companiesData.highlight}
-          </span>{" "}
-          {companiesData.titleEnd}
-        </h2>
+      <div className="relative mx-auto max-w-7xl">
+        {/* Heading */}
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="mb-4 inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-[#438fe5] sm:text-sm">
+            Why Choose Us
+          </span>
 
-        <p className="mt-2 text-[16px] font-medium text-[#647084] sm:text-[18px]">
-          {companiesData.subtitle}
-        </p>
-      </div>
+          <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-[#151b2a] sm:text-4xl lg:text-5xl">
+            {companiesData.title}{" "}
+            <span className="text-[#5099fa]">
+              {companiesData.highlight}
+            </span>{" "}
+            {companiesData.titleEnd}
+          </h2>
 
-      {/* Benefits Carousel */}
-      <div className="mx-auto mt-[75px] w-full max-w-[1100px] overflow-hidden">
-        <div
-          onTransitionEnd={handleTransitionEnd}
-          style={{
-            transform: `translateX(-${activeIndex * 158}px)`,
-            transition: transitionEnabled
-              ? "transform 650ms ease-in-out"
-              : "none"
-          }}
-          className="flex w-max gap-[18px]"
-        >
-          {[...benefits, ...benefits].map((item, index) => (
-            <div
-              key={`${item.id}-${index}`}
-              className="flex h-[140px] w-[140px] shrink-0 flex-col items-center justify-center gap-3 rounded-2xl border border-[#d7e5f8] bg-white p-3 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#647084] sm:text-base lg:text-lg">
+            {companiesData.subtitle}
+          </p>
+        </div>
+
+        {/* Benefits Grid */}
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:mt-14 sm:gap-6 lg:grid-cols-3">
+          {benefits.map((item) => (
+            <article
+              key={item.id}
+              className="group relative flex min-h-[175px] flex-col items-center justify-center overflow-hidden rounded-2xl border border-[#e3ebf6] bg-white p-5 text-center shadow-[0_4px_20px_rgba(25,55,100,0.04)] transition-[border-color,box-shadow] duration-200 hover:border-[#b9d7fa] hover:shadow-[0_12px_30px_rgba(25,55,100,0.10)] sm:min-h-[195px] sm:p-7"
             >
-              <span className="text-[36px]">
-                {item.image}
-              </span>
+              {/* Top accent line */}
+              <div className="pointer-events-none absolute left-1/2 top-0 h-[3px] w-0 -translate-x-1/2 rounded-full bg-[#5099fa] transition-[width] duration-300 ease-out group-hover:w-1/2" />
 
-              <h3 className="text-[13px] font-bold leading-snug text-[#243653]">
+              {/* Icon */}
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#edf5ff] text-3xl sm:h-16 sm:w-16 sm:text-4xl">
+                <span aria-hidden="true">{item.image}</span>
+              </div>
+
+              {/* Benefit title */}
+              <h3 className="max-w-[220px] text-sm font-bold leading-snug text-[#243653] sm:text-base">
                 {item.name}
               </h3>
-            </div>
+            </article>
           ))}
         </div>
       </div>
-
-      {/* Pagination Dots */}
-      <div className="mt-6 flex items-center justify-center gap-[17px]">
-        {dotIndexes.map((index, dotIndex) => (
-          <button
-            key={dotIndex}
-            onClick={() => goToSlide(index)}
-            aria-label={`Go to benefit group ${dotIndex + 1}`}
-            className={`h-[13px] w-[13px] rounded-full transition-colors duration-300 ${
-              activeDot === dotIndex
-                ? "bg-[#ff7900]"
-                : "bg-[#1760a5]"
-            }`}
-          />
-        ))}
-      </div>
-
     </section>
   );
 }
