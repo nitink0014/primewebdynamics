@@ -1,94 +1,107 @@
 
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import blogsData from "../../data/blogsData.json";
 
 function BlogsSection() {
   return (
-    <section className="w-full bg-[#f1f4f8] px-5 pb-[50px] pt-[35px] font-sans sm:px-8 lg:px-0">
-      <div className="mx-auto w-full max-w-[1600px] lg:w-[92%]">
+    <section className="relative w-full overflow-hidden bg-[#f7f9fc] px-5 py-16 font-sans sm:px-8 lg:py-20">
+      {/* Background Accent */}
+      <div className="pointer-events-none absolute -right-32 top-10 h-72 w-72 rounded-full bg-[#dceaff]/60 blur-[90px]" />
+
+      <div className="relative mx-auto w-full max-w-[1250px]">
 
         {/* Section Heading */}
-        <div className="mb-[22px]">
-          <div className="flex items-center justify-between gap-4">
-
-            <div className="flex h-[30px] items-center rounded-[9px] bg-[#dceaff] px-[11px] text-[12px] font-bold text-[#347fff]">
+        <div className="mb-10 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+          <div className="max-w-[700px]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#d5e5fb] bg-[#eaf3ff] px-4 py-2 text-[12px] font-extrabold tracking-[1.2px] text-[#2878ce]">
+              <BookOpen size={15} />
               {blogsData.badge}
             </div>
 
-            <Link
-              to="/blogs"
-              className="flex shrink-0 items-center gap-[6px] text-[14px] font-bold text-[#347fff] transition-colors duration-300 hover:text-[#ff821f]"
-            >
-              {blogsData.viewAllText}
-              <ArrowRight size={17} strokeWidth={2.8} />
-            </Link>
+            <h2 className="mt-5 text-[30px] font-extrabold leading-[1.15] tracking-[-1px] text-[#14243d] sm:text-[40px] lg:text-[46px]">
+              {blogsData.title}
+            </h2>
+
+            <p className="mt-4 max-w-[620px] text-[14px] leading-7 text-[#68778c] sm:text-[16px]">
+              {blogsData.subtitle}
+            </p>
           </div>
 
-          <h2 className="mt-[14px] text-[30px] font-bold leading-[1.15] tracking-[-1px] text-[#151b2a] sm:text-[40px] lg:text-[50px]">
-            {blogsData.title}
-          </h2>
-
-          <p className="mt-[9px] text-[14px] font-medium text-[#647084] sm:text-[16px]">
-            {blogsData.subtitle}
-          </p>
+          <Link
+            to="/blogs"
+            className="inline-flex w-fit shrink-0 items-center gap-2 rounded-lg border border-[#cbdcf0] bg-white px-5 py-3 text-[13px] font-bold text-[#2878ce] transition-[border-color,background-color,color] duration-200 hover:border-[#2878ce] hover:bg-[#edf5ff] focus:outline-none focus:ring-2 focus:ring-[#2878ce] focus:ring-offset-2"
+          >
+            {blogsData.viewAllText}
+            <ArrowRight size={17} />
+          </Link>
         </div>
 
         {/* Blog Cards */}
-        <div className="grid grid-cols-1 gap-[16px] sm:grid-cols-2 lg:grid-cols-4">
-          {blogsData.blogs.map((blog) => (
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {blogsData.blogs.map((blog, index) => (
             <article
               key={blog.id}
-              className="flex h-[390px] min-w-0 flex-col overflow-hidden rounded-[13px] border border-[#d0d8e3] bg-[#f9fafc]"
+              className="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-[#e1e7ef] bg-white shadow-[0_4px_18px_rgba(20,36,61,0.04)] transition-[border-color,box-shadow] duration-300 hover:border-[#b8d5f5] hover:shadow-[0_14px_35px_rgba(20,36,61,0.09)]"
             >
               {/* Image */}
-              <div className="relative h-[165px] w-full shrink-0 overflow-hidden bg-[#e2e8f0]">
+              <Link
+                to={`/blogs/${blog.slug}`}
+                className="relative block aspect-[16/10] w-full overflow-hidden bg-[#e8eef6] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#2878ce]"
+                aria-label={`Read ${blog.title}`}
+              >
                 <img
                   src={blog.image}
                   alt={blog.title}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="h-full w-full object-cover"
                 />
 
-                <span className="absolute left-[10px] top-[10px] max-w-[calc(100%-20px)] truncate rounded-full bg-[#5ba2f8] px-[11px] py-[6px] text-[11px] font-bold text-white">
+                <span className="absolute left-4 top-4 max-w-[calc(100%-32px)] truncate rounded-md border border-white/20 bg-[#102653]/90 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.8px] text-white backdrop-blur-sm">
                   {blog.category}
                 </span>
-              </div>
+              </Link>
 
               {/* Card Content */}
-              <div className="flex min-h-0 flex-1 flex-col px-[13px] pb-[12px] pt-[13px]">
-
-                <div className="flex items-center gap-[6px] text-[12px] font-medium">
-                  <span className="truncate text-[#347fff]">
+              <div className="flex flex-1 flex-col p-5">
+                {/* Meta Information */}
+                <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold text-[#7c8ba0]">
+                  <span className="text-[#2878ce]">
                     {blog.category}
                   </span>
 
-                  <span className="text-[#a0a9b7]">•</span>
+                  <span className="h-1 w-1 rounded-full bg-[#b6c0ce]" />
 
-                  <span className="flex shrink-0 items-center gap-[4px] text-[#8a96a9]">
+                  <span className="inline-flex items-center gap-1.5">
                     <Clock size={13} />
                     {blog.readTime}
                   </span>
                 </div>
 
-                <h3 className="mt-[10px] line-clamp-2 text-[15px] font-extrabold leading-[1.35] text-[#101b35]">
+                {/* Title */}
+                <h3 className="mt-4 line-clamp-2 text-[17px] font-extrabold leading-[1.4] tracking-[-0.3px] text-[#172943] transition-colors duration-200 group-hover:text-[#2878ce]">
                   {blog.title}
                 </h3>
 
-                <p className="mt-[8px] line-clamp-3 text-[12px] font-normal leading-[1.5] text-[#45546a]">
+                {/* Description */}
+                <p className="mt-3 line-clamp-3 text-[13px] leading-[1.8] text-[#68778c]">
                   {blog.description}
                 </p>
 
                 {/* Read More */}
                 <Link
                   to={`/blogs/${blog.slug}`}
-                  className="mt-auto flex w-fit items-center gap-[6px] pt-[8px] text-[12px] font-semibold text-[#347fff] transition-colors duration-300 hover:text-[#ff821f]"
+                  className="mt-6 inline-flex w-fit items-center gap-2 border-b border-transparent pb-1 text-[12px] font-extrabold text-[#2878ce] transition-[gap,color,border-color] duration-200 hover:gap-3 hover:border-[#2878ce] hover:text-[#f58227] focus:outline-none focus:ring-2 focus:ring-[#2878ce]"
                 >
-                  Read More
-                  <ArrowRight size={15} strokeWidth={2.8} />
+                  Read Article
+                  <ArrowRight size={15} />
                 </Link>
+              </div>
 
+              {/* Bottom Accent */}
+              <div className="h-[3px] w-full bg-[#edf3fa]">
+                <div className="h-full w-0 bg-[#2878ce] transition-[width] duration-300 group-hover:w-full" />
               </div>
             </article>
           ))}
