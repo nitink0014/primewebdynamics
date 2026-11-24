@@ -16,22 +16,36 @@ import {
 
 import aboutData from "../data/aboutData.json";
 
-function SectionTitle({ children, subtitle }) {
+function SectionTitle({ children, subtitle, light = false }) {
   return (
     <div className="mb-12 text-center">
-      <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-[2px] text-[#1760a4]">
+      <span
+        className={`mb-3 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[2px] ${
+          light
+            ? "bg-white/10 text-blue-100"
+            : "bg-blue-50 text-[#1760a4]"
+        }`}
+      >
         <Sparkles size={14} />
         Prime Webdynamics
       </span>
 
-      <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+      <h2
+        className={`text-3xl font-extrabold tracking-tight sm:text-4xl ${
+          light ? "text-white" : "text-slate-900"
+        }`}
+      >
         {children}
       </h2>
 
       <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-orange-500" />
 
       {subtitle && (
-        <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+        <p
+          className={`mx-auto mt-5 max-w-2xl text-sm leading-7 sm:text-base ${
+            light ? "text-slate-300" : "text-slate-600"
+          }`}
+        >
           {subtitle}
         </p>
       )}
@@ -304,7 +318,7 @@ export default function About() {
         <div className="pointer-events-none absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-orange-500/10 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl">
-          <SectionTitle>
+          <SectionTitle light>
             {learningJourney.title}
           </SectionTitle>
 

@@ -57,7 +57,6 @@ function HowItWorksSection() {
 
         {/* Section Heading */}
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
-
           <span className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-xs font-bold tracking-[1.5px] text-blue-600 shadow-sm sm:text-sm">
             <span className="h-2 w-2 rounded-full bg-orange-500" />
             YOUR LEARNING JOURNEY
@@ -86,7 +85,6 @@ function HowItWorksSection() {
 
           {/* Steps */}
           <div className="grid grid-cols-1 gap-6 sm:gap-7 lg:grid-cols-5 lg:gap-4">
-
             {howItWorksData.steps.map((step) => {
               const Icon = iconMap[step.icon];
               const colors = colorMap[step.color] || colorMap.blue;
@@ -105,7 +103,7 @@ function HowItWorksSection() {
                   </div>
 
                   {/* Step Card */}
-                  <div className="relative flex min-h-[195px] flex-1 flex-col rounded-2xl border border-[#e2eaf7] bg-white p-5 shadow-[0_5px_20px_rgba(30,64,120,0.035)] transition-[border-color,box-shadow] duration-300 group-hover:border-blue-200 group-hover:shadow-[0_12px_30px_rgba(30,64,120,0.09)] sm:p-6 lg:mt-5 lg:min-h-[255px] lg:w-full lg:flex-none lg:items-center lg:text-center">
+                  <div className="relative flex h-[255px] w-full min-w-0 flex-col overflow-hidden rounded-2xl border border-[#e2eaf7] bg-white p-5 shadow-[0_5px_20px_rgba(30,64,120,0.035)] transition-[border-color,box-shadow] duration-300 group-hover:border-blue-200 group-hover:shadow-[0_12px_30px_rgba(30,64,120,0.09)] sm:p-6 lg:mt-5 lg:h-[255px] lg:w-full lg:flex-none lg:items-center lg:text-center">
 
                     {/* Step Number */}
                     <span className={`text-xs font-extrabold tracking-[2px] ${colors.number}`}>
@@ -123,13 +121,13 @@ function HowItWorksSection() {
                     </p>
 
                     {/* Bottom Accent */}
-                    <div className={`pointer-events-none absolute bottom-0 left-0 h-[3px] w-0 rounded-r-full transition-[width] duration-300 group-hover:w-full ${colors.accent}`} />
-
+                    <div
+                      className={`pointer-events-none absolute bottom-0 left-0 h-[3px] w-0 rounded-r-full transition-[width] duration-300 group-hover:w-full ${colors.accent}`}
+                    />
                   </div>
                 </article>
               );
             })}
-
           </div>
         </div>
 
@@ -141,10 +139,12 @@ function HowItWorksSection() {
             className="group inline-flex min-h-[54px] items-center justify-center gap-3 rounded-xl bg-[#397fe0] px-7 py-3 text-sm font-bold text-white shadow-[0_8px_22px_rgba(57,127,224,0.22)] transition-[background-color,box-shadow] duration-300 hover:bg-[#f0783c] hover:shadow-[0_10px_25px_rgba(240,120,60,0.25)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500"
           >
             {howItWorksData.buttonText}
-            <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight
+              size={18}
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            />
           </button>
         </div>
-
       </div>
 
       {/* Registration Popup */}
@@ -152,7 +152,6 @@ function HowItWorksSection() {
         isOpen={isPopupOpen}
         onClose={() => setIsPopupOpen(false)}
       />
-
     </section>
   );
 }
