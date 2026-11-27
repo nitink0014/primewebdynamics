@@ -37,14 +37,22 @@ function Registration() {
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
 
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    let updatedValue = value;
+
+    // Phone number: allow only digits and maximum 10 digits
+    if (name === "phone") {
+      updatedValue = value.replace(/\D/g, "").slice(0, 10);
+    }
 
     setSubmitted(false);
 
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: updatedValue,
     }));
 
     setErrors((prev) => ({
@@ -53,21 +61,25 @@ function Registration() {
     }));
   };
 
+  // Form validation
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const newErrors = {};
 
+    // Name validation
     if (!formData.name.trim()) {
       newErrors.name = "Please enter your full name";
     }
 
-    const phone = formData.phone.replace(/\D/g, "");
+    // Phone validation
+    const phone = formData.phone.trim();
 
     if (!phone) {
       newErrors.phone = "Please enter your phone number";
-    } else if (phone.length !== 10) {
-      newErrors.phone = "Phone number must be exactly 10 digits";
+    } else if (!/^[6-9]\d{9}$/.test(phone)) {
+      newErrors.phone =
+        "Enter a valid 10-digit Indian mobile number";
     }
 
     setErrors(newErrors);
@@ -78,6 +90,7 @@ function Registration() {
     }
 
     console.log("Registration Data:", formData);
+
     setSubmitted(true);
   };
 
@@ -87,6 +100,7 @@ function Registration() {
   const labelClass =
     "mb-1.5 block text-[12px] font-bold tracking-wide text-slate-700";
 
+  // Reusable input component
   const renderInput = (
     name,
     label,
@@ -109,13 +123,17 @@ function Registration() {
 
         <input
           id={name}
-          type={type}
+          type={name === "phone" ? "tel" : type}
           name={name}
           placeholder={placeholder}
           value={formData[name]}
           onChange={handleChange}
           maxLength={name === "phone" ? 10 : undefined}
           inputMode={name === "phone" ? "numeric" : undefined}
+          pattern={name === "phone" ? "[6-9][0-9]{9}" : undefined}
+          autoComplete={
+            name === "phone" ? "tel-national" : undefined
+          }
           min={name === "amount" ? "0" : undefined}
           className={`${inputClass} ${
             errors[name]
@@ -123,7 +141,9 @@ function Registration() {
               : ""
           }`}
           aria-invalid={Boolean(errors[name])}
-          aria-describedby={errors[name] ? `${name}-error` : undefined}
+          aria-describedby={
+            errors[name] ? `${name}-error` : undefined
+          }
         />
       </div>
 
@@ -138,7 +158,14 @@ function Registration() {
     </div>
   );
 
-  const renderSelect = (name, label, placeholder, Icon, options) => (
+  // Reusable select component
+  const renderSelect = (
+    name,
+    label,
+    placeholder,
+    Icon,
+    options
+  ) => (
     <div className="min-w-0">
       <label htmlFor={name} className={labelClass}>
         {label}
@@ -173,7 +200,7 @@ function Registration() {
     </div>
   );
 
-  // Compact section heading
+  // Section heading
   const sectionHeading = (Icon, title, subtitle) => (
     <div className="mt-4 mb-4 flex items-center gap-3 border-b border-slate-100 pb-3">
       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">

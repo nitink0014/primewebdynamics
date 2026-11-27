@@ -432,11 +432,11 @@ function ScrollController({
 
           end: () =>
             `+=${Math.max(
-              section.offsetHeight,
-              window.innerHeight * 2.5
+              section.offsetHeight * 0.7,
+              window.innerHeight * 1.8
             )}`,
 
-          scrub: 1.4,
+          scrub: 0.8,
 
           invalidateOnRefresh: true,
 

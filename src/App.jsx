@@ -5,7 +5,11 @@ import {
   useLocation,
 } from "react-router-dom";
 
-import { useLayoutEffect, useRef, useState } from "react";
+import {
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -33,6 +37,16 @@ function App() {
 
   const previousLocationKey = useRef(location.key);
 
+  // Scroll to top whenever route changes
+  useLayoutEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [location.pathname]);
+
+  // Global navigation loader
   useLayoutEffect(() => {
     // Initial page load par loader nahi dikhana
     if (previousLocationKey.current === location.key) {
