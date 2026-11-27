@@ -19,6 +19,95 @@ const categories = [
   ...new Set(blogs.map((blog) => blog.category)),
 ];
 
+/* White Mouse-Following Tilt + Glow Card */
+function TiltGlowCard({
+  children,
+  className = "",
+  glowColor = "rgba(255, 255, 255, 0.55)",
+  ...props
+}) {
+  const handleMouseMove = (event) => {
+    const card = event.currentTarget;
+    const rect = card.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const centerX = rect.width / 2 || 1;
+    const centerY = rect.height / 2 || 1;
+
+    const rotateY = ((x - centerX) / centerX) * 4;
+    const rotateX = ((centerY - y) / centerY) * 4;
+
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      translateY(-3px)
+    `;
+  };
+
+  const handleMouseLeave = (event) => {
+    const card = event.currentTarget;
+
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(0deg)
+      rotateY(0deg)
+      translateY(0px)
+    `;
+  };
+
+  return (
+    <div
+      {...props}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        "--card-glow": glowColor,
+        ...props.style,
+      }}
+      className={`group relative [transform-style:preserve-3d] transition-[transform,border-color,box-shadow] duration-300 ease-out will-change-transform ${className}`}
+    >
+      {/* White Mouse-Following Light */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 rounded-[inherit] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        style={{
+          background: `
+            radial-gradient(
+              220px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+              rgba(255, 255, 255, 0.65),
+              rgba(255, 255, 255, 0.22) 35%,
+              transparent 70%
+            )
+          `,
+          filter: "blur(18px)",
+        }}
+      />
+
+      {/* Soft White Border Light */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 rounded-[inherit] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        style={{
+          boxShadow: `
+            inset 0 0 18px rgba(255, 255, 255, 0.10),
+            0 0 18px rgba(255, 255, 255, 0.12)
+          `,
+        }}
+      />
+
+      <div className="relative z-[1] h-full">
+        {children}
+      </div>
+    </div>
+  );
+}
+
 export default function Blogs() {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
@@ -47,7 +136,6 @@ export default function Blogs() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#f7f9fc]">
-
       {/* Hero Banner */}
       <section
         className="relative flex min-h-[310px] items-center justify-center bg-cover bg-center px-5 py-16 text-center sm:min-h-[360px]"
@@ -71,14 +159,14 @@ export default function Blogs() {
           <div className="mx-auto mt-5 h-1 w-20 rounded-full bg-orange-500" />
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-blue-100 sm:text-base">
-            Explore articles, learning resources and insights to help you grow your knowledge and develop practical skills.
+            Explore articles, learning resources and insights to help you grow
+            your knowledge and develop practical skills.
           </p>
         </div>
       </section>
 
       {/* Blog Content */}
       <section className="mx-auto max-w-[1450px] px-5 py-14 sm:px-8 sm:py-16">
-
         {/* Section Heading */}
         <div className="mb-9 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
@@ -102,72 +190,75 @@ export default function Blogs() {
         </div>
 
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
-
           {/* Blog Cards */}
           <div className="lg:col-span-9">
             {filteredBlogs.length > 0 ? (
               <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
                 {filteredBlogs.map((blog, index) => (
-                  <article
+                  <TiltGlowCard
                     key={blog.id}
-                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_5px_20px_rgba(15,35,65,0.035)] transition-[border-color,box-shadow] duration-200 hover:border-blue-200 hover:shadow-[0_12px_30px_rgba(15,35,65,0.09)]"
+                    className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_5px_20px_rgba(15,35,65,0.035)] hover:border-white/80 hover:shadow-[0_15px_35px_rgba(255,255,255,0.18)]"
+                    glowColor="rgba(255, 255, 255, 0.55)"
                   >
-
-                    {/* Blog Image */}
-                    <Link
-                      to={`/blogs/${blog.slug}`}
-                      className="relative block aspect-[16/10] overflow-hidden bg-blue-50"
-                    >
-                      <img
-                        src={blog.image}
-                        alt={blog.title}
-                        loading="lazy"
-                        className="h-full w-full object-cover"
-                      />
-
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#061d38]/50 via-transparent to-transparent" />
-
-                      <span className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-[#061d38]/80 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-sm">
-                        {blog.category}
-                      </span>
-                    </Link>
-
-                    {/* Blog Information */}
-                    <div className="flex flex-1 flex-col p-5">
-                      <div className="flex items-center justify-between gap-3">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#1760a4]">
-                          Article {String(index + 1).padStart(2, "0")}
-                        </span>
-
-                        <Newspaper
-                          size={17}
-                          className="shrink-0 text-slate-300"
+                    <article className="flex h-full flex-col overflow-hidden rounded-2xl">
+                      {/* Blog Image */}
+                      <Link
+                        to={`/blogs/${blog.slug}`}
+                        className="relative block aspect-[16/10] overflow-hidden bg-blue-50"
+                      >
+                        <img
+                          src={blog.image}
+                          alt={blog.title}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                         />
+
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#061d38]/50 via-transparent to-transparent" />
+
+                        <span className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-[#061d38]/80 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-sm">
+                          {blog.category}
+                        </span>
+                      </Link>
+
+                      {/* Blog Information */}
+                      <div className="flex flex-1 flex-col p-5">
+                        <div className="flex items-center justify-between gap-3">
+                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#1760a4]">
+                            Article {String(index + 1).padStart(2, "0")}
+                          </span>
+
+                          <Newspaper
+                            size={17}
+                            className="shrink-0 text-slate-300 transition-colors duration-300 group-hover:text-slate-500"
+                          />
+                        </div>
+
+                        <h3 className="mt-3 text-lg font-extrabold leading-7 text-slate-900 transition-colors duration-200 group-hover:text-[#1760a4]">
+                          {blog.title}
+                        </h3>
+
+                        <p className="mt-3 line-clamp-3 text-sm leading-7 text-slate-500">
+                          {blog.description}
+                        </p>
+
+                        <div className="mt-auto border-t border-slate-100 pt-5">
+                          <Link
+                            to={`/blogs/${blog.slug}`}
+                            className="inline-flex items-center gap-2 text-sm font-extrabold text-orange-500 transition-colors duration-200 hover:text-[#1760a4]"
+                          >
+                            Read Article
+                            <ArrowRight
+                              size={17}
+                              className="transition-transform duration-300 group-hover:translate-x-1"
+                            />
+                          </Link>
+                        </div>
                       </div>
-
-                      <h3 className="mt-3 text-lg font-extrabold leading-7 text-slate-900 transition-colors duration-200 group-hover:text-[#1760a4]">
-                        {blog.title}
-                      </h3>
-
-                      <p className="mt-3 line-clamp-3 text-sm leading-7 text-slate-500">
-                        {blog.description}
-                      </p>
-
-                      <div className="mt-auto border-t border-slate-100 pt-5">
-                        <Link
-                          to={`/blogs/${blog.slug}`}
-                          className="inline-flex items-center gap-2 text-sm font-extrabold text-orange-500 transition-colors duration-200 hover:text-[#1760a4]"
-                        >
-                          Read Article
-                          <ArrowRight size={17} />
-                        </Link>
-                      </div>
-                    </div>
-                  </article>
+                    </article>
+                  </TiltGlowCard>
                 ))}
               </div>
             ) : (
-
               /* No Results */
               <div className="flex min-h-[350px] flex-col items-center justify-center rounded-2xl border border-dashed border-blue-200 bg-white px-5 py-14 text-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-[#1760a4]">
@@ -179,7 +270,8 @@ export default function Blogs() {
                 </h3>
 
                 <p className="mt-2 max-w-sm text-sm leading-7 text-slate-500">
-                  We couldn't find any articles matching your search. Try another keyword or select a different category.
+                  We couldn't find any articles matching your search. Try
+                  another keyword or select a different category.
                 </p>
 
                 <button
@@ -196,9 +288,11 @@ export default function Blogs() {
 
           {/* Sidebar */}
           <aside className="space-y-6 lg:col-span-3 lg:sticky lg:top-24">
-
             {/* Search */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_5px_20px_rgba(15,35,65,0.035)]">
+            <TiltGlowCard
+              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_5px_20px_rgba(15,35,65,0.035)] hover:border-white/80 hover:shadow-[0_12px_30px_rgba(255,255,255,0.15)]"
+              glowColor="rgba(255, 255, 255, 0.45)"
+            >
               <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-[#1760a4]">
                   <Search size={20} />
@@ -243,10 +337,13 @@ export default function Blogs() {
                   </button>
                 </div>
               </form>
-            </div>
+            </TiltGlowCard>
 
             {/* Categories */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_5px_20px_rgba(15,35,65,0.035)]">
+            <TiltGlowCard
+              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_5px_20px_rgba(15,35,65,0.035)] hover:border-white/80 hover:shadow-[0_12px_30px_rgba(255,255,255,0.15)]"
+              glowColor="rgba(255, 255, 255, 0.45)"
+            >
               <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-orange-500">
                   <BookOpen size={20} />
@@ -295,7 +392,7 @@ export default function Blogs() {
                   );
                 })}
               </div>
-            </div>
+            </TiltGlowCard>
 
             {/* Clear Filters */}
             {(search || activeCategory !== "All") && (

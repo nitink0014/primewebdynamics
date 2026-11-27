@@ -16,6 +16,91 @@ import {
 
 import aboutData from "../data/aboutData.json";
 
+/* =========================================
+   Reusable Tilt + Cursor Glow Card
+========================================= */
+
+function TiltGlowCard({
+  as: Component = "div",
+  children,
+  className = "",
+  glowColor = "rgba(67,136,237,0.10)",
+  ...props
+}) {
+  const handleCardMove = (event) => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    const card = event.currentTarget;
+    const rect = card.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateY = ((x - centerX) / centerX) * 2.5;
+    const rotateX = ((centerY - y) / centerY) * 2.5;
+
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      translateY(-4px)
+    `;
+  };
+
+  const handleCardLeave = (event) => {
+    const card = event.currentTarget;
+
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(0deg)
+      rotateY(0deg)
+      translateY(0px)
+    `;
+  };
+
+  return (
+    <Component
+      {...props}
+      onMouseMove={handleCardMove}
+      onMouseLeave={handleCardLeave}
+      style={{
+        ...props.style,
+        "--card-glow": glowColor,
+      }}
+      className={`
+        group relative overflow-hidden
+        transition-[transform,border-color,box-shadow,background-color]
+        duration-300 ease-out
+        will-change-transform
+        ${className}
+      `}
+    >
+      {/* Cursor Following Glow */}
+      <div
+        className="pointer-events-none absolute inset-0 z-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{
+          background:
+            "radial-gradient(230px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--card-glow), transparent 75%)",
+        }}
+      />
+
+      {children}
+    </Component>
+  );
+}
+
+/* =========================================
+   Section Title
+========================================= */
+
 function SectionTitle({ children, subtitle, light = false }) {
   return (
     <div className="mb-12 text-center">
@@ -55,6 +140,10 @@ function SectionTitle({ children, subtitle, light = false }) {
 
 const inputClass =
   "w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-800 outline-none transition-[border-color,box-shadow,background-color] duration-200 placeholder:text-slate-400 focus:border-[#2878ce] focus:bg-white focus:ring-4 focus:ring-blue-100";
+
+/* =========================================
+   About Page
+========================================= */
 
 export default function About() {
   const {
@@ -210,25 +299,30 @@ export default function About() {
             </div>
           </div>
 
+          {/* Tilt + Glow Image Card */}
           <div className="relative">
             <div className="absolute -bottom-4 -right-4 h-2/3 w-2/3 rounded-3xl bg-orange-100" />
 
-            <div className="relative overflow-hidden rounded-3xl border border-slate-100 bg-white p-2 shadow-[0_20px_60px_rgba(15,35,65,0.12)]">
+            <TiltGlowCard
+              className="rounded-3xl border border-slate-100 bg-white p-2 shadow-[0_20px_60px_rgba(15,35,65,0.12)]"
+              glowColor="rgba(67,136,237,0.12)"
+            >
               <img
                 src={hero.backgroundImage}
                 alt="Prime Webdynamics training environment"
-                className="h-[300px] w-full rounded-2xl object-cover sm:h-[400px]"
+                className="relative z-10 h-[300px] w-full rounded-2xl object-cover sm:h-[400px]"
               />
 
-              <div className="absolute bottom-6 left-6 right-6 rounded-xl border border-white/20 bg-[#061d38]/90 p-5 text-white backdrop-blur-md">
+              <div className="absolute bottom-6 left-6 right-6 z-10 rounded-xl border border-white/20 bg-[#061d38]/90 p-5 text-white backdrop-blur-md">
                 <p className="text-xs font-bold uppercase tracking-[2px] text-orange-400">
                   Learn. Practice. Grow.
                 </p>
+
                 <p className="mt-2 text-lg font-bold">
                   Skills that prepare you for the real world.
                 </p>
               </div>
-            </div>
+            </TiltGlowCard>
           </div>
         </div>
       </section>
@@ -243,37 +337,46 @@ export default function About() {
           </SectionTitle>
 
           <div className="grid gap-7 md:grid-cols-2">
-            <div className="rounded-2xl border border-blue-100 bg-white p-7 shadow-[0_8px_30px_rgba(15,35,65,0.05)] sm:p-9">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-[#1760a4]">
+
+            {/* Mission Card */}
+            <TiltGlowCard
+              className="rounded-2xl border border-blue-100 bg-white p-7 shadow-[0_8px_30px_rgba(15,35,65,0.05)] sm:p-9"
+              glowColor="rgba(67,136,237,0.12)"
+            >
+              <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-[#1760a4]">
                 <Target size={29} />
               </div>
 
-              <h3 className="mt-7 text-2xl font-extrabold text-slate-900">
+              <h3 className="relative z-10 mt-7 text-2xl font-extrabold text-slate-900">
                 {mission.title}
               </h3>
 
-              <div className="mt-3 h-1 w-12 rounded-full bg-orange-500" />
+              <div className="relative z-10 mt-3 h-1 w-12 rounded-full bg-orange-500" />
 
-              <p className="mt-5 text-sm leading-8 text-slate-600 sm:text-base">
+              <p className="relative z-10 mt-5 text-sm leading-8 text-slate-600 sm:text-base">
                 {mission.description}
               </p>
-            </div>
+            </TiltGlowCard>
 
-            <div className="rounded-2xl border border-orange-100 bg-white p-7 shadow-[0_8px_30px_rgba(15,35,65,0.05)] sm:p-9">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-50 text-orange-600">
+            {/* Vision Card */}
+            <TiltGlowCard
+              className="rounded-2xl border border-orange-100 bg-white p-7 shadow-[0_8px_30px_rgba(15,35,65,0.05)] sm:p-9"
+              glowColor="rgba(240,120,50,0.10)"
+            >
+              <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-50 text-orange-600">
                 <Telescope size={29} />
               </div>
 
-              <h3 className="mt-7 text-2xl font-extrabold text-slate-900">
+              <h3 className="relative z-10 mt-7 text-2xl font-extrabold text-slate-900">
                 {vision.title}
               </h3>
 
-              <div className="mt-3 h-1 w-12 rounded-full bg-blue-600" />
+              <div className="relative z-10 mt-3 h-1 w-12 rounded-full bg-blue-600" />
 
-              <p className="mt-5 text-sm leading-8 text-slate-600 sm:text-base">
+              <p className="relative z-10 mt-5 text-sm leading-8 text-slate-600 sm:text-base">
                 {vision.description}
               </p>
-            </div>
+            </TiltGlowCard>
           </div>
         </div>
       </section>
@@ -286,28 +389,29 @@ export default function About() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {whyChooseUs.items.map((item, index) => (
-            <div
+            <TiltGlowCard
               key={item.id}
-              className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_5px_22px_rgba(15,35,65,0.04)] transition-[border-color,box-shadow] duration-200 hover:border-blue-200 hover:shadow-[0_12px_30px_rgba(15,35,65,0.09)]"
+              className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_5px_22px_rgba(15,35,65,0.04)] hover:border-blue-200 hover:shadow-[0_12px_30px_rgba(15,35,65,0.09)]"
+              glowColor="rgba(67,136,237,0.10)"
             >
-              <span className="absolute right-5 top-5 text-3xl font-extrabold tracking-tight text-slate-100">
+              <span className="pointer-events-none absolute right-5 top-5 z-10 text-3xl font-extrabold tracking-tight text-slate-100">
                 {String(index + 1).padStart(2, "0")}
               </span>
 
-              <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-4xl transition-colors duration-200 group-hover:bg-blue-100">
+              <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-4xl transition-colors duration-300 group-hover:bg-blue-100">
                 {item.icon}
               </div>
 
-              <h3 className="mt-6 text-xl font-extrabold text-slate-900">
+              <h3 className="relative z-10 mt-6 text-xl font-extrabold text-slate-900">
                 {item.title}
               </h3>
 
-              <p className="mt-3 text-sm leading-7 text-slate-600">
+              <p className="relative z-10 mt-3 text-sm leading-7 text-slate-600">
                 {item.description}
               </p>
 
-              <div className="mt-6 h-1 w-10 rounded-full bg-orange-500 transition-[width] duration-200 group-hover:w-16" />
-            </div>
+              <div className="relative z-10 mt-6 h-1 w-10 rounded-full bg-orange-500 transition-[width] duration-300 group-hover:w-16" />
+            </TiltGlowCard>
           ))}
         </div>
       </section>
@@ -324,24 +428,25 @@ export default function About() {
 
           <div className="grid gap-6 md:grid-cols-3">
             {learningJourney.items.map((item, index) => (
-              <div
+              <TiltGlowCard
                 key={item.id}
-                className="rounded-2xl border border-white/10 bg-white/[0.06] p-7 text-center transition-[border-color,background-color] duration-200 hover:border-white/20 hover:bg-white/[0.09] sm:p-9"
+                className="rounded-2xl border border-white/10 bg-white/[0.06] p-7 text-center hover:border-white/20 hover:bg-white/[0.09] sm:p-9"
+                glowColor="rgba(67,136,237,0.13)"
               >
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-orange-400/30 bg-orange-500/10 text-xl font-extrabold text-orange-400">
+                <div className="relative z-10 mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-orange-400/30 bg-orange-500/10 text-xl font-extrabold text-orange-400">
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
-                <h3 className="mt-7 text-xl font-extrabold text-white sm:text-2xl">
+                <h3 className="relative z-10 mt-7 text-xl font-extrabold text-white sm:text-2xl">
                   {item.title}
                 </h3>
 
-                <div className="mx-auto mt-3 h-1 w-10 rounded-full bg-orange-500" />
+                <div className="relative z-10 mx-auto mt-3 h-1 w-10 rounded-full bg-orange-500" />
 
-                <p className="mt-5 text-sm leading-7 text-slate-300">
+                <p className="relative z-10 mt-5 text-sm leading-7 text-slate-300">
                   {item.description}
                 </p>
-              </div>
+              </TiltGlowCard>
             ))}
           </div>
         </div>
@@ -368,7 +473,7 @@ export default function About() {
 
           <a
             href={contactCTA.buttonLink}
-            className="inline-flex shrink-0 items-center gap-3 rounded-xl bg-orange-500 px-7 py-4 text-sm font-extrabold text-white shadow-lg shadow-orange-950/10 transition-colors duration-200 hover:bg-orange-600"
+            className="inline-flex shrink-0 items-center gap-3 rounded-xl bg-orange-500 px-7 py-4 text-sm font-extrabold text-white shadow-lg shadow-orange-950/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600"
           >
             {contactCTA.buttonText}
             <ArrowRight size={19} />
@@ -384,12 +489,14 @@ export default function About() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {topCourses.courses.map((course, index) => (
-            <a
+            <TiltGlowCard
+              as="a"
               href={topCourses.link}
               key={course}
-              className="group flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white p-5 shadow-[0_4px_16px_rgba(15,35,65,0.035)] transition-[border-color,box-shadow,background-color] duration-200 hover:border-blue-200 hover:bg-blue-50/50 hover:shadow-[0_8px_22px_rgba(15,35,65,0.07)]"
+              className="flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white p-5 shadow-[0_4px_16px_rgba(15,35,65,0.035)] hover:border-blue-200 hover:bg-blue-50/50 hover:shadow-[0_8px_22px_rgba(15,35,65,0.07)]"
+              glowColor="rgba(67,136,237,0.09)"
             >
-              <div className="flex min-w-0 items-center gap-3">
+              <div className="relative z-10 flex min-w-0 items-center gap-3">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-xs font-extrabold text-[#1760a4]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -401,9 +508,9 @@ export default function About() {
 
               <ArrowRight
                 size={18}
-                className="shrink-0 text-slate-400 transition-colors group-hover:text-orange-500"
+                className="relative z-10 shrink-0 text-slate-400 transition-colors group-hover:text-orange-500"
               />
-            </a>
+            </TiltGlowCard>
           ))}
         </div>
       </section>
@@ -441,15 +548,16 @@ export default function About() {
                 const DetailIcon = [Phone, Mail, MapPin][index % 3];
 
                 return (
-                  <div
+                  <TiltGlowCard
                     key={detail.id}
                     className="flex gap-4 rounded-xl border border-white/10 bg-white/[0.05] p-5"
+                    glowColor="rgba(67,136,237,0.13)"
                   >
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-500/10 text-orange-400">
+                    <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-500/10 text-orange-400">
                       <DetailIcon size={22} />
                     </div>
 
-                    <div className="min-w-0">
+                    <div className="relative z-10 min-w-0">
                       <h3 className="font-bold text-white">
                         {detail.title}
                       </h3>
@@ -477,7 +585,7 @@ export default function About() {
                         </p>
                       )}
                     </div>
-                  </div>
+                  </TiltGlowCard>
                 );
               })}
             </div>

@@ -5,13 +5,41 @@ import { Link } from "react-router-dom";
 import blogsData from "../../data/blogsData.json";
 
 function BlogsSection() {
+  const handleCardMove = (event) => {
+    const card = event.currentTarget;
+    const rect = card.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateY = ((x - centerX) / centerX) * 2.2;
+    const rotateX = ((centerY - y) / centerY) * 2.2;
+
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      translateY(-3px)
+    `;
+  };
+
+  const handleCardLeave = (event) => {
+    event.currentTarget.style.transform =
+      "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)";
+  };
+
   return (
     <section className="relative w-full overflow-hidden bg-[#f7f9fc] px-5 py-16 font-sans sm:px-8 lg:py-20">
       {/* Background Accent */}
-      <div className="pointer-events-none absolute -right-32 top-10 h-72 w-72 rounded-full bg-[#dceaff]/60 blur-[90px]" />
+      <div className="pointer-events-none absolute -right-32 top-10 h-72 w-72 rounded-full bg-[#dceaff]/40 blur-[100px]" />
 
       <div className="relative mx-auto w-full max-w-[1250px]">
-
         {/* Section Heading */}
         <div className="mb-10 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
           <div className="max-w-[700px]">
@@ -31,20 +59,37 @@ function BlogsSection() {
 
           <Link
             to="/blogs"
-            className="inline-flex w-fit shrink-0 items-center gap-2 rounded-lg border border-[#cbdcf0] bg-white px-5 py-3 text-[13px] font-bold text-[#2878ce] transition-[border-color,background-color,color] duration-200 hover:border-[#2878ce] hover:bg-[#edf5ff] focus:outline-none focus:ring-2 focus:ring-[#2878ce] focus:ring-offset-2"
+            className="inline-flex w-fit shrink-0 items-center gap-2 rounded-lg border border-[#cbdcf0] bg-white px-5 py-3 text-[13px] font-bold text-[#2878ce] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#2878ce] hover:bg-[#edf5ff] hover:shadow-[0_8px_20px_rgba(40,120,206,0.08)] focus:outline-none focus:ring-2 focus:ring-[#2878ce] focus:ring-offset-2"
           >
             {blogsData.viewAllText}
-            <ArrowRight size={17} />
+            <ArrowRight
+              size={17}
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            />
           </Link>
         </div>
 
         {/* Blog Cards */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {blogsData.blogs.map((blog, index) => (
+          {blogsData.blogs.map((blog) => (
             <article
               key={blog.id}
-              className="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-[#e1e7ef] bg-white shadow-[0_4px_18px_rgba(20,36,61,0.04)] transition-[border-color,box-shadow] duration-300 hover:border-[#b8d5f5] hover:shadow-[0_14px_35px_rgba(20,36,61,0.09)]"
+              onMouseMove={handleCardMove}
+              onMouseLeave={handleCardLeave}
+              style={{
+                "--card-glow": "rgba(40, 120, 206, 0.09)",
+              }}
+              className="group relative flex min-w-0 flex-col overflow-hidden rounded-2xl border border-[#e1e7ef] bg-white shadow-[0_4px_18px_rgba(20,36,61,0.04)] transition-[transform,border-color,box-shadow] duration-300 ease-out will-change-transform hover:border-[#c5d9ef] hover:shadow-[0_14px_35px_rgba(20,36,61,0.08)]"
             >
+              {/* Subtle Cursor Glow */}
+              <div
+                className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                style={{
+                  background:
+                    "radial-gradient(230px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--card-glow), transparent 75%)",
+                }}
+              />
+
               {/* Image */}
               <Link
                 to={`/blogs/${blog.slug}`}
@@ -55,16 +100,16 @@ function BlogsSection() {
                   src={blog.image}
                   alt={blog.title}
                   loading="lazy"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 />
 
-                <span className="absolute left-4 top-4 max-w-[calc(100%-32px)] truncate rounded-md border border-white/20 bg-[#102653]/90 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.8px] text-white backdrop-blur-sm">
+                <span className="absolute left-4 top-4 max-w-[calc(100%-32px)] truncate rounded-md border border-white/20 bg-[#102653]/85 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.8px] text-white backdrop-blur-sm">
                   {blog.category}
                 </span>
               </Link>
 
               {/* Card Content */}
-              <div className="flex flex-1 flex-col p-5">
+              <div className="relative z-10 flex flex-1 flex-col p-5">
                 {/* Meta Information */}
                 <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold text-[#7c8ba0]">
                   <span className="text-[#2878ce]">
@@ -80,7 +125,7 @@ function BlogsSection() {
                 </div>
 
                 {/* Title */}
-                <h3 className="mt-4 line-clamp-2 text-[17px] font-extrabold leading-[1.4] tracking-[-0.3px] text-[#172943] transition-colors duration-200 group-hover:text-[#2878ce]">
+                <h3 className="mt-4 line-clamp-2 text-[17px] font-extrabold leading-[1.4] tracking-[-0.3px] text-[#172943] transition-colors duration-300 group-hover:text-[#2878ce]">
                   {blog.title}
                 </h3>
 
@@ -92,21 +137,15 @@ function BlogsSection() {
                 {/* Read More */}
                 <Link
                   to={`/blogs/${blog.slug}`}
-                  className="mt-6 inline-flex w-fit items-center gap-2 border-b border-transparent pb-1 text-[12px] font-extrabold text-[#2878ce] transition-[gap,color,border-color] duration-200 hover:gap-3 hover:border-[#2878ce] hover:text-[#f58227] focus:outline-none focus:ring-2 focus:ring-[#2878ce]"
+                  className="mt-6 inline-flex w-fit items-center gap-2 border-b border-transparent pb-1 text-[12px] font-extrabold text-[#2878ce] transition-[gap,color,border-color] duration-300 hover:gap-3 hover:border-[#2878ce] hover:text-[#f58227] focus:outline-none focus:ring-2 focus:ring-[#2878ce]"
                 >
                   Read Article
                   <ArrowRight size={15} />
                 </Link>
               </div>
-
-              {/* Bottom Accent */}
-              <div className="h-[3px] w-full bg-[#edf3fa]">
-                <div className="h-full w-0 bg-[#2878ce] transition-[width] duration-300 group-hover:w-full" />
-              </div>
             </article>
           ))}
         </div>
-
       </div>
     </section>
   );

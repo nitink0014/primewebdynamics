@@ -81,9 +81,8 @@ function CourseDetail() {
   return (
     <>
       <main className="min-h-screen overflow-hidden bg-[#f5f8fd] font-sans">
-
         {/* Top Navigation */}
-        <section className="px-5 pt-7 sm:px-8 lg:px-10">
+        <section className="px-5 pt-7 pb-2 sm:px-8 lg:px-10">
           <div className="mx-auto max-w-[1350px]">
             <button
               type="button"
@@ -97,15 +96,13 @@ function CourseDetail() {
         </section>
 
         {/* Course Hero */}
-        <section className="px-5 pb-9 pt-6 sm:px-8 lg:px-10">
+        <section className="mx-1 mb-6 px-5 pb-9 pt-6 sm:mx-2 sm:px-8 lg:mx-0 lg:px-10">
           <div className="relative mx-auto max-w-[1350px] overflow-hidden rounded-[28px] bg-gradient-to-br from-[#071d3d] via-[#123e78] to-[#1769b5] shadow-[0_20px_55px_rgba(16,45,103,0.15)]">
-
             <div className="pointer-events-none absolute -right-24 -top-32 h-96 w-96 rounded-full border-[55px] border-white/[0.04]" />
             <div className="pointer-events-none absolute -bottom-44 left-1/3 h-96 w-96 rounded-full border-[55px] border-white/[0.04]" />
             <div className="pointer-events-none absolute right-1/4 top-0 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl" />
 
             <div className="relative z-10 grid items-center gap-9 p-6 sm:p-9 lg:grid-cols-[1fr_390px] lg:gap-12 lg:p-12">
-
               {/* Course Information */}
               <div className="min-w-0">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold tracking-wider text-blue-100">
@@ -128,14 +125,10 @@ function CourseDetail() {
                 {/* Course Meta */}
                 <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
                   <div className="flex items-center gap-3 rounded-xl border border-white/15 bg-white/[0.08] p-4">
-                    <Clock3
-                      size={21}
-                      className="shrink-0 text-orange-300"
-                    />
+                    <Clock3 size={21} className="shrink-0 text-orange-300" />
+
                     <div className="min-w-0">
-                      <p className="text-[11px] text-blue-200">
-                        Duration
-                      </p>
+                      <p className="text-[11px] text-blue-200">Duration</p>
                       <p className="mt-1 text-sm font-bold text-white">
                         {course.duration}
                       </p>
@@ -143,14 +136,10 @@ function CourseDetail() {
                   </div>
 
                   <div className="flex items-center gap-3 rounded-xl border border-white/15 bg-white/[0.08] p-4">
-                    <GraduationCap
-                      size={22}
-                      className="shrink-0 text-orange-300"
-                    />
+                    <GraduationCap size={22} className="shrink-0 text-orange-300" />
+
                     <div className="min-w-0">
-                      <p className="text-[11px] text-blue-200">
-                        Level
-                      </p>
+                      <p className="text-[11px] text-blue-200">Level</p>
                       <p className="mt-1 text-sm font-bold text-white">
                         {course.level}
                       </p>
@@ -158,14 +147,10 @@ function CourseDetail() {
                   </div>
 
                   <div className="flex items-center gap-3 rounded-xl border border-white/15 bg-white/[0.08] p-4">
-                    <MonitorPlay
-                      size={21}
-                      className="shrink-0 text-orange-300"
-                    />
+                    <MonitorPlay size={21} className="shrink-0 text-orange-300" />
+
                     <div className="min-w-0">
-                      <p className="text-[11px] text-blue-200">
-                        Learning Mode
-                      </p>
+                      <p className="text-[11px] text-blue-200">Learning Mode</p>
                       <p className="mt-1 text-sm font-bold text-white">
                         {course.mode}
                       </p>
@@ -204,14 +189,12 @@ function CourseDetail() {
         </section>
 
         {/* Main Content */}
-        <section className="px-5 pb-16 sm:px-8 lg:px-10">
-          <div className="mx-auto grid max-w-[1350px] grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1fr)_350px] lg:gap-9">
-
+        <section className="mt-3 px-5 pb-16 sm:px-8 lg:px-10">
+          <div className="mx-auto grid max-w-[1350px] grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1fr)_350px] lg:gap-10">
             {/* Left Content */}
-            <div className="min-w-0 space-y-7">
-
+            <div className="min-w-0 flex flex-col gap-5">
               {/* About Course */}
-              <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_18px_rgba(15,35,75,0.035)] sm:p-8">
+              <section className="mx-1 rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_18px_rgba(15,35,75,0.035)] sm:p-8">
                 <div className="flex items-center gap-3">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#1760a4]">
                     <BookOpen size={22} />
@@ -233,7 +216,7 @@ function CourseDetail() {
               </section>
 
               {/* Easy Explanation */}
-              <section className="overflow-hidden rounded-2xl border border-orange-200 bg-gradient-to-br from-orange-50 to-[#fff7f0] p-6 sm:p-8">
+              <section className="mx-1 overflow-hidden rounded-2xl border border-orange-200 bg-gradient-to-br from-orange-50 to-[#fff7f0] p-6 sm:p-8">
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-500 text-white shadow-md shadow-orange-200">
                     <Lightbulb size={23} />
@@ -256,7 +239,7 @@ function CourseDetail() {
               </section>
 
               {/* Syllabus */}
-              <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_18px_rgba(15,35,75,0.035)] sm:p-8">
+              <section className="mx-1 rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_18px_rgba(15,35,75,0.035)] sm:p-8">
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#1760a4]">
@@ -303,7 +286,7 @@ function CourseDetail() {
               </section>
 
               {/* Who Should Join */}
-              <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_18px_rgba(15,35,75,0.035)] sm:p-8">
+              <section className="mx-1 rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_18px_rgba(15,35,75,0.035)] sm:p-8">
                 <div className="flex items-center gap-3">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#1760a4]">
                     <Users size={22} />
@@ -326,8 +309,7 @@ function CourseDetail() {
             </div>
 
             {/* Right Sidebar */}
-            <aside className="space-y-6 lg:sticky lg:top-24">
-
+            <aside className="mx-1 flex flex-col gap-5 lg:sticky lg:top-24">
               {/* Tools */}
               <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_18px_rgba(15,35,75,0.04)]">
                 <div className="flex items-center gap-3">
@@ -397,10 +379,7 @@ function CourseDetail() {
 
                 <div className="mt-5 space-y-4">
                   {careers.map((career) => (
-                    <div
-                      key={career}
-                      className="flex items-start gap-3"
-                    >
+                    <div key={career} className="flex items-start gap-3">
                       <CheckCircle2
                         size={17}
                         className="mt-0.5 shrink-0 text-[#1760a4]"
@@ -466,10 +445,11 @@ function CourseDetail() {
         </section>
 
         {/* Course Includes */}
-        <section className="px-5 pb-16 sm:px-8 lg:px-10">
+        <section className="mx-1 mt-1 px-5 pb-16 sm:mx-2 sm:px-8 lg:mx-0 lg:px-10">
           <div className="mx-auto max-w-[1350px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_6px_25px_rgba(15,35,75,0.045)]">
             <div className="flex items-center gap-3 bg-[#102d67] px-6 py-5 text-white sm:px-8">
               <Award size={22} className="text-orange-300" />
+
               <h2 className="text-base font-extrabold uppercase tracking-wider">
                 Course Includes
               </h2>
