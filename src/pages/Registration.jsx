@@ -62,6 +62,8 @@ function Registration() {
   };
 
   // Form validation
+ 
+  // Form validation and submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -91,8 +93,27 @@ function Registration() {
 
     console.log("Registration Data:", formData);
 
+    // Show success message
     setSubmitted(true);
+
+    // Reset all form fields
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      course: "",
+      branch: "",
+      address: "",
+      city: "",
+      country: "",
+      zipcode: "",
+      amount: "",
+    });
+
+    // Clear validation errors
+    setErrors({});
   };
+
 
   const inputClass =
     "w-full rounded-xl border border-slate-200 bg-slate-50/80 py-3 pl-11 pr-4 text-sm text-slate-700 outline-none transition-all duration-200 placeholder:text-slate-400 hover:border-blue-200 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10";

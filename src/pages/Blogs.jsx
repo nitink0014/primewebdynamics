@@ -8,6 +8,7 @@ import {
   Sparkles,
   X,
   Newspaper,
+  ChevronDown,
 } from "lucide-react";
 
 import blogsData from "../data/blogsData.json";
@@ -111,6 +112,7 @@ function TiltGlowCard({
 export default function Blogs() {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
+  const [categoriesOpen, setCategoriesOpen] = useState(false);
 
   const filteredBlogs = useMemo(() => {
     const searchTerm = search.toLowerCase().trim();
@@ -132,6 +134,7 @@ export default function Blogs() {
   const clearFilters = () => {
     setSearch("");
     setActiveCategory("All");
+    setCategoriesOpen(false);
   };
 
   return (
@@ -166,7 +169,7 @@ export default function Blogs() {
       </section>
 
       {/* Blog Content */}
-      <section className="mx-auto max-w-[1450px] px-5 py-14 sm:px-8 sm:py-16">
+      <section className="mx-auto max-w-[1450px] px-4 py-10 sm:px-8 sm:py-16">
         {/* Section Heading */}
         <div className="mb-9 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
@@ -189,11 +192,12 @@ export default function Blogs() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
+        {/* Responsive Layout */}
+        <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12 lg:gap-8">
           {/* Blog Cards */}
-          <div className="lg:col-span-9">
+          <div className="order-2 min-w-0 lg:order-1 lg:col-span-9">
             {filteredBlogs.length > 0 ? (
-              <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
                 {filteredBlogs.map((blog, index) => (
                   <TiltGlowCard
                     key={blog.id}
@@ -296,34 +300,34 @@ export default function Blogs() {
           </div>
 
           {/* Sidebar */}
-          <aside className="space-y-6 lg:col-span-3 lg:sticky lg:top-24">
+          <aside className="order-1 grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:order-2 lg:col-span-3 lg:grid-cols-1 lg:gap-6 lg:sticky lg:top-24">
             {/* Search */}
             <TiltGlowCard
-              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_5px_20px_rgba(15,35,65,0.035)] hover:border-white/80 hover:shadow-[0_12px_30px_rgba(255,255,255,0.15)]"
+              className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_5px_20px_rgba(15,35,65,0.035)] hover:border-white/80 hover:shadow-[0_12px_30px_rgba(255,255,255,0.15)] sm:p-5"
               glowColor="rgba(255, 255, 255, 0.45)"
             >
               <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-[#1760a4]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#1760a4]">
                   <Search size={20} />
                 </div>
 
-                <h3 className="text-lg font-extrabold text-slate-900">
+                <h3 className="text-base font-extrabold text-slate-900 sm:text-lg">
                   Search Articles
                 </h3>
               </div>
 
               <form
-                className="mt-5"
+                className="mt-4"
                 onSubmit={(event) => event.preventDefault()}
               >
-                <div className="flex overflow-hidden rounded-xl border border-slate-200 bg-slate-50 transition-colors focus-within:border-[#2878ce] focus-within:bg-white">
+                <div className="flex min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-50 transition-colors focus-within:border-[#2878ce] focus-within:bg-white">
                   <input
                     type="search"
                     value={search}
                     onChange={(event) => setSearch(event.target.value)}
                     placeholder="Search keyword..."
                     aria-label="Search blogs"
-                    className="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm text-slate-700 outline-none placeholder:text-slate-400"
+                    className="min-w-0 flex-1 bg-transparent px-3 py-3 text-sm text-slate-700 outline-none placeholder:text-slate-400 sm:px-4"
                   />
 
                   {search && (
@@ -331,7 +335,7 @@ export default function Blogs() {
                       type="button"
                       onClick={() => setSearch("")}
                       aria-label="Clear search"
-                      className="px-2 text-slate-400 transition-colors hover:text-red-500"
+                      className="shrink-0 px-2 text-slate-400 transition-colors hover:text-red-500"
                     >
                       <X size={16} />
                     </button>
@@ -340,7 +344,7 @@ export default function Blogs() {
                   <button
                     type="submit"
                     aria-label="Search blogs"
-                    className="flex items-center justify-center bg-[#1760a4] px-4 text-white transition-colors hover:bg-orange-500"
+                    className="flex shrink-0 items-center justify-center bg-[#1760a4] px-3 text-white transition-colors hover:bg-orange-500 sm:px-4"
                   >
                     <Search size={19} />
                   </button>
@@ -348,22 +352,48 @@ export default function Blogs() {
               </form>
             </TiltGlowCard>
 
-            {/* Categories */}
+            {/* Categories: Dropdown on Mobile, List on Desktop */}
             <TiltGlowCard
-              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_5px_20px_rgba(15,35,65,0.035)] hover:border-white/80 hover:shadow-[0_12px_30px_rgba(255,255,255,0.15)]"
+              className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_5px_20px_rgba(15,35,65,0.035)] hover:border-white/80 hover:shadow-[0_12px_30px_rgba(255,255,255,0.15)] sm:p-5"
               glowColor="rgba(255, 255, 255, 0.45)"
             >
-              <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-orange-500">
-                  <BookOpen size={20} />
+              {/* Category Header */}
+              <button
+                type="button"
+                onClick={() => setCategoriesOpen((prev) => !prev)}
+                aria-expanded={categoriesOpen}
+                className="flex w-full items-center justify-between gap-3 border-b border-slate-100 pb-4 text-left lg:pointer-events-none"
+              >
+                <div className="flex min-w-0 items-center gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-50 text-orange-500">
+                    <BookOpen size={20} />
+                  </div>
+
+                  <div className="min-w-0">
+                    <h3 className="text-base font-extrabold text-slate-900 sm:text-lg">
+                      Categories
+                    </h3>
+
+                    <p className="mt-0.5 truncate text-xs text-slate-500 lg:hidden">
+                      {activeCategory}
+                    </p>
+                  </div>
                 </div>
 
-                <h3 className="text-lg font-extrabold text-slate-900">
-                  Categories
-                </h3>
-              </div>
+                <ChevronDown
+                  size={20}
+                  className={`shrink-0 text-slate-500 transition-transform duration-300 lg:hidden ${
+                    categoriesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
 
-              <div className="mt-4 space-y-1">
+              {/* Category List */}
+              <div
+                className={`mt-4 space-y-1 ${
+                  categoriesOpen ? "block" : "hidden"
+                } lg:block`}
+              >
                 {categories.map((category) => {
                   const isActive = activeCategory === category;
 
@@ -378,7 +408,10 @@ export default function Blogs() {
                     <button
                       key={category}
                       type="button"
-                      onClick={() => setActiveCategory(category)}
+                      onClick={() => {
+                        setActiveCategory(category);
+                        setCategoriesOpen(false);
+                      }}
                       aria-pressed={isActive}
                       className={`flex w-full items-center justify-between gap-3 rounded-lg px-3 py-3 text-left text-sm transition-colors duration-200 ${
                         isActive
@@ -386,10 +419,10 @@ export default function Blogs() {
                           : "text-slate-600 hover:bg-slate-50 hover:text-[#1760a4]"
                       }`}
                     >
-                      <span>{category}</span>
+                      <span className="break-words">{category}</span>
 
                       <span
-                        className={`flex h-7 min-w-7 items-center justify-center rounded-full px-2 text-xs font-bold ${
+                        className={`flex h-7 min-w-7 shrink-0 items-center justify-center rounded-full px-2 text-xs font-bold ${
                           isActive
                             ? "bg-[#1760a4] text-white"
                             : "bg-slate-100 text-slate-500"
@@ -408,7 +441,7 @@ export default function Blogs() {
               <button
                 type="button"
                 onClick={clearFilters}
-                className="flex w-full items-center justify-center gap-2 rounded-xl border border-blue-200 bg-blue-50 px-5 py-3.5 text-sm font-bold text-[#1760a4] transition-colors hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600"
+                className="flex w-full items-center justify-center gap-2 rounded-xl border border-blue-200 bg-blue-50 px-5 py-3.5 text-sm font-bold text-[#1760a4] transition-colors hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 sm:col-span-2 lg:col-span-1"
               >
                 <X size={16} />
                 Reset All Filters

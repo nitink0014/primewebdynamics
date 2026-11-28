@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   CheckCircle2,
@@ -13,6 +13,7 @@ import content from "../../data/autoPopupForm.json";
 
 const AutoPopupForm = ({ onSubmit, isOpen, onClose }) => {
   const [errors, setErrors] = useState({});
+  const formRef = useRef(null);
 
   // Close popup using Escape key
   useEffect(() => {
@@ -48,10 +49,14 @@ const AutoPopupForm = ({ onSubmit, isOpen, onClose }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(e.target);
+    const form = formRef.current;
+
+    if (!form) return;
+
+    const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
     const phoneDigits = data.phone.replace(/\D/g, "");
@@ -85,15 +90,24 @@ const AutoPopupForm = ({ onSubmit, isOpen, onClose }) => {
     data.phone = phoneDigits;
     data.email = data.email.trim();
 
-    if (onSubmit) {
-      onSubmit(data);
-    } else {
-      console.log("Enquiry Form Data:", data);
-    }
+    try {
+      // Submit form data
+      if (onSubmit) {
+        await onSubmit(data);
+      } else {
+        console.log("Enquiry Form Data:", data);
+      }
 
-    e.target.reset();
-    setErrors({});
-    onClose?.();
+      // Reset all form fields
+      form.reset();
+
+      // Clear validation errors
+      setErrors({});
+
+      // Popup remains open after submission
+    } catch (error) {
+      console.error("Enquiry form submission failed:", error);
+    }
   };
 
   if (!isOpen) return null;
@@ -247,6 +261,7 @@ const AutoPopupForm = ({ onSubmit, isOpen, onClose }) => {
 
           {/* Enquiry Form */}
           <form
+            ref={formRef}
             onSubmit={handleSubmit}
             noValidate
             className="flex flex-col gap-3.5"
