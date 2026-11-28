@@ -246,12 +246,13 @@ function Registration() {
 
               <div className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
                 {registrationData.brand.firstLine}
-                <span className="text-sky-300">
-                  {registrationData.brand.highlight}
-                </span>
+               
               </div>
 
               <h1 className="mt-2 text-2xl font-bold leading-tight text-white sm:text-[30px]">
+                 <span className="text-sky-300">
+                  {registrationData.brand.highlight}
+                </span>
                 {registrationData.brand.secondLine}
               </h1>
 

@@ -7,7 +7,7 @@
   "blogs": [
     {
       "id": 1,
-      "slug": "mern-training-institutes-delhi",
+      "slug": "mern-training",
       "category": "MERN Stack",
       "readTime": "6 min read",
       "title": "MERN Stack Development: Skills, Projects and Career Guide",
@@ -66,7 +66,7 @@
     },
     {
       "id": 2,
-      "slug": "ai-training-institutes-delhi",
+      "slug": "ai-training",
       "category": "Artificial Intelligence",
       "readTime": "7 min read",
       "title": "Artificial Intelligence: A Beginner's Learning Guide",
@@ -124,7 +124,7 @@
     },
     {
       "id": 3,
-      "slug": "data-science-training-delhi",
+      "slug": "data-science-training",
       "category": "Data Science",
       "readTime": "6 min read",
       "title": "Understanding Data Science: Skills, Tools and Career Paths",
@@ -189,7 +189,7 @@
     },
     {
       "id": 4,
-      "slug": "machine-learning-training-delhi",
+      "slug": "machine-learning-training",
       "category": "Machine Learning",
       "readTime": "6 min read",
       "title": "Machine Learning: Concepts, Tools and Project Ideas",
@@ -251,7 +251,7 @@
     },
     {
       "id": 5,
-      "slug": "data-analytics-training-delhi",
+      "slug": "data-analytics-training",
       "category": "Data Analytics",
       "readTime": "5 min read",
       "title": "Data Analytics: Skills, Tools and Career Opportunities",
@@ -309,7 +309,7 @@
     },
     {
       "id": 6,
-      "slug": "python-training-institutes-delhi",
+      "slug": "python-training",
       "category": "Python",
       "readTime": "5 min read",
       "title": "Python Programming: A Beginner's Complete Guide",

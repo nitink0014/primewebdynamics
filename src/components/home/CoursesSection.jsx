@@ -149,13 +149,6 @@ function CoursesSection() {
                 {/* Course Details */}
                 <div className="relative z-10 flex flex-1 flex-col p-4 sm:p-5">
 
-                  {/* Course Number */}
-                  {course.courseNumber && (
-                    <span className="mb-3 w-fit rounded-md border border-[#e5efff] bg-[#edf5ff] px-2.5 py-1 text-[11px] font-bold tracking-wide text-[#438fe5]">
-                      COURSE {course.courseNumber}
-                    </span>
-                  )}
-
                   {/* Course Title */}
                   <h3 className="min-h-[48px] text-lg font-bold leading-snug text-[#18202f] transition-colors duration-300 group-hover:text-[#3478df]">
                     {course.title}

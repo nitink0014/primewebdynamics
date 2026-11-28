@@ -13,7 +13,7 @@
   "formSubtitle": "Share your details and our team will get in touch with you.",
   "placeholders": {
     "name": "Full Name",
-    "email": "Email Address (Optional)",
+    "email": "Email Address",
     "phone": "Phone Number",
     "course": "Select a Course (Optional)",
     "branch": "Select a Location (Optional)"

@@ -233,23 +233,32 @@ export default function Blogs() {
                           />
                         </div>
 
-                        <h3 className="mt-3 text-lg font-extrabold leading-7 text-slate-900 transition-colors duration-200 group-hover:text-[#1760a4]">
+                        {/* Clickable Blog Title */}
+                        <Link
+                          to={`/blogs/${blog.slug}`}
+                          className="mt-3 block text-lg font-extrabold leading-7 text-slate-900 transition-colors duration-200 hover:text-[#1760a4]"
+                        >
                           {blog.title}
-                        </h3>
+                        </Link>
 
                         <p className="mt-3 line-clamp-3 text-sm leading-7 text-slate-500">
                           {blog.description}
                         </p>
 
+                        {/* Blog Title as Link Text */}
                         <div className="mt-auto border-t border-slate-100 pt-5">
                           <Link
                             to={`/blogs/${blog.slug}`}
-                            className="inline-flex items-center gap-2 text-sm font-extrabold text-orange-500 transition-colors duration-200 hover:text-[#1760a4]"
+                            title={blog.title}
+                            className="inline-flex max-w-full items-center gap-2 text-sm font-extrabold text-orange-500 transition-colors duration-200 hover:text-[#1760a4]"
                           >
-                            Read Article
+                            <span className="line-clamp-1">
+                              {blog.title}
+                            </span>
+
                             <ArrowRight
                               size={17}
-                              className="transition-transform duration-300 group-hover:translate-x-1"
+                              className="shrink-0 transition-transform duration-300 group-hover:translate-x-1"
                             />
                           </Link>
                         </div>
