@@ -1,30 +1,28 @@
 
-import { useState } from "react";
 import {
-  FileUser,
-  MessagesSquare,
+  BookOpen,
+  Code,
   FolderGit2,
-  Brain,
-  BriefcaseBusiness,
+  Lightbulb,
   UsersRound,
+  BriefcaseBusiness,
   ArrowUpRight,
   GraduationCap,
-  CheckCircle2,
+  Check,
 } from "lucide-react";
 
-import successStoriesData from "../../data/successStoriesData.json";
-import AutoPopupForm from "./AutoPopupForm";
+import learningOutcomeData from "../../data/learningOutcomeData.json";
 
 const iconMap = {
-  FileUser,
-  MessagesSquare,
+  BookOpen,
+  Code,
   FolderGit2,
-  Brain,
-  BriefcaseBusiness,
+  Lightbulb,
   UsersRound,
+  BriefcaseBusiness,
 };
 
-const serviceStyles = [
+const outcomeStyles = [
   {
     icon: "bg-blue-50 text-blue-600",
     number: "text-blue-100",
@@ -57,9 +55,7 @@ const serviceStyles = [
   },
 ];
 
-function SuccessStoriesSection() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
+function LearningOutcome() {
   const handleCardMove = (event) => {
     const card = event.currentTarget;
     const rect = card.getBoundingClientRect();
@@ -96,46 +92,42 @@ function SuccessStoriesSection() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#f5f8fd] px-4 py-16 font-sans sm:px-6 sm:py-20 lg:px-8">
+    <section className="relative w-full overflow-hidden bg-white px-4 py-16 font-sans sm:px-6 sm:py-20 lg:px-8">
 
       {/* Soft Background Decorations */}
-      <div className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-blue-100/35 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 top-10 h-80 w-80 rounded-full bg-blue-100/30 blur-3xl" />
 
-      <div className="pointer-events-none absolute -right-32 bottom-20 h-80 w-80 rounded-full bg-orange-100/25 blur-3xl" />
+      <div className="pointer-events-none absolute -left-32 bottom-10 h-72 w-72 rounded-full bg-orange-100/25 blur-3xl" />
 
       <div className="relative mx-auto w-full max-w-[1325px]">
 
         {/* Section Heading */}
         <div className="mb-12 flex flex-col items-center text-center">
 
-          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 text-xs font-extrabold tracking-[1.2px] text-[#347dc9] shadow-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-[#f3f7ff] px-4 py-2 text-xs font-extrabold tracking-[1.2px] text-[#347dc9]">
             <GraduationCap size={16} />
-            {successStoriesData.badge}
+            {learningOutcomeData.badge}
           </div>
 
-          <h2 className="mt-5 text-[clamp(32px,4vw,54px)] font-extrabold leading-[1.15] tracking-[-1.5px] text-[#102b59]">
-            {successStoriesData.title}{" "}
-
-            <span className="text-[#4388ed]">
-              {successStoriesData.highlight}
-            </span>
+          <h2 className="mt-5 max-w-[850px] text-[clamp(32px,4vw,53px)] font-extrabold leading-[1.15] tracking-[-1.5px] text-[#102b59]">
+            {learningOutcomeData.title}
           </h2>
 
           <p className="mt-4 max-w-[680px] text-sm leading-7 text-[#647084] sm:text-base">
-            {successStoriesData.subtitle}
+            {learningOutcomeData.subtitle}
           </p>
         </div>
 
-        {/* Career Support Services */}
+        {/* Learning Outcomes */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
-          {successStoriesData.supportServices.map((service, index) => {
-            const Icon = iconMap[service.icon] || GraduationCap;
-            const style = serviceStyles[index % serviceStyles.length];
+          {learningOutcomeData.features.map((item, index) => {
+            const Icon = iconMap[item.icon] || GraduationCap;
+            const style = outcomeStyles[index % outcomeStyles.length];
 
             return (
               <article
-                key={service.id}
+                key={item.id}
                 onMouseMove={handleCardMove}
                 onMouseLeave={handleCardLeave}
                 style={{
@@ -145,7 +137,7 @@ function SuccessStoriesSection() {
                   group relative flex min-h-[255px]
                   flex-col overflow-hidden
                   rounded-[22px]
-                  border border-[#e5edf6]
+                  border border-[#e5ebf4]
                   bg-white p-6
                   shadow-[0_5px_22px_rgba(16,43,89,0.04)]
                   transition-[transform,border-color,box-shadow]
@@ -170,7 +162,7 @@ function SuccessStoriesSection() {
                   }}
                 />
 
-                {/* Decorative Number */}
+                {/* Background Number */}
                 <span
                   className={`
                     pointer-events-none absolute right-6 top-3
@@ -178,7 +170,7 @@ function SuccessStoriesSection() {
                     ${style.number}
                   `}
                 >
-                  {service.number}
+                  {item.number}
                 </span>
 
                 {/* Icon */}
@@ -197,17 +189,21 @@ function SuccessStoriesSection() {
 
                 {/* Content */}
                 <h3 className="relative mt-6 text-xl font-extrabold text-[#102b59]">
-                  {service.title}
+                  {item.title}
                 </h3>
 
                 <p className="relative mt-3 flex-1 text-[13px] leading-[1.85] text-[#647084] sm:text-sm">
-                  {service.description}
+                  {item.description}
                 </p>
 
-                {/* Bottom Label */}
+                {/* Outcome Label */}
                 <div className="relative mt-5 flex items-center gap-2 text-xs font-bold text-[#347dc9]">
-                  <CheckCircle2 size={15} />
-                  Career Development
+
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#edf5ff]">
+                    <Check size={12} strokeWidth={3} />
+                  </span>
+
+                  Practical Learning Outcome
                 </div>
 
               </article>
@@ -231,23 +227,22 @@ function SuccessStoriesSection() {
                 <GraduationCap size={22} />
 
                 <span className="text-xs font-extrabold uppercase tracking-[1.3px]">
-                  Career Starts Here
+                  {learningOutcomeData.footer.eyebrow}
                 </span>
               </div>
 
               <h3 className="mt-3 text-[22px] font-extrabold leading-tight text-white sm:text-[28px]">
-                {successStoriesData.footer.title}
+                {learningOutcomeData.footer.title}
               </h3>
 
               <p className="mt-3 text-sm leading-7 text-blue-100/85 sm:text-base">
-                {successStoriesData.footer.description}
+                {learningOutcomeData.footer.description}
               </p>
             </div>
 
-            {/* CTA Button */}
-            <button
-              type="button"
-              onClick={() => setIsPopupOpen(true)}
+            {/* CTA Link */}
+            <a
+              href={learningOutcomeData.footer.buttonLink}
               className="
                 group inline-flex min-h-[50px]
                 shrink-0 items-center justify-center gap-3
@@ -264,24 +259,18 @@ function SuccessStoriesSection() {
                 focus-visible:outline-orange-400
               "
             >
-              {successStoriesData.footer.buttonText}
+              {learningOutcomeData.footer.buttonText}
 
               <ArrowUpRight
                 size={18}
                 className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
-            </button>
+            </a>
           </div>
         </div>
       </div>
-
-      {/* Registration Popup */}
-      <AutoPopupForm
-        isOpen={isPopupOpen}
-        onClose={() => setIsPopupOpen(false)}
-      />
     </section>
   );
 }
 
-export default SuccessStoriesSection;
+export default LearningOutcome;

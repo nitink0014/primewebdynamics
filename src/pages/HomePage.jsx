@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 
 import HeroCarousel from "../components/home/HeroCarousel";
 import StatsSection from "../components/home/StatsSection";
-import CompaniesSection from "../components/home/CompaniesSection";
+import ChooseUs from "../components/home/ChooseUs";
 import CoursesSection from "../components/home/CoursesSection";
 import FeaturesSection from "../components/home/FeaturesSection";
 import LiveClassesSection from "../components/home/LiveClassesSection";
 import HowItWorksSection from "../components/home/HowItWorksSection";
-import SuccessStoriesSection from "../components/home/SuccessStoriesSection";
-import TestimonialsSection from "../components/home/TestimonialsSection";
-import CareerTestimonialsSection from "../components/home/CareerTestimonialsSection";
+import CareerDevelopment from "../components/home/CareerDevelopment";
+import LearningOutcome from "../components/home/LearningOutcome";
+import LearningApproach from "../components/home/LearningApproach";
 import EnquirySection from "../components/home/EnquirySection";
 import BlogsSection from "../components/home/BlogsSection";
 import FAQSection from "../components/home/FAQSection";
@@ -38,14 +38,14 @@ function HomePage() {
       <HeroCarousel onEnroll={openPopup} />
 
       <StatsSection />
-      <CompaniesSection />
+      <ChooseUs />
       <CoursesSection />
       <FeaturesSection />
       <LiveClassesSection />
       <HowItWorksSection />
-      <SuccessStoriesSection />
-      <TestimonialsSection />
-      <CareerTestimonialsSection />
+      <CareerDevelopment />
+      <LearningOutcome />
+      <LearningApproach />
       <EnquirySection />
       <BlogsSection />
       <FAQSection />

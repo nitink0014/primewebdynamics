@@ -8,9 +8,10 @@ import {
   TrendingUp,
   ArrowUpRight,
 } from "lucide-react";
+
 import { Link } from "react-router-dom";
 
-import careerTestimonialsData from "../../data/careerTestimonialsData.json";
+import learningApproachData from "../../data/learningApproachData.json";
 
 const iconMap = {
   Code,
@@ -21,7 +22,7 @@ const iconMap = {
   TrendingUp,
 };
 
-function CareerTestimonialsSection() {
+function LearningApproach() {
   const handleCardMove = (event) => {
     const card = event.currentTarget;
     const rect = card.getBoundingClientRect();
@@ -55,6 +56,7 @@ function CareerTestimonialsSection() {
     <section className="relative w-full overflow-hidden bg-[#0b1b35] px-5 py-16 font-sans sm:px-8 lg:py-20">
       {/* Background Effects */}
       <div className="pointer-events-none absolute -left-40 top-10 h-80 w-80 rounded-full bg-[#0785ff]/[0.07] blur-[110px]" />
+
       <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-[#f59e0b]/[0.06] blur-[120px]" />
 
       <div className="relative mx-auto w-full max-w-[1250px]">
@@ -63,22 +65,23 @@ function CareerTestimonialsSection() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#0785ff]/25 bg-[#0785ff]/[0.08] px-4 py-2 text-[12px] font-bold tracking-[1.5px] text-[#65b5ff]">
               <span className="h-2 w-2 rounded-full bg-[#0785ff]" />
-              {careerTestimonialsData.badge}
+
+              {learningApproachData.badge}
             </div>
 
             <h2 className="mt-5 max-w-[680px] text-[30px] font-extrabold leading-[1.15] tracking-[-1px] text-white sm:text-[40px] lg:text-[48px]">
-              {careerTestimonialsData.title}
+              {learningApproachData.title}
             </h2>
           </div>
 
           <p className="max-w-[500px] text-[15px] leading-7 text-[#aebdd2] lg:justify-self-end lg:pb-1">
-            {careerTestimonialsData.subtitle}
+            {learningApproachData.subtitle}
           </p>
         </div>
 
-        {/* Learning Framework */}
+        {/* Learning Features */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {careerTestimonialsData.features.map((item) => {
+          {learningApproachData.features.map((item) => {
             const Icon = iconMap[item.icon];
 
             return (
@@ -123,6 +126,7 @@ function CareerTestimonialsSection() {
                 {/* Static Accent */}
                 <div className="relative z-10 mt-6 flex items-center gap-2">
                   <span className="h-[3px] w-8 rounded-full bg-[#0785ff]/70" />
+
                   <span className="h-[3px] w-3 rounded-full bg-[#f59e0b]/70" />
                 </div>
               </div>
@@ -132,31 +136,32 @@ function CareerTestimonialsSection() {
 
         {/* Bottom CTA */}
         <div className="group relative mt-12 overflow-hidden rounded-2xl border border-[#31496d] bg-gradient-to-r from-[#142e52] to-[#19375e] px-6 py-8 shadow-[0_8px_28px_rgba(0,0,0,0.08)] transition-[border-color,box-shadow] duration-300 hover:border-[#45638b] hover:shadow-[0_14px_35px_rgba(0,0,0,0.14)] sm:px-10 sm:py-10">
-          {/* Subtle CTA Glow */}
+          {/* CTA Glow */}
           <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[#0785ff]/[0.06] blur-[90px]" />
 
           <div className="relative flex flex-col items-start justify-between gap-7 md:flex-row md:items-center">
             <div className="max-w-[680px]">
-              {careerTestimonialsData.footer.eyebrow && (
+              {learningApproachData.footer.eyebrow && (
                 <span className="text-[12px] font-bold tracking-[1.8px] text-[#65b5ff]">
-                  {careerTestimonialsData.footer.eyebrow}
+                  {learningApproachData.footer.eyebrow}
                 </span>
               )}
 
               <h3 className="mt-2 text-[24px] font-extrabold leading-tight text-white sm:text-[30px]">
-                {careerTestimonialsData.footer.title}
+                {learningApproachData.footer.title}
               </h3>
 
               <p className="mt-3 text-[14px] leading-7 text-[#b9c8dc] sm:text-[15px]">
-                {careerTestimonialsData.footer.description}
+                {learningApproachData.footer.description}
               </p>
             </div>
 
             <Link
-              to={careerTestimonialsData.footer.buttonLink}
+              to={learningApproachData.footer.buttonLink}
               className="inline-flex shrink-0 items-center gap-3 rounded-lg bg-[#0785ff] px-6 py-3.5 text-sm font-bold text-white transition-[transform,background-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:bg-[#0878e0] hover:shadow-[0_6px_20px_rgba(7,133,255,0.18)] focus:outline-none focus:ring-2 focus:ring-[#65b5ff] focus:ring-offset-2 focus:ring-offset-[#142e52]"
             >
-              {careerTestimonialsData.footer.buttonText}
+              {learningApproachData.footer.buttonText}
+
               <ArrowUpRight
                 size={18}
                 className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -169,4 +174,4 @@ function CareerTestimonialsSection() {
   );
 }
 
-export default CareerTestimonialsSection;
+export default LearningApproach;

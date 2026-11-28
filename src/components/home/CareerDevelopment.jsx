@@ -1,28 +1,31 @@
 
+import { useState } from "react";
+
 import {
-  BookOpen,
-  Code,
+  FileUser,
+  MessagesSquare,
   FolderGit2,
-  Lightbulb,
-  UsersRound,
+  Brain,
   BriefcaseBusiness,
+  UsersRound,
   ArrowUpRight,
   GraduationCap,
-  Check,
+  CheckCircle2,
 } from "lucide-react";
 
-import testimonialsData from "../../data/testimonialsData.json";
+import careerDevelopmentData from "../../data/careerDevelopmentData.json";
+import AutoPopupForm from "./AutoPopupForm";
 
 const iconMap = {
-  BookOpen,
-  Code,
+  FileUser,
+  MessagesSquare,
   FolderGit2,
-  Lightbulb,
-  UsersRound,
+  Brain,
   BriefcaseBusiness,
+  UsersRound,
 };
 
-const outcomeStyles = [
+const serviceStyles = [
   {
     icon: "bg-blue-50 text-blue-600",
     number: "text-blue-100",
@@ -55,7 +58,9 @@ const outcomeStyles = [
   },
 ];
 
-function TestimonialsSection() {
+function CareerDevelopment() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   const handleCardMove = (event) => {
     const card = event.currentTarget;
     const rect = card.getBoundingClientRect();
@@ -92,42 +97,46 @@ function TestimonialsSection() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-white px-4 py-16 font-sans sm:px-6 sm:py-20 lg:px-8">
+    <section className="relative w-full overflow-hidden bg-[#f5f8fd] px-4 py-16 font-sans sm:px-6 sm:py-20 lg:px-8">
 
       {/* Soft Background Decorations */}
-      <div className="pointer-events-none absolute -right-32 top-10 h-80 w-80 rounded-full bg-blue-100/30 blur-3xl" />
+      <div className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-blue-100/35 blur-3xl" />
 
-      <div className="pointer-events-none absolute -left-32 bottom-10 h-72 w-72 rounded-full bg-orange-100/25 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 bottom-20 h-80 w-80 rounded-full bg-orange-100/25 blur-3xl" />
 
       <div className="relative mx-auto w-full max-w-[1325px]">
 
         {/* Section Heading */}
         <div className="mb-12 flex flex-col items-center text-center">
 
-          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-[#f3f7ff] px-4 py-2 text-xs font-extrabold tracking-[1.2px] text-[#347dc9]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 text-xs font-extrabold tracking-[1.2px] text-[#347dc9] shadow-sm">
             <GraduationCap size={16} />
-            {testimonialsData.badge}
+            {careerDevelopmentData.badge}
           </div>
 
-          <h2 className="mt-5 max-w-[850px] text-[clamp(32px,4vw,53px)] font-extrabold leading-[1.15] tracking-[-1.5px] text-[#102b59]">
-            {testimonialsData.title}
+          <h2 className="mt-5 text-[clamp(32px,4vw,54px)] font-extrabold leading-[1.15] tracking-[-1.5px] text-[#102b59]">
+            {careerDevelopmentData.title}{" "}
+
+            <span className="text-[#4388ed]">
+              {careerDevelopmentData.highlight}
+            </span>
           </h2>
 
           <p className="mt-4 max-w-[680px] text-sm leading-7 text-[#647084] sm:text-base">
-            {testimonialsData.subtitle}
+            {careerDevelopmentData.subtitle}
           </p>
         </div>
 
-        {/* Learning Outcomes */}
+        {/* Career Support Services */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
-          {testimonialsData.features.map((item, index) => {
-            const Icon = iconMap[item.icon] || GraduationCap;
-            const style = outcomeStyles[index % outcomeStyles.length];
+          {careerDevelopmentData.supportServices.map((service, index) => {
+            const Icon = iconMap[service.icon] || GraduationCap;
+            const style = serviceStyles[index % serviceStyles.length];
 
             return (
               <article
-                key={item.id}
+                key={service.id}
                 onMouseMove={handleCardMove}
                 onMouseLeave={handleCardLeave}
                 style={{
@@ -137,7 +146,7 @@ function TestimonialsSection() {
                   group relative flex min-h-[255px]
                   flex-col overflow-hidden
                   rounded-[22px]
-                  border border-[#e5ebf4]
+                  border border-[#e5edf6]
                   bg-white p-6
                   shadow-[0_5px_22px_rgba(16,43,89,0.04)]
                   transition-[transform,border-color,box-shadow]
@@ -162,7 +171,7 @@ function TestimonialsSection() {
                   }}
                 />
 
-                {/* Background Number */}
+                {/* Decorative Number */}
                 <span
                   className={`
                     pointer-events-none absolute right-6 top-3
@@ -170,7 +179,7 @@ function TestimonialsSection() {
                     ${style.number}
                   `}
                 >
-                  {item.number}
+                  {service.number}
                 </span>
 
                 {/* Icon */}
@@ -189,21 +198,17 @@ function TestimonialsSection() {
 
                 {/* Content */}
                 <h3 className="relative mt-6 text-xl font-extrabold text-[#102b59]">
-                  {item.title}
+                  {service.title}
                 </h3>
 
                 <p className="relative mt-3 flex-1 text-[13px] leading-[1.85] text-[#647084] sm:text-sm">
-                  {item.description}
+                  {service.description}
                 </p>
 
-                {/* Outcome Label */}
+                {/* Bottom Label */}
                 <div className="relative mt-5 flex items-center gap-2 text-xs font-bold text-[#347dc9]">
-
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#edf5ff]">
-                    <Check size={12} strokeWidth={3} />
-                  </span>
-
-                  Practical Learning Outcome
+                  <CheckCircle2 size={15} />
+                  Career Development
                 </div>
 
               </article>
@@ -227,22 +232,23 @@ function TestimonialsSection() {
                 <GraduationCap size={22} />
 
                 <span className="text-xs font-extrabold uppercase tracking-[1.3px]">
-                  {testimonialsData.footer.eyebrow}
+                  Career Starts Here
                 </span>
               </div>
 
               <h3 className="mt-3 text-[22px] font-extrabold leading-tight text-white sm:text-[28px]">
-                {testimonialsData.footer.title}
+                {careerDevelopmentData.footer.title}
               </h3>
 
               <p className="mt-3 text-sm leading-7 text-blue-100/85 sm:text-base">
-                {testimonialsData.footer.description}
+                {careerDevelopmentData.footer.description}
               </p>
             </div>
 
-            {/* CTA Link */}
-            <a
-              href={testimonialsData.footer.buttonLink}
+            {/* CTA Button */}
+            <button
+              type="button"
+              onClick={() => setIsPopupOpen(true)}
               className="
                 group inline-flex min-h-[50px]
                 shrink-0 items-center justify-center gap-3
@@ -259,18 +265,24 @@ function TestimonialsSection() {
                 focus-visible:outline-orange-400
               "
             >
-              {testimonialsData.footer.buttonText}
+              {careerDevelopmentData.footer.buttonText}
 
               <ArrowUpRight
                 size={18}
                 className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
-            </a>
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Registration Popup */}
+      <AutoPopupForm
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+      />
     </section>
   );
 }
 
-export default TestimonialsSection;
+export default CareerDevelopment;

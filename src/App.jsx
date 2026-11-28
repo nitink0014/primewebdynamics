@@ -77,24 +77,60 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
 
-        <Route path="/registration" element={<Registration />} />
+        <Route
+          path="/registration"
+          element={<Registration />}
+        />
 
-        <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/contact"
+          element={<Contact />}
+        />
 
-        <Route path="/about" element={<About />} />
+        <Route
+          path="/about"
+          element={<About />}
+        />
 
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/blogs/:slug" element={<BlogDetails />} />
+        <Route
+          path="/blogs"
+          element={<Blogs />}
+        />
 
-        <Route path="/career-guidance" element={<CareerGuidance />} />
+        <Route
+          path="/blogs/:slug"
+          element={<BlogDetails />}
+        />
 
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/courses/:id" element={<CourseDetail />} />
+        <Route
+          path="/career-guidance"
+          element={<CareerGuidance />}
+        />
 
-        <Route path="/reviews" element={<Reviews />} />
+        <Route
+          path="/courses"
+          element={<Courses />}
+        />
 
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route
+          path="/courses/:id"
+          element={<CourseDetail />}
+        />
+
+        <Route
+          path="/reviews"
+          element={<Reviews />}
+        />
+
+        <Route
+          path="/privacy-policy"
+          element={<PrivacyPolicy />}
+        />
+
+        <Route
+          path="/refund-policy"
+          element={<RefundPolicy />}
+        />
 
         <Route
           path="/terms-conditions"

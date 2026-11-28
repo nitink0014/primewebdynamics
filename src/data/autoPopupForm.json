@@ -37,15 +37,15 @@
     "branch": "Select a Branch"
   },
   "courses": [
-    "Full Stack Development",
-    "Java Development",
-    "Python Development",
-    "Data Science",
-    "Data Analytics",
-    "Artificial Intelligence",
-    "Machine Learning",
-    "Digital Marketing"
-  ],
+  "Web Development",
+  "App Development",
+  "Digital Marketing",
+  "Python Programming",
+  "Frontend Technologies",
+  "Backend Technologies",
+  "Full Stack Developer",
+  "Data Analyst"
+],
   "branches": [
     "Sanjay Palace, Agra"
      
