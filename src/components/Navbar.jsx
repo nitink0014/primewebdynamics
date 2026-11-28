@@ -48,7 +48,8 @@ function Navbar() {
           <img
             src="/PrimeWebdynamicsLogo.png"
             alt="Prime Webdynamics"
-            className="h-12 w-auto object-contain sm:h-[58px]"
+            className="h-16 w-auto object-contain mix-blend-multiply"
+
           />
         </Link>
 
